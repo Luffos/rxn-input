@@ -2,4 +2,5 @@
  * @format
  */
 
-export default {};
+const GlobalKeyboard = {};
+export default GlobalKeyboard;
