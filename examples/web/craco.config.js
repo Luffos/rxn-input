@@ -2,24 +2,13 @@
 const webpack = require("webpack");
 const path = require('path')
 
-const {
-    when,
-    whenDev,
-    whenProd,
-    whenTest,
-    ESLINT_MODES,
-    POSTCSS_MODES,
-    getLoader,
-    loaderByName,
-    getPlugin,
-    pluginByName
-} = require("@craco/craco");
-
 const TerserPlugin = require('terser-webpack-plugin');
 
 const findWebpackPlugin = (webpackConfig, pluginName) =>
     webpackConfig.resolve.plugins.find(
-        ({ constructor }) => constructor && constructor.name === pluginName
+        ({
+            constructor
+        }) => constructor && constructor.name === pluginName
     );
 
 const enableTypescriptImportsFromExternalPaths = (
@@ -33,9 +22,7 @@ const enableTypescriptImportsFromExternalPaths = (
         );
 
         if (tsxRule) {
-            tsxRule.include = Array.isArray(tsxRule.include)
-                ? [...tsxRule.include, ...newIncludePaths]
-                : [tsxRule.include, ...newIncludePaths];
+            tsxRule.include = Array.isArray(tsxRule.include) ? [...tsxRule.include, ...newIncludePaths] : [tsxRule.include, ...newIncludePaths];
         }
     }
 };
@@ -58,9 +45,7 @@ const enableImportsFromExternalPaths = (webpackConfig, paths) => {
     addPathsToModuleScopePlugin(webpackConfig, paths);
 };
 
-module.exports = function ({
-    env
-}) {
+module.exports = function () {
     return {
         babel: {
             plugins: [
@@ -75,10 +60,9 @@ module.exports = function ({
         webpack: {
             configure: webpackConfig => {
 
-
-                  enableImportsFromExternalPaths(webpackConfig, [
-                       path.resolve(__dirname, "../shared")
-                    ]);
+                enableImportsFromExternalPaths(webpackConfig, [
+                    path.resolve(__dirname, "../shared")
+                ]);
 
                 return webpackConfig;
             },
@@ -97,7 +81,6 @@ module.exports = function ({
                         },
                     })
                 ],
-                remove: ["ManifestPlugin", "WorkboxWebpackPlugin", "WebpackManifestPlugin"]
             }
         },
     }
