@@ -48,20 +48,23 @@ const enableImportsFromExternalPaths = (webpackConfig, paths) => {
 module.exports = function () {
     return {
         babel: {
+            presets: ["@babel/preset-react"],
             plugins: [
                 ["react-native-web", {
                     commonjs: true
+                }],
+                ["replace-imports", {
+                    test: /react$/gi,
+                    replacer: path.resolve("./node_modules/react")
                 }]
             ],
-        },
-        alias: {
-            'react-native$': 'react-native-web'
         },
         webpack: {
             configure: webpackConfig => {
 
                 enableImportsFromExternalPaths(webpackConfig, [
-                    path.resolve(__dirname, "../shared")
+                    path.resolve(__dirname, "../shared"),
+                    path.resolve(__dirname, "../..")
                 ]);
 
                 return webpackConfig;
@@ -79,7 +82,7 @@ module.exports = function () {
                                 comments: false,
                             },
                         },
-                    })
+                    }),
                 ],
             }
         },
