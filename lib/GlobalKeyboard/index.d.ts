@@ -2,7 +2,7 @@ interface GlobalKeyBoardListener {}
 
 interface iGlobalKeyboard {
   addListener: (
-    event: 'keypress' | 'keydown',
+    event: 'keyup' | 'keydown',
     callback: (e: any) => void,
   ) => GlobalKeyBoardListener;
   removeListener: (listener: GlobalKeyBoardListener) => void;
