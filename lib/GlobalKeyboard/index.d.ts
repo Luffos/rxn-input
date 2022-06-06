@@ -1,6 +1,6 @@
-interface GlobalKeyBoardListener {}
+export interface GlobalKeyBoardListener {}
 
-interface iGlobalKeyboard {
+export interface iGlobalKeyboard {
   addListener: (
     event: 'keyup' | 'keydown',
     callback: (e: any) => void,
