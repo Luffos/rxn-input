@@ -11,7 +11,9 @@ const App = () => {
       [
         ...prevState,
         <View
-          key={`keyLog_${Date.now()}`}
+          key={`keyLog_Down_${Date.now()}_${
+            Math.floor(Math.random() * 99999999) + 1
+          }`}
           style={{
             width: '100%',
             height: `${100 / 20}%`,
@@ -35,7 +37,9 @@ const App = () => {
       [
         ...prevState,
         <View
-          key={`keyLog_${Date.now()}`}
+          key={`keyLog_Down_${Date.now()}_${
+            Math.floor(Math.random() * 99999999) + 1
+          }`}
           style={{
             width: '100%',
             height: `${100 / 20}%`,
