@@ -288,6 +288,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation project(':rxnkeyboard')
 }
 
 if (isNewArchitectureEnabled()) {

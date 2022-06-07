@@ -3,7 +3,7 @@ import {
   NativeEventEmitter,
   NativeModules,
 } from 'react-native';
-import {iGlobalKeyboard} from '.';
+import type {iGlobalKeyboard} from '.';
 import {ErrorMessages} from '../ErrorMessages';
 
 const eventEmitter = new NativeEventEmitter(NativeModules.RXNKeyboard);

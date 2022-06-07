@@ -2,5 +2,5 @@
  * @format
  */
 
-import GlobalKeyboard from './lib/GlobalKeyboard';
+import GlobalKeyboard from './src/GlobalKeyboard';
 export default GlobalKeyboard;

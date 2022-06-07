@@ -1,9 +1,6 @@
-import {iGlobalKeyboard} from '.';
-import {
-  EmitterSubscription,
-  NativeEventEmitter,
-  NativeModules,
-} from 'react-native';
+import {NativeModules} from 'react-native';
+import {EmitterSubscription, NativeEventEmitter} from 'react-native';
+import type {iGlobalKeyboard} from '.';
 import {ErrorMessages} from '../ErrorMessages';
 
 const eventEmitter = new NativeEventEmitter(NativeModules.RXNKeyboard);

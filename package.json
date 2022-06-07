@@ -1,11 +1,26 @@
 {
-  "name": "rxnkeyboard",
+  "name": "rxn-keyboard",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
+   "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "rxn-keyboard.podspec",
+    "!lib/typescript/example",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
   "dependencies": {
     "react": "17.0.2",
     "react-native": "0.68.2"
