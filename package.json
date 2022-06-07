@@ -6,10 +6,11 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
-   "source": "src/index",
+  "react-native": "src/index",
+  "source": "src/index",
+  "main": "index",
   "files": [
     "src",
-    "lib",
     "android",
     "ios",
     "cpp",

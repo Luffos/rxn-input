@@ -1,8 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useCallback, useEffect, useState} from 'react';
-import {NativeModules} from 'react-native';
 import {Text, StatusBar, View} from 'react-native';
-import GlobalKeyboard from '../../';
+import RXNKeyboard, {GlobalKeyboard} from '../../';
 
 const App = () => {
   const [renderArray, setRenderArray] = useState<Array<JSX.Element>>([]);
@@ -73,7 +72,7 @@ const App = () => {
   }, [handleKeyDown, handleKeyUp]);
 
   useEffect(() => {
-    console.log(NativeModules.RXNKeyboard);
+    console.log(RXNKeyboard);
   });
 
   return (

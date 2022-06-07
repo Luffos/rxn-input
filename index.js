@@ -2,5 +2,9 @@
  * @format
  */
 
+import {NativeModules} from 'react-native';
 import GlobalKeyboard from './src/GlobalKeyboard';
-export default GlobalKeyboard;
+
+const {RXNKeyboard} = NativeModules;
+export default RXNKeyboard;
+export {GlobalKeyboard};
