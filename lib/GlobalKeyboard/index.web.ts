@@ -1,16 +1,37 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+import {
+  EmitterSubscription,
+  NativeEventEmitter,
+  NativeModules,
+} from 'react-native';
 import {iGlobalKeyboard} from '.';
 import {ErrorMessages} from '../ErrorMessages';
+
+const eventEmitter = new NativeEventEmitter(NativeModules.RXNKeyboard);
+
+window.addEventListener('keydown', e => {
+  eventEmitter.emit('keydown', e);
+});
+
+window.addEventListener('keyup', e => {
+  eventEmitter.emit('keyup', e);
+});
 
 const GlobalKeyboard: iGlobalKeyboard = {
   addListener: (event, callback) => {
     if (event.toLowerCase() === 'keydown' || event.toLowerCase() === 'keyup') {
-      return {};
+      return eventEmitter.addListener(event.toLowerCase(), e => callback(e));
     }
 
     throw Error(ErrorMessages.InvalidEvent);
   },
-  removeListener: () => {},
-  clearAllListeners: () => {},
+  removeListener: (listener: any) => {
+    if (listener) {
+      (listener as EmitterSubscription).remove();
+    }
+  },
+  clearAllListeners: () => {
+    eventEmitter.removeAllListeners('keyup');
+    eventEmitter.removeAllListeners('keydown');
+  },
 };
 export default GlobalKeyboard;

@@ -1,9 +1,13 @@
 export interface GlobalKeyBoardListener {}
 
+export interface KeyEvent {
+  key: string;
+}
+
 export interface iGlobalKeyboard {
   addListener: (
     event: 'keyup' | 'keydown',
-    callback: (e: any) => void,
+    callback: (e: KeyEvent) => void,
   ) => GlobalKeyBoardListener;
   removeListener: (listener: GlobalKeyBoardListener) => void;
   clearAllListeners: () => void;
