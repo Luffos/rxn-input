@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class RXNKeyhandlerPackage implements ReactPackage {
+public class RXNKeyHandlerPackage implements ReactPackage {
 
     @NonNull
     @Override
     public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(new RXNKeyhandlerModule(reactContext));
+        modules.add(new RXNKeyHandlerModule(reactContext));
         return modules;
     }
 

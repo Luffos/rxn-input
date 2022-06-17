@@ -3,7 +3,7 @@ import {
   NativeEventEmitter,
   NativeModules,
 } from 'react-native';
-import type {iGlobalKeyboard} from '.';
+import type {iKeyHandler} from '.';
 import {ErrorMessages} from '../ErrorMessages';
 
 const eventEmitter = new NativeEventEmitter(NativeModules.RXNKeyhandler);
@@ -16,7 +16,7 @@ window.addEventListener('keyup', e => {
   eventEmitter.emit('keyup', e);
 });
 
-const GlobalKeyboard: iGlobalKeyboard = {
+const KeyHandler: iKeyHandler = {
   addListener: (event, callback) => {
     if (event.toLowerCase() === 'keydown' || event.toLowerCase() === 'keyup') {
       return eventEmitter.addListener(event.toLowerCase(), e => callback(e));
@@ -34,4 +34,4 @@ const GlobalKeyboard: iGlobalKeyboard = {
     eventEmitter.removeAllListeners('keydown');
   },
 };
-export default GlobalKeyboard;
+export default KeyHandler;

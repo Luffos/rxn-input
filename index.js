@@ -3,8 +3,8 @@
  */
 
 import {NativeModules} from 'react-native';
-import GlobalKeyboard from './src/GlobalKeyboard';
+import KeyHandler from './src/KeyHandler';
 
-const {RXNKeyhandler} = NativeModules;
-export default RXNKeyhandler;
-export {GlobalKeyboard};
+const {RXNKeyHandler} = NativeModules;
+export default RXNKeyHandler;
+export {KeyHandler};

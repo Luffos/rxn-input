@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useCallback, useEffect, useState} from 'react';
 import {Text, StatusBar, View} from 'react-native';
-import RXNKeyhandler, {GlobalKeyboard} from '../../';
+import RXNKeyhandler, {KeyHandler} from '../../';
 
 const App = () => {
   const [renderArray, setRenderArray] = useState<Array<JSX.Element>>([]);
@@ -59,15 +59,12 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const keyDownListener = GlobalKeyboard.addListener(
-      'keydown',
-      handleKeyDown,
-    );
-    const keyUpListener = GlobalKeyboard.addListener('keyup', handleKeyUp);
+    const keyDownListener = KeyHandler.addListener('keydown', handleKeyDown);
+    const keyUpListener = KeyHandler.addListener('keyup', handleKeyUp);
 
     return () => {
-      GlobalKeyboard.removeListener(keyDownListener);
-      GlobalKeyboard.removeListener(keyUpListener);
+      KeyHandler.removeListener(keyDownListener);
+      KeyHandler.removeListener(keyUpListener);
     };
   }, [handleKeyDown, handleKeyUp]);
 

@@ -14,14 +14,14 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.module.annotations.ReactModule;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
-@ReactModule(name = RXNKeyhandlerModule.NAME)
-public class RXNKeyhandlerModule extends ReactContextBaseJavaModule {
-    public static final String NAME = "RXNKeyhandler";
+@ReactModule(name = RXNKeyHandlerModule.NAME)
+public class RXNKeyHandlerModule extends ReactContextBaseJavaModule {
+    public static final String NAME = "RXNKeyHandler";
     
     private ReactContext mReactContext;
     private DeviceEventManagerModule.RCTDeviceEventEmitter mJSModule = null;
 
-    public RXNKeyhandlerModule(ReactApplicationContext reactContext) {
+    public RXNKeyHandlerModule(ReactApplicationContext reactContext) {
         super(reactContext);
         mReactContext = reactContext;
     }
