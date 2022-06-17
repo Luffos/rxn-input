@@ -1,5 +1,5 @@
 {
-  "name": "rxn-keyboard",
+  "name": "rxn-keyhandler",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,7 +14,7 @@
     "android",
     "ios",
     "cpp",
-    "rxn-keyboard.podspec",
+    "rxn-keyhandler.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "rxn-keyboard": ["./index"]
+      "rxn-keyhandler": ["./index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

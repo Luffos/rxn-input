@@ -6,7 +6,7 @@ import {
 import type {iGlobalKeyboard} from '.';
 import {ErrorMessages} from '../ErrorMessages';
 
-const eventEmitter = new NativeEventEmitter(NativeModules.RXNKeyboard);
+const eventEmitter = new NativeEventEmitter(NativeModules.RXNKeyhandler);
 
 window.addEventListener('keydown', e => {
   eventEmitter.emit('keydown', e);

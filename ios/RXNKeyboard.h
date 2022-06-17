@@ -1,5 +1,5 @@
 #import <React/RCTBridgeModule.h>
 
-@interface RXNKeyboard : NSObject <RCTBridgeModule>
+@interface RXNKeyhandler : NSObject <RCTBridgeModule>
 
 @end

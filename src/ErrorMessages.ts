@@ -1,3 +1,3 @@
 export const ErrorMessages = {
-  InvalidEvent: "[RXNKeyboard] Please, use 'keyup' or 'keydown' as event.",
+  InvalidEvent: "[RXNKeyhandler] Please, use 'keyup' or 'keydown' as event.",
 };

@@ -1,4 +1,4 @@
-package com.rxnkeyboard;
+package com.rxnkeyhandler;
 
 import androidx.annotation.NonNull;
 
@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class RXNKeyboardPackage implements ReactPackage {
+public class RXNKeyhandlerPackage implements ReactPackage {
 
     @NonNull
     @Override
     public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(new RXNKeyboardModule(reactContext));
+        modules.add(new RXNKeyhandlerModule(reactContext));
         return modules;
     }
 
