@@ -1,6 +1,6 @@
-#import "RXNKeyhandler.h"
+#import "RXNKeyHandler.h"
 
-@implementation RXNKeyhandler
+@implementation RXNKeyHandler
 
 RCT_EXPORT_MODULE()
 

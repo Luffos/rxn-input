@@ -3,7 +3,7 @@ import {EmitterSubscription, NativeEventEmitter} from 'react-native';
 import type {iKeyHandler} from '.';
 import {ErrorMessages} from '../ErrorMessages';
 
-const eventEmitter = new NativeEventEmitter(NativeModules.RXNKeyhandler);
+const eventEmitter = new NativeEventEmitter(NativeModules.RXNKeyHandler);
 
 const KeyHandler: iKeyHandler = {
   addListener: (event, callback) => {

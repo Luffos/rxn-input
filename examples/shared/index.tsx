@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useCallback, useEffect, useState} from 'react';
 import {Text, StatusBar, View} from 'react-native';
-import RXNKeyhandler, {KeyHandler} from '../../';
+import RXNKeyHandler, {KeyHandler} from '../../';
 
 const App = () => {
   const [renderArray, setRenderArray] = useState<Array<JSX.Element>>([]);
@@ -69,7 +69,7 @@ const App = () => {
   }, [handleKeyDown, handleKeyUp]);
 
   useEffect(() => {
-    console.log(RXNKeyhandler);
+    console.log(RXNKeyHandler);
   });
 
   return (
