@@ -17,7 +17,6 @@
     "src",
     "android",
     "ios",
-    "cpp",
     "rxn-keyhandler.podspec",
     "!lib/typescript/example",
     "!android/build",
