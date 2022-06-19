@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "web:start": "cd ./examples/web & yarn start"
   },
   "react-native": "src/index",
   "source": "src/index",
