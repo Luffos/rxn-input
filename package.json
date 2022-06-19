@@ -5,7 +5,10 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "web:start": "cd ./examples/web & yarn start"
+    "web:start": "cd ./examples/web & yarn start",
+    "mobile:start": "cd ./examples/mobile & yarn start",
+    "mobile:android": "cd ./examples/mobile & yarn android",
+    "mobile:ios": "cd ./examples/mobile & yarn ios"
   },
   "react-native": "src/index",
   "source": "src/index",
