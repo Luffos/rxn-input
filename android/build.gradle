@@ -19,10 +19,10 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('RXNKeyHandler_compileSdkVersion', 29)
+    compileSdkVersion safeExtGet('RXNKeyListener_compileSdkVersion', 29)
     defaultConfig {
-        minSdkVersion safeExtGet('RXNKeyHandler_minSdkVersion', 16)
-        targetSdkVersion safeExtGet('RXNKeyHandler_targetSdkVersion', 29)
+        minSdkVersion safeExtGet('RXNKeyListener_minSdkVersion', 16)
+        targetSdkVersion safeExtGet('RXNKeyListener_targetSdkVersion', 29)
         versionCode 1
         versionName "1.0"
 

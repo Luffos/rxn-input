@@ -1,4 +1,4 @@
-package com.rxnkeyhandler;
+package com.rxnkeylistener;
 
 import android.app.Activity;
 import android.util.Log;
@@ -14,14 +14,14 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.module.annotations.ReactModule;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
-@ReactModule(name = RXNKeyHandlerModule.NAME)
-public class RXNKeyHandlerModule extends ReactContextBaseJavaModule {
-    public static final String NAME = "RXNKeyHandler";
+@ReactModule(name = RXNKeyListenerModule.NAME)
+public class RXNKeyListenerModule extends ReactContextBaseJavaModule {
+    public static final String NAME = "RXNKeyListener";
     
     private ReactContext mReactContext;
     private DeviceEventManagerModule.RCTDeviceEventEmitter mJSModule = null;
 
-    public RXNKeyHandlerModule(ReactApplicationContext reactContext) {
+    public RXNKeyListenerModule(ReactApplicationContext reactContext) {
         super(reactContext);
         mReactContext = reactContext;
     }

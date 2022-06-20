@@ -3,8 +3,8 @@
  */
 
 import {NativeModules} from 'react-native';
-import KeyHandler from './src/KeyHandler';
+import KeyListener from './src/KeyListener';
 
-const {RXNKeyHandler} = NativeModules;
-export default RXNKeyHandler;
-export {KeyHandler};
+const {RXNKeyListener} = NativeModules;
+export default RXNKeyListener;
+export {KeyListener};

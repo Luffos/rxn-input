@@ -289,7 +289,7 @@ dependencies {
         implementation jscFlavor
     }
 
-    implementation project(':rxnkeyboard')
+    implementation project(':rxnkeylistener')
 }
 
 if (isNewArchitectureEnabled()) {
