@@ -1,5 +1,5 @@
 # rxn-keyhandler
-🎮‎ ‎ ⌨️‎ ‎ Cross Platform Key Handler for React, React Native and Expo.
+🎮‎ ‎ ⌨️‎ ‎ Cross Platform Key Listener for React, React Native and Expo.
 <br/>Inspired by [react-native-keyevent](https://github.com/kevinejohn/react-native-keyevent)
 
 ##  Install
