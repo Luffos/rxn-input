@@ -12,7 +12,7 @@
   },
   "react-native": "src/index",
   "source": "src/index",
-  "main": "index",
+  "main": "index.js",
   "files": [
     "src",
     "android",
