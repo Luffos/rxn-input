@@ -13,7 +13,14 @@ Using Yarn
 ```sh
 yarn add rxn-keylistener
 ```
+
 <br/> 🌐 Using this module for Web?<br/>Don't forget to setup [react-native-web](https://github.com/necolas/react-native-web)
+
+## Setup
+
+  Android
+
+  IOS
 
 ## Contributors
 
