@@ -5,7 +5,7 @@ Support:
 
 | Android |   IOS   | Web | Expo |
 |:-------:|:-------:|:---:|:----:|
-|    ✅   |    ✅    | ✅  |   ❌  |
+|    ✅   |   🚧   | ✅  |  ❌ |
 
 Inspired by [react-native-keyevent](https://github.com/kevinejohn/react-native-keyevent)
 
