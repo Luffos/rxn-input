@@ -18,9 +18,9 @@ yarn add rxn-keylistener
 
 ## Setup
 
-  Android
+  <p><img width="46" src="https://cdn.vox-cdn.com/thumbor/kL-Z76ZSmU6AUOBanezRDqSQ7us=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19086219/Android_logo_stacked__RGB_.jpg"/><br/>Android</p>
 
-  IOS
+  <p><img width="46" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfnunL1fJZICp_7tCdH7lqBZ6K8CXgBGFu4Q&usqp=CAU"/><br/>IOS</p>
 
 ## Contributors
 
