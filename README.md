@@ -1,6 +1,13 @@
 # rxn-keylistener
 🎮‎ ‎ ⌨️‎ ‎ Cross Platform Key Listener for React and React Native.
-<br/>Inspired by [react-native-keyevent](https://github.com/kevinejohn/react-native-keyevent)
+
+Support:
+
+| Android |   IOS   | Web | Expo |
+|:-------:|:-------:|:---:|:----:|
+|    ✅   |    ✅    | ✅  |   ❌  |
+
+Inspired by [react-native-keyevent](https://github.com/kevinejohn/react-native-keyevent)
 
 ##  Install
 
