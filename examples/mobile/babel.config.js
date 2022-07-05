@@ -8,7 +8,7 @@ module.exports = {
       'module-resolver',
       {
         alias: {
-          'react': './node_modules/react',
+          react: './node_modules/react',
           'react-native': './node_modules/react-native',
         },
       },
