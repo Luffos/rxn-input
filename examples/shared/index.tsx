@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useCallback, useEffect, useState} from 'react';
 import {Text, StatusBar, View} from 'react-native';
-import RXNKeyListener, {KeyListener} from '../../index';
+import KeyListener, {RXNKeyListener} from '../../index';
 
 const App = () => {
   const [renderArray, setRenderArray] = useState<Array<JSX.Element>>([]);

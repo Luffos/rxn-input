@@ -17,11 +17,18 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 @ReactModule(name = RXNKeyListenerModule.NAME)
 public class RXNKeyListenerModule extends ReactContextBaseJavaModule {
     public static final String NAME = "RXNKeyListener";
-    
-    private ReactContext mReactContext;
-    private DeviceEventManagerModule.RCTDeviceEventEmitter mJSModule = null;
 
-    public RXNKeyListenerModule(ReactApplicationContext reactContext) {
+    private static ReactContext mReactContext;
+    private static DeviceEventManagerModule.RCTDeviceEventEmitter mJSModule = null;
+
+    private static RXNKeyListenerModule instance = null;
+
+    public static RXNKeyListenerModule initModule(ReactApplicationContext reactContext) {
+        instance = new RXNKeyListenerModule(reactContext);
+        return instance;
+    }
+
+    protected RXNKeyListenerModule(ReactApplicationContext reactContext) {
         super(reactContext);
         mReactContext = reactContext;
     }
@@ -32,27 +39,19 @@ public class RXNKeyListenerModule extends ReactContextBaseJavaModule {
         return NAME;
     }
 
-    public void onKeyDownEvent(int keyCode, KeyEvent keyEvent) {
-        if (!mReactContext.hasActiveCatalystInstance()) {
-            return;
-        }
-
+    public static void onKeyDownEvent(int keyCode, KeyEvent keyEvent) {
         if (mJSModule == null) {
             mJSModule = mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class);
         }
-        //mJSModule.emit("onKeyDown", getJsEventParams(keyCode, keyEvent, null));
-        Log.d("--->", "keyDown");
+        mJSModule.emit("keydown", keyCode);
+        Log.d("--->", "keyDown" + " " + keyCode);
     };
 
-    public void onKeyUpEvent(int keyCode, KeyEvent keyEvent) {
-        if (!mReactContext.hasActiveCatalystInstance()) {
-            return;
-        }
-
+    public static void onKeyUpEvent(int keyCode, KeyEvent keyEvent) {
         if (mJSModule == null) {
             mJSModule = mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class);
         }
-        //mJSModule.emit("onKeyUp", getJsEventParams(keyCode, keyEvent, null));
-        Log.d("--->", "keyUp");
+        mJSModule.emit("keyup", keyCode);
+        Log.d("--->", "keyUp" + " " + keyCode);
     };
 }
