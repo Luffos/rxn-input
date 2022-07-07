@@ -36,6 +36,34 @@ yarn add rxn-keylistener
 
 🌐 Using this module for Web?<br/>Don't forget to setup [react-native-web](https://github.com/necolas/react-native-web)
 
+## Usage
+
+```typescript
+import KeyListener from "rxn-keylistener";
+
+const App = () => {
+  const handleKeyDown = useCallback((e) => {
+    // Your implementation here
+  }, []);
+
+  const handleKeyUp = useCallback((e) => {
+    // Your implementation here
+  }, []);
+
+  useEffect(() => {
+    const keyDownListener = KeyListener.addListener("keydown", handleKeyDown);
+    const keyUpListener = KeyListener.addListener("keyup", handleKeyUp);
+
+    return () => {
+      KeyListener.removeListener(keyDownListener);
+      KeyListener.removeListener(keyUpListener);
+    };
+  }, [handleKeyDown, handleKeyUp]);
+
+  return <></>;
+};
+```
+
 ## Contributors
 
 <a href = "https://github.com/Luffos/rxn-units/graphs/contributors">
