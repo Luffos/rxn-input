@@ -44,14 +44,13 @@ public class RXNKeyListenerModule extends ReactContextBaseJavaModule {
             mJSModule = mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class);
         }
         mJSModule.emit("keydown", keyCode);
-        Log.d("--->", "keyDown" + " " + keyCode);
-    };
+    }
 
     public static void onKeyUpEvent(int keyCode, KeyEvent keyEvent) {
         if (mJSModule == null) {
             mJSModule = mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class);
         }
         mJSModule.emit("keyup", keyCode);
-        Log.d("--->", "keyUp" + " " + keyCode);
-    };
+    }
+
 }
