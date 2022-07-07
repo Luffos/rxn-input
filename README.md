@@ -29,8 +29,8 @@ yarn add rxn-keylistener
      <td align="center"><img width="46" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfnunL1fJZICp_7tCdH7lqBZ6K8CXgBGFu4Q&usqp=CAU"/><br/>IOS</td>
   </tr>
   <tr>
-    <td><a href="./docs/ANDROID_SETUP.md">See instructions here</a></td>
-    <td><a href="./docs/IOS_SETUP.md">See instructions here</a></td>
+    <td align="center"><a href="./docs/ANDROID_SETUP.md">See instructions here</a></td>
+    <td align="center">Working on it...</td>
   </tr>
  </table>
 
