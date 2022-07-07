@@ -39,9 +39,11 @@ yarn add rxn-keylistener
 ## Usage
 
 ```typescript
+import React, {useCallback, useEffect} from 'react';
 import KeyListener from "rxn-keylistener";
 
 const App = () => {
+
   const handleKeyDown = useCallback((e) => {
     // Your implementation here
   }, []);
