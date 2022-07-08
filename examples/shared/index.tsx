@@ -1,12 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useCallback, useEffect, useState} from 'react';
 import {Text, StatusBar, View} from 'react-native';
-import KeyListener, {RXNKeyListener} from '../../index';
+import KeyListener from '../../index';
 
 const App = () => {
   const [renderArray, setRenderArray] = useState<Array<JSX.Element>>([]);
 
   const handleKeyDown = useCallback(e => {
+    console.log(e);
     setRenderArray(prevState =>
       [
         ...prevState,
@@ -26,7 +27,7 @@ const App = () => {
           <Text
             style={{
               color: 'white',
-            }}>{`Key ${e.key} was pressed  (keydown)`}</Text>
+            }}>{`key ${e.key} was pressed  (keydown)`}</Text>
         </View>,
       ].splice(-20, 20),
     );
@@ -67,10 +68,6 @@ const App = () => {
       KeyListener.removeListener(keyUpListener);
     };
   }, [handleKeyDown, handleKeyUp]);
-
-  useEffect(() => {
-    console.log(RXNKeyListener);
-  });
 
   return (
     <View
