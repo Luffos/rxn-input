@@ -23,4 +23,8 @@ const KeyListener: iKeyListener = {
     eventEmitter.removeAllListeners('keydown');
   },
 };
+
+const KeyEvent = {};
+
+export {KeyEvent, iKeyListener};
 export default KeyListener;
