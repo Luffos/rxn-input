@@ -13,6 +13,7 @@ import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.WritableNativeMap;
 import com.facebook.react.module.annotations.ReactModule;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
@@ -42,10 +43,18 @@ public class RXNKeyListenerModule extends ReactContextBaseJavaModule {
     }
 
     private WritableMap createMap(int keyCode, KeyEvent keyEvent) {
-        WritableMap map = Arguments.createMap();
-        map.putBoolean("ctrlKey", keyEvent.isCtrlPressed());
-        map.putBoolean("altKey", keyEvent.isAltPressed());
-        map.putString("key", String.valueOf((char) keyEvent.getUnicodeChar()));
+        WritableMap map = new WritableNativeMap();
+
+        String key = String.valueOf((char) keyEvent.getUnicodeChar());
+
+        Log.d("--->", ""+key.compareTo(""));
+
+        if (key == null) {
+            map.putString("key", "Empty");
+        } else {
+            map.putString("key", key);
+        }
+
         return map;
     }
 

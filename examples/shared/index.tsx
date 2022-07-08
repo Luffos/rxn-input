@@ -1,12 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useCallback, useEffect, useState} from 'react';
 import {Text, StatusBar, View} from 'react-native';
-import KeyListener from '../../index';
+import KeyListener, {KeyEvent} from '../../index';
 
 const App = () => {
   const [renderArray, setRenderArray] = useState<Array<JSX.Element>>([]);
 
-  const handleKeyDown = useCallback(e => {
+  const handleKeyDown: (e: KeyEvent) => void = useCallback(e => {
     console.log(e);
     setRenderArray(prevState =>
       [

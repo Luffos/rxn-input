@@ -3,7 +3,6 @@ export interface KeyListenerListener {}
 export interface KeyEvent {
   key: string;
 }
-
 export interface iKeyListener {
   addListener: (
     event: 'keyup' | 'keydown',

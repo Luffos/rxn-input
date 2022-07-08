@@ -3,9 +3,10 @@
  */
 
 import {NativeModules} from 'react-native';
-import KeyListener from './src/KeyListener';
+import KeyListener, {KeyEvent} from './src/KeyListener';
 
 const {RXNKeyListener} = NativeModules;
-export {RXNKeyListener};
+
+export {RXNKeyListener, KeyEvent};
 
 export default KeyListener;
