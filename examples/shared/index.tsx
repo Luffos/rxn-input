@@ -27,7 +27,7 @@ const App = () => {
           <Text
             style={{
               color: 'white',
-            }}>{`key ${e.key} was pressed  (keydown)`}</Text>
+            }}>{`Key ${e.key} was pressed  (keydown)`}</Text>
         </View>,
       ].splice(-20, 20),
     );
