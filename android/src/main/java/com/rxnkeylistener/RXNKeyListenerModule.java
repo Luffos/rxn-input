@@ -60,9 +60,11 @@ public class RXNKeyListenerModule extends ReactContextBaseJavaModule {
         map.putBoolean("ctrlKey", keyEvent.isCtrlPressed());
 
         InputDevice device = keyEvent.getDevice();
+
         WritableMap deviceMap = new WritableNativeMap();
         deviceMap.putInt("id", device.getId());
         deviceMap.putString("name", device.getName());
+        deviceMap.putString("descriptor", device.getDescriptor());
         deviceMap.putBoolean("isVirtual", device.isVirtual());
 
         map.putMap("device", deviceMap);

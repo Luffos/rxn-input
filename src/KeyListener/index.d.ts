@@ -10,6 +10,7 @@ export interface KeyEvent {
     | {
         id: number;
         name: string;
+        descriptor: string;
         isVirtual: boolean;
       }
     | undefined;
