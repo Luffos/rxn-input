@@ -5,6 +5,7 @@ export interface KeyEvent {
   capslock: boolean;
   shiftKey: boolean;
   altKey: boolean;
+  ctrlKey: boolean;
 }
 export interface iKeyListener {
   addListener: (

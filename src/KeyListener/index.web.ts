@@ -25,6 +25,7 @@ const KeyListener: iKeyListener = {
           capslock: e.getModifierState('CapsLock'),
           shiftKey: e.shiftKey,
           altKey: e.altKey,
+          ctrlKey: e.ctrlKey,
         }),
       );
     }
