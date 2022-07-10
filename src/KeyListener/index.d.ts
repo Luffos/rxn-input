@@ -2,6 +2,9 @@ export interface KeyListenerListener {}
 
 export interface KeyEvent {
   key: string;
+  capslock: boolean;
+  shiftKey: boolean;
+  altKey: boolean;
 }
 export interface iKeyListener {
   addListener: (

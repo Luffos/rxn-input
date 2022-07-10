@@ -47,13 +47,15 @@ public class RXNKeyListenerModule extends ReactContextBaseJavaModule {
 
         String key = String.valueOf((char) keyEvent.getUnicodeChar());
 
-        Log.d("--->", ""+key.compareTo(""));
-
-        if (key == null) {
-            map.putString("key", "Empty");
-        } else {
+        if (key.matches("^[a-zA-Z0-9]*$")) {
             map.putString("key", key);
+        } else {
+            map.putString("key", KeyEvent.keyCodeToString(keyCode));
         }
+
+        map.putBoolean("capslock", keyEvent.isCapsLockOn());
+        map.putBoolean("shiftKey", keyEvent.isShiftPressed());
+        map.putBoolean("altKey", keyEvent.isAltPressed());
 
         return map;
     }
