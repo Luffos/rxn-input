@@ -2,10 +2,12 @@ export interface KeyListenerListener {}
 
 export interface KeyEvent {
   key: string;
-  capslock: boolean;
   shiftKey: boolean;
   altKey: boolean;
   ctrlKey: boolean;
+  capsLock: boolean;
+  numLock: boolean;
+  scrollLock: boolean;
   device?:
     | {
         id: number;

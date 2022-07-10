@@ -22,10 +22,12 @@ const KeyListener: iKeyListener = {
       return eventEmitter.addListener(event.toLowerCase(), (e: KeyboardEvent) =>
         callback({
           key: e.key,
-          capslock: e.getModifierState('CapsLock'),
           shiftKey: e.shiftKey,
           altKey: e.altKey,
           ctrlKey: e.ctrlKey,
+          capsLock: e.getModifierState('CapsLock'),
+          numLock: e.getModifierState('NumLock'),
+          scrollLock: e.getModifierState('ScrollLock'),
           device: undefined,
         }),
       );
