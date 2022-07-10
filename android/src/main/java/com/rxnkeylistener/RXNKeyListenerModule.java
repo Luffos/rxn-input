@@ -2,6 +2,7 @@ package com.rxnkeylistener;
 
 import android.app.Activity;
 import android.util.Log;
+import android.view.InputDevice;
 import android.view.KeyEvent;
 
 import androidx.annotation.NonNull;
@@ -57,6 +58,14 @@ public class RXNKeyListenerModule extends ReactContextBaseJavaModule {
         map.putBoolean("shiftKey", keyEvent.isShiftPressed());
         map.putBoolean("altKey", keyEvent.isAltPressed());
         map.putBoolean("ctrlKey", keyEvent.isCtrlPressed());
+
+        InputDevice device = keyEvent.getDevice();
+        WritableMap deviceMap = new WritableNativeMap();
+        deviceMap.putInt("id", device.getId());
+        deviceMap.putString("name", device.getName());
+        deviceMap.putBoolean("isVirtual", device.isVirtual());
+
+        map.putMap("device", deviceMap);
 
         return map;
     }

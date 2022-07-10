@@ -6,6 +6,13 @@ export interface KeyEvent {
   shiftKey: boolean;
   altKey: boolean;
   ctrlKey: boolean;
+  device?:
+    | {
+        id: number;
+        name: string;
+        isVirtual: boolean;
+      }
+    | undefined;
 }
 export interface iKeyListener {
   addListener: (

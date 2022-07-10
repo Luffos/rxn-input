@@ -26,6 +26,7 @@ const KeyListener: iKeyListener = {
           shiftKey: e.shiftKey,
           altKey: e.altKey,
           ctrlKey: e.ctrlKey,
+          device: undefined,
         }),
       );
     }
