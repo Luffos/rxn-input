@@ -25,6 +25,7 @@ const KeyListener: iKeyListener = {
           shiftKey: e.shiftKey,
           altKey: e.altKey,
           ctrlKey: e.ctrlKey,
+          metaKey: e.metaKey,
           capsLock: e.getModifierState('CapsLock'),
           numLock: e.getModifierState('NumLock'),
           scrollLock: e.getModifierState('ScrollLock'),

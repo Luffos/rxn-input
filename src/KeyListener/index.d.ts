@@ -5,6 +5,7 @@ export interface KeyEvent {
   shiftKey: boolean;
   altKey: boolean;
   ctrlKey: boolean;
+  metaKey: boolean;
   capsLock: boolean;
   numLock: boolean;
   scrollLock: boolean;

@@ -57,6 +57,7 @@ public class RXNKeyListenerModule extends ReactContextBaseJavaModule {
         map.putBoolean("shiftKey", keyEvent.isShiftPressed());
         map.putBoolean("altKey", keyEvent.isAltPressed());
         map.putBoolean("ctrlKey", keyEvent.isCtrlPressed());
+        map.putBoolean("metaKey", keyEvent.isMetaPressed());
         map.putBoolean("capsLock", keyEvent.isCapsLockOn());
         map.putBoolean("numLock", keyEvent.isNumLockOn());
         map.putBoolean("scrollLock", keyEvent.isScrollLockOn());
