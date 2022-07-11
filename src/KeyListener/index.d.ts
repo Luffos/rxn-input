@@ -1,6 +1,9 @@
+import type KeyCode from 'src/KeyCode';
+
 export interface KeyListenerListener {}
 
 export interface KeyEvent {
+  keyCode: KeyCode | string;
   key: string;
   shiftKey: boolean;
   altKey: boolean;

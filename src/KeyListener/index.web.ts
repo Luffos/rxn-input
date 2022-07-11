@@ -21,6 +21,7 @@ const KeyListener: iKeyListener = {
     if (event.toLowerCase() === 'keydown' || event.toLowerCase() === 'keyup') {
       return eventEmitter.addListener(event.toLowerCase(), (e: KeyboardEvent) =>
         callback({
+          keyCode: '',
           key: e.key,
           shiftKey: e.shiftKey,
           altKey: e.altKey,

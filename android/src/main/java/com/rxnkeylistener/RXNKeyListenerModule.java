@@ -46,6 +46,8 @@ public class RXNKeyListenerModule extends ReactContextBaseJavaModule {
     private WritableMap createMap(int keyCode, KeyEvent keyEvent) {
         WritableMap map = new WritableNativeMap();
 
+        map.putString("keyCode", "");
+
         String key = String.valueOf((char) keyEvent.getUnicodeChar());
 
         if (key.matches("^[a-zA-Z0-9]*$")) {
