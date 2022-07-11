@@ -1,3 +1,4 @@
+import type {AndroidKeyCodeString} from 'src/AndroidKeyCode';
 import type KeyCode from 'src/KeyCode';
 
 export interface KeyListenerListener {}
@@ -23,8 +24,8 @@ export interface KeyEvent {
   original:
     | Partial<KeyboardEvent>
     | Partial<{
-        KeyCode: number;
-        keyCodeString: string;
+        KeyCode: AndroidKeyCode | number;
+        keyCodeString: AndroidKeyCodeString | string;
         Action: number;
         Flags: number;
         UnicodeChar: number;
