@@ -20,6 +20,17 @@ export interface KeyEvent {
         isVirtual: boolean;
       }
     | undefined;
+  original:
+    | Partial<KeyboardEvent>
+    | Partial<{
+        KeyCode: number;
+        keyCodeString: string;
+        Action: number;
+        Flags: number;
+        UnicodeChar: number;
+        DiplayLabel: number;
+        RepeatCount: number;
+      }>;
 }
 export interface iKeyListener {
   addListener: (

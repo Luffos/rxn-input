@@ -31,6 +31,7 @@ const KeyListener: iKeyListener = {
           numLock: e.getModifierState('NumLock'),
           scrollLock: e.getModifierState('ScrollLock'),
           device: undefined,
+          original: e,
         }),
       );
     }

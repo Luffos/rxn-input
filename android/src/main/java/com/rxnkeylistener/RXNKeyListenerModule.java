@@ -74,6 +74,18 @@ public class RXNKeyListenerModule extends ReactContextBaseJavaModule {
 
         map.putMap("device", deviceMap);
 
+        WritableMap originalMap = new WritableNativeMap();
+        originalMap.putInt("KeyCode", keyEvent.getKeyCode());
+        originalMap.putString("keyCodeString", KeyEvent.keyCodeToString(keyCode));
+        originalMap.putInt("Action", keyEvent.getAction());
+        originalMap.putInt("Flags", keyEvent.getFlags());
+        originalMap.putInt("UnicodeChar", keyEvent.getUnicodeChar());
+        originalMap.putInt("DiplayLabel", keyEvent.getDisplayLabel());
+        originalMap.putInt("RepeatCount", keyEvent.getRepeatCount());
+
+        map.putMap("original", originalMap);
+
+
         return map;
     }
 
