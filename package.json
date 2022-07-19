@@ -2,17 +2,17 @@
   "name": "rxn-keylistener",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "web:start": "cd ./examples/web & yarn start",
-    "mobile:start": "cd ./examples/mobile & yarn start",
-    "mobile:android": "cd ./examples/mobile & yarn android",
-    "mobile:ios": "cd ./examples/mobile & yarn ios"
+  "homepage": "https://github.com/Luffos/rxn-keylistener#readme",
+  "bugs": {
+    "url": "https://github.com/Luffos/rxn-keylistener/issues"
   },
-  "react-native": "src/index",
-  "source": "src/index",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luffos/rxn-keylistener.git"
+  },
   "main": "index.js",
+  "source": "src/index",
+  "react-native": "src/index",
   "files": [
     "src",
     "android",
@@ -25,6 +25,28 @@
     "!**/__fixtures__",
     "!**/__mocks__"
   ],
+  "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "mobile:android": "cd ./examples/mobile & yarn android",
+    "mobile:ios": "cd ./examples/mobile & yarn ios",
+    "mobile:start": "cd ./examples/mobile & yarn start",
+    "test": "jest",
+    "web:start": "cd ./examples/web & yarn start"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "preset": "react-native"
+  },
+  "resolutions": {
+    "@types/react": "^17"
+  },
   "dependencies": {
     "react": "17.0.2",
     "react-native": "0.68.2"
@@ -44,19 +66,5 @@
     "metro-react-native-babel-preset": "^0.67.0",
     "react-test-renderer": "17.0.2",
     "typescript": "^4.4.4"
-  },
-  "resolutions": {
-    "@types/react": "^17"
-  },
-  "jest": {
-    "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
   }
 }
