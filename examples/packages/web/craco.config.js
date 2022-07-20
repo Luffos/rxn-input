@@ -1,12 +1,31 @@
 /* eslint-disable no-unused-vars */
-const webpack = require('webpack');
-const path = require('path');
+const webpack = require("webpack");
+const path = require('path')
 
-const TerserPlugin = require('terser-webpack-plugin');
+const {
+  when,
+  whenDev,
+  whenProd,
+  whenTest,
+  ESLINT_MODES,
+  POSTCSS_MODES,
+  getLoader,
+  loaderByName,
+  getPlugin,
+  pluginByName
+} = require("@craco/craco");
+
+const {
+  getWebpackTools
+} = require("react-native-monorepo-tools");
+
+const monorepoWebpackTools = getWebpackTools();
 
 const findWebpackPlugin = (webpackConfig, pluginName) =>
   webpackConfig.resolve.plugins.find(
-    ({constructor}) => constructor && constructor.name === pluginName,
+    ({
+      constructor
+    }) => constructor && constructor.name === pluginName,
   );
 
 const enableTypescriptImportsFromExternalPaths = (
@@ -20,9 +39,9 @@ const enableTypescriptImportsFromExternalPaths = (
     );
 
     if (tsxRule) {
-      tsxRule.include = Array.isArray(tsxRule.include)
-        ? [...tsxRule.include, ...newIncludePaths]
-        : [tsxRule.include, ...newIncludePaths];
+      tsxRule.include = Array.isArray(tsxRule.include) ?
+        [...tsxRule.include, ...newIncludePaths] :
+        [tsxRule.include, ...newIncludePaths];
     }
   }
 };
@@ -43,33 +62,30 @@ const enableImportsFromExternalPaths = (webpackConfig, paths) => {
   addPathsToModuleScopePlugin(webpackConfig, paths);
 };
 
-module.exports = function () {
+module.exports = function({
+  env
+}) {
   return {
     babel: {
-      presets: ['@babel/preset-react'],
       plugins: [
-        [
-          'react-native-web',
-          {
-            commonjs: true,
-          },
-        ],
-        [
-          'module-resolver',
-          {
-            alias: {
-              react: './node_modules/react',
-            },
-          },
-        ],
+        ["module-resolver", {
+          "alias": {
+            "^react-native$": "react-native-web"
+          }
+        }]
       ],
     },
     webpack: {
-      configure: webpackConfig => {
+      configure: (webpackConfig) => {
+
         enableImportsFromExternalPaths(webpackConfig, [
-          path.resolve(__dirname, '../shared'),
-          path.resolve(__dirname, '../..'),
+          path.resolve(__dirname, '../../../'),
         ]);
+
+        // Allow importing from external workspaces.
+        monorepoWebpackTools.enableWorkspacesResolution(webpackConfig);
+        // Ensure nohoisted libraries are resolved from this workspace.
+        monorepoWebpackTools.addNohoistAliases(webpackConfig);
 
         return webpackConfig;
       },
@@ -77,18 +93,11 @@ module.exports = function () {
         add: [
           // Inject the "__DEV__" global variable.
           new webpack.DefinePlugin({
-            __DEV__: process.env.NODE_ENV !== 'production',
-          }),
-          new TerserPlugin({
-            extractComments: false,
-            terserOptions: {
-              format: {
-                comments: false,
-              },
-            },
+            __DEV__: process.env.NODE_ENV !== "production",
           }),
         ],
-      },
+        remove: ["ManifestPlugin", "WorkboxWebpackPlugin", "WebpackManifestPlugin"]
+      }
     },
-  };
+  }
 };

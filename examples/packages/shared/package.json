@@ -1,0 +1,19 @@
+{
+    "name": "@examples/shared",
+    "version": "0.0.1",
+    "description": "",
+    "private": true,
+    "main": "index.tsx",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "@types/react": "^17.0.19",
+        "@types/react-native": "^0.64.13",
+        "typescript": "^4.6.4"
+    },
+    "peerDependencies": {
+        "react": "*",
+        "react-native": "*"
+    }
+}
