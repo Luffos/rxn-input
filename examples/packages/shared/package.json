@@ -15,5 +15,10 @@
     "peerDependencies": {
         "react": "*",
         "react-native": "*"
+    },
+    "peerDependenciesMeta": {
+        "react-native-web": {
+          "optional": true
+        }
     }
 }
