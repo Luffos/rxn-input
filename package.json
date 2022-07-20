@@ -27,11 +27,11 @@
   ],
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "mobile:android": "cd ./examples/mobile & yarn android",
-    "mobile:ios": "cd ./examples/mobile & yarn ios",
-    "mobile:start": "cd ./examples/mobile & yarn start",
+    "mobile:android": "cd ./examples/packages/mobile & yarn android",
+    "mobile:ios": "cd ./examples/packages/mobile & yarn ios",
+    "mobile:start": "cd ./examples/packages/mobile & yarn start",
     "test": "jest",
-    "web:start": "cd ./examples/web & yarn start"
+    "web:start": "cd ./examples/packages/web & yarn start"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -66,5 +66,10 @@
     "metro-react-native-babel-preset": "^0.67.0",
     "react-test-renderer": "17.0.2",
     "typescript": "^4.4.4"
+  },
+   "rnpm": {
+    "android": {
+      "packageInstance": "new RXNKeyListenerPackage()"
+    }
   }
 }
