@@ -67,7 +67,7 @@
     "react-test-renderer": "17.0.2",
     "typescript": "^4.4.4"
   },
-   "rnpm": {
+  "rnpm": {
     "android": {
       "packageInstance": "new RXNKeyListenerPackage()"
     }

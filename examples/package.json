@@ -14,7 +14,7 @@
       "**/react-native-dev-menu"
     ]
   },
- "devDependencies": {
+  "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^5.17.0",
     "eslint": "^7.32.0",
