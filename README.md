@@ -70,7 +70,7 @@ const App = () => {
 
 ## Contributors
 
-<a href = "https://github.com/Luffos/rxn-units/graphs/contributors">
+<a href = "https://github.com/Luffos/rxn-keylistener/graphs/contributors">
   <img src = "https://contrib.rocks/image?repo=Luffos/rxn-keylistener"/>
 </a>
 
