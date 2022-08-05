@@ -1,4 +1,4 @@
-package com.rxnkeylistener;
+package com.rxninputlistener;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -10,14 +10,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class RXNKeyListenerPackage implements ReactPackage {
+public class RXNInputListenerPackage implements ReactPackage {
 
-    public RXNKeyListenerPackage() { }
+    public RXNInputListenerPackage() { }
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
-                RXNKeyListenerModule.initModule(reactContext)
+                RXNInputListenerModule.initModule(reactContext)
         );
     }
 

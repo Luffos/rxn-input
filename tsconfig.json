@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "rxn-keylistener": ["./index"]
+      "rxn-inputlistener": ["./index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

@@ -6,20 +6,20 @@ import android.view.KeyEvent;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
-import com.rxnkeylistener.RXNKeyListenerModule;
+import com.rxninputlistener.RXNInputListenerModule;
 
 public class MainActivity extends ReactActivity {
 
   @Override
   public boolean onKeyDown(int keyCode, KeyEvent event) {
-    RXNKeyListenerModule.onKeyDownEvent(keyCode, event);
+    RXNInputListenerModule.onKeyDownEvent(keyCode, event);
     super.onKeyDown(keyCode, event);
     return true;
   }
 
   @Override
   public boolean onKeyUp(int keyCode, KeyEvent event) {
-    RXNKeyListenerModule.onKeyUpEvent(keyCode, event);
+    RXNInputListenerModule.onKeyUpEvent(keyCode, event);
     super.onKeyDown(keyCode, event);
     return true;
   }

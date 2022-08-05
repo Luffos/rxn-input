@@ -1,5 +1,5 @@
-# rxn-keylistener
-🎮‎ ‎ ⌨️‎ ‎ Cross Platform Key Listener for React and React Native.
+# rxn-inputlistener
+🎮‎ ‎ ⌨️‎ ‎ Cross Platform Input Listener for React and React Native.
 
 <br/><a href="#"><img width="260px" src="http://www.animatedgif.net/underconstruction/anim0205-1_e0.gif"/></a>
 
@@ -17,12 +17,12 @@ Inspired by [react-native-keyevent](https://github.com/kevinejohn/react-native-k
 
 Using NPM
 ```sh
-npm install rxn-keylistener
+npm install rxn-inputlistener
 ```
 
 Using Yarn
 ```sh
-yarn add rxn-keylistener
+yarn add rxn-inputlistener
 ```
 
 ## Setup
@@ -44,7 +44,7 @@ yarn add rxn-keylistener
 
 ```typescript
 import React, {useCallback, useEffect} from 'react';
-import KeyListener from "rxn-keylistener";
+import InputListener from "rxn-inputlistener";
 
 const App = () => {
 
@@ -57,12 +57,12 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const keyDownListener = KeyListener.addListener("keydown", handleKeyDown);
-    const keyUpListener = KeyListener.addListener("keyup", handleKeyUp);
+    const keyDownListener = InputListener.addListener("keydown", handleKeyDown);
+    const keyUpListener = InputListener.addListener("keyup", handleKeyUp);
 
     return () => {
-      KeyListener.removeListener(keyDownListener);
-      KeyListener.removeListener(keyUpListener);
+      InputListener.removeListener(keyDownListener);
+      InputListener.removeListener(keyUpListener);
     };
   }, [handleKeyDown, handleKeyUp]);
 
@@ -72,8 +72,8 @@ const App = () => {
 
 ## Contributors
 
-<a href = "https://github.com/Luffos/rxn-keylistener/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=Luffos/rxn-keylistener"/>
+<a href = "https://github.com/Luffos/rxn-inputlistener/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=Luffos/rxn-inputlistener"/>
 </a>
 
 ##  License

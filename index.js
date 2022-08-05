@@ -3,18 +3,18 @@
  */
 
 import {NativeModules} from 'react-native';
-import KeyListener, {KeyEvent} from './src/KeyListener';
+import InputListener, {KeyEvent} from './src/InputListener';
 import KeyCode from './src/KeyCode';
 import {AndroidKeyCode, AndroidKeyCodeString} from './src/AndroidKeyCode';
 
-const {RXNKeyListener} = NativeModules;
+const {RXNInputListener} = NativeModules;
 
 export {
-  RXNKeyListener,
+  RXNInputListener,
   KeyEvent,
   KeyCode,
   AndroidKeyCode,
   AndroidKeyCodeString,
 };
 
-export default KeyListener;
+export default InputListener;

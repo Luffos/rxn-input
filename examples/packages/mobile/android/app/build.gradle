@@ -285,7 +285,7 @@ dependencies {
         implementation jscFlavor
     }
 
-    implementation project(':rxnkeylistener')
+    implementation project(':rxninputlistener')
 }
 
 if (isNewArchitectureEnabled()) {

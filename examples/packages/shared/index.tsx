@@ -3,7 +3,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {Text, StatusBar, View} from 'react-native';
 
 //@ts-ignore
-import KeyListener, {KeyEvent} from '../../../index';
+import InputListener, {KeyEvent} from '../../../index';
 
 const App = () => {
   const [renderArray, setRenderArray] = useState<Array<JSX.Element>>([]);
@@ -62,12 +62,12 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const keyDownListener = KeyListener.addListener('keydown', handleKeyDown);
-    const keyUpListener = KeyListener.addListener('keyup', handleKeyUp);
+    const keyDownListener = InputListener.addListener('keydown', handleKeyDown);
+    const keyUpListener = InputListener.addListener('keyup', handleKeyUp);
 
     return () => {
-      KeyListener.removeListener(keyDownListener);
-      KeyListener.removeListener(keyUpListener);
+      InputListener.removeListener(keyDownListener);
+      InputListener.removeListener(keyUpListener);
     };
   }, [handleKeyDown, handleKeyUp]);
 
