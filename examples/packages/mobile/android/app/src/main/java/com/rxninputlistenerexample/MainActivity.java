@@ -2,6 +2,7 @@ package com.rxninputlistenerexample;
 
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

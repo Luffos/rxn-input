@@ -3,7 +3,7 @@ import {
   NativeEventEmitter,
   NativeModules,
 } from 'react-native';
-import type {iInputListener} from '.';
+import type {iKeyListener} from '.';
 import {ErrorMessages} from '../ErrorMessages';
 
 const eventEmitter = new NativeEventEmitter(NativeModules.RXNInputListener);
@@ -16,7 +16,7 @@ window.addEventListener('keyup', e => {
   eventEmitter.emit('keyup', e);
 });
 
-const InputListener: iInputListener = {
+const KeyListener: iKeyListener = {
   addListener: (event, callback) => {
     if (event.toLowerCase() === 'keydown' || event.toLowerCase() === 'keyup') {
       return eventEmitter.addListener(event.toLowerCase(), (e: KeyboardEvent) =>
@@ -51,5 +51,5 @@ const InputListener: iInputListener = {
 
 const KeyEvent = {};
 
-export {KeyEvent, iInputListener};
-export default InputListener;
+export {KeyEvent, iKeyListener};
+export default KeyListener;

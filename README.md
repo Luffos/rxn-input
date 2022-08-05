@@ -45,7 +45,7 @@ yarn add rxn-inputlistener
 
 ```typescript
 import React, {useCallback, useEffect} from 'react';
-import InputListener from "rxn-inputlistener";
+import {KeyListener} from "rxn-inputlistener";
 
 const App = () => {
 
@@ -58,12 +58,12 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const keyDownListener = InputListener.addListener("keydown", handleKeyDown);
-    const keyUpListener = InputListener.addListener("keyup", handleKeyUp);
+    const keyDownListener = KeyListener.addListener("keydown", handleKeyDown);
+    const keyUpListener = KeyListener.addListener("keyup", handleKeyUp);
 
     return () => {
-      InputListener.removeListener(keyDownListener);
-      InputListener.removeListener(keyUpListener);
+      KeyListener.removeListener(keyDownListener);
+      KeyListener.removeListener(keyUpListener);
     };
   }, [handleKeyDown, handleKeyUp]);
 

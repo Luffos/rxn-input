@@ -1,7 +1,7 @@
 import type {AndroidKeyCodeString} from 'src/AndroidKeyCode';
 import type KeyCode from 'src/KeyCode';
 
-export interface InputListenerListener {}
+export interface KeyListenerListener {}
 
 export interface KeyEvent {
   keyCode: KeyCode | string;
@@ -33,15 +33,15 @@ export interface KeyEvent {
         RepeatCount: number;
       }>;
 }
-export interface iInputListener {
+export interface iKeyListener {
   addListener: (
     event: 'keyup' | 'keydown',
     callback: (e: KeyEvent) => void,
-  ) => InputListenerListener;
-  removeListener: (listener: InputListenerListener) => void;
+  ) => KeyListenerListener;
+  removeListener: (listener: KeyListenerListener) => void;
   clearAllListeners: () => void;
 }
 
-const InputListener: iInputListener;
+const KeyListener: iKeyListener;
 
-export default InputListener;
+export default KeyListener;
