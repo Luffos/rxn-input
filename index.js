@@ -19,3 +19,5 @@ export {
   AndroidKeyCode,
   AndroidKeyCodeString,
 };
+
+export default Input;
