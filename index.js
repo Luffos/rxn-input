@@ -10,6 +10,8 @@ import Input from './src/Input';
 
 const {RXNInputListener} = NativeModules;
 
+export * from './src/hooks';
+
 export {
   Input,
   RXNInputListener,
