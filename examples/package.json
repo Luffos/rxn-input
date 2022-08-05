@@ -10,8 +10,11 @@
       "**/react-dom",
       "**/react-native",
       "**/react-native/**",
+      "**/react-native-web",
+      "**/react-native-web/**",
       "**/react-native-codegen",
-      "**/react-native-dev-menu"
+      "**/react-native-dev-menu",
+      "**/@react-native-community/**"
     ]
   },
   "devDependencies": {
