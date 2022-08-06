@@ -1,5 +1,5 @@
 # rxn-input
-🎮 🖱️ ⌨️‎ ‎ Cross Platform Input Listener for React and React Native.
+🎮 🖱️ ⌨️‎ ‎ Cross Platform Input Handler for React and React Native.
 
 <br/><a href="#"><img width="260px" src="http://www.animatedgif.net/underconstruction/anim0205-1_e0.gif"/></a>
 
