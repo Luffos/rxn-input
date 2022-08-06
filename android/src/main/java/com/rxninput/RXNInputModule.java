@@ -1,4 +1,4 @@
-package com.rxninputlistener;
+package com.rxninput;
 
 import android.view.InputDevice;
 import android.view.KeyEvent;
@@ -13,21 +13,21 @@ import com.facebook.react.bridge.WritableNativeMap;
 import com.facebook.react.module.annotations.ReactModule;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
-@ReactModule(name = RXNInputListenerModule.NAME)
-public class RXNInputListenerModule extends ReactContextBaseJavaModule {
-    public static final String NAME = "RXNInputListener";
+@ReactModule(name = RXNInputModule.NAME)
+public class RXNInputModule extends ReactContextBaseJavaModule {
+    public static final String NAME = "RXNInput";
 
     private static ReactContext mReactContext;
     private static DeviceEventManagerModule.RCTDeviceEventEmitter mJSModule = null;
 
-    private static RXNInputListenerModule instance = null;
+    private static RXNInputModule instance = null;
 
-    public static RXNInputListenerModule initModule(ReactApplicationContext reactContext) {
-        instance = new RXNInputListenerModule(reactContext);
+    public static RXNInputModule initModule(ReactApplicationContext reactContext) {
+        instance = new RXNInputModule(reactContext);
         return instance;
     }
 
-    protected RXNInputListenerModule(ReactApplicationContext reactContext) {
+    protected RXNInputModule(ReactApplicationContext reactContext) {
         super(reactContext);
         mReactContext = reactContext;
     }

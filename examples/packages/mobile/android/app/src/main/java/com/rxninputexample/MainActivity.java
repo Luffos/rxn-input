@@ -1,30 +1,28 @@
-package com.rxninputlistenerexample;
+package com.rxninputexample;
 
-import android.util.Log;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
-
-import com.rxninputlistener.RXNInputListenerModule;
+import com.rxninput.RXNInputModule;
 
 public class MainActivity extends ReactActivity {
 
   @Override
   public boolean onKeyDown(int keyCode, KeyEvent event) {
-    RXNInputListenerModule.onKeyDownEvent(keyCode, event);
+    RXNInputModule.onKeyDownEvent(keyCode, event);
     super.onKeyDown(keyCode, event);
     return true;
   }
 
   @Override
   public boolean onKeyUp(int keyCode, KeyEvent event) {
-    RXNInputListenerModule.onKeyUpEvent(keyCode, event);
+    RXNInputModule.onKeyUpEvent(keyCode, event);
     super.onKeyDown(keyCode, event);
     return true;
   }
+
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
@@ -32,7 +30,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "RXNInputListenerExample";
+    return "RXNInputExample";
   }
 
   /**

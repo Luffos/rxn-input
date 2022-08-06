@@ -1,7 +1,7 @@
 module.exports = {
   project: {
     android: {
-      packageInstance: 'new RXNInputListenerPackage()',
+      packageInstance: 'new RXNInputPackage()',
     },
   },
 };

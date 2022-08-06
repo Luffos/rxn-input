@@ -1,6 +1,6 @@
-#import "RXNInputListener.h"
+#import "RXNInput.h"
 
-@implementation RXNInputListener
+@implementation RXNInput
 
 RCT_EXPORT_MODULE()
 

@@ -1,6 +1,6 @@
 Android Setup
 
-<p>Once you have installed rxn-inputlistener <a href="https://github.com/Luffos/rxn-inputlistener#install">(as described here)</a>, you need to manually add some code lines to get things working as expected.<p/>
+<p>Once you have installed rxn-input <a href="https://github.com/Luffos/rxn-input#install">(as described here)</a>, you need to manually add some code lines to get things working as expected.<p/>
 
 The only thing you need to do is edit the file named ```MainActivity.java``` at your project root ```PROJECT_ROOT/android/app/src/main/java/.../.../MainActivity.java```
 
@@ -10,20 +10,20 @@ package com.YOUR_APP;
 + import android.util.Log;
 + import android.view.KeyEvent;
 
-+ import com.rxninputlistener.RXNInputListenerModule;
++ import com.rxninput.RXNInputModule;
 
 public class MainActivity extends ReactActivity {
 
 +  @Override
 +  public boolean onKeyDown(int keyCode, KeyEvent event) {
-+    RXNInputListenerModule.onKeyDownEvent(keyCode, event);
++    RXNInputModule.onKeyDownEvent(keyCode, event);
 +    super.onKeyDown(keyCode, event);
 +    return true;
 +  }
 
 +  @Override
 +  public boolean onKeyUp(int keyCode, KeyEvent event) {
-+    RXNInputListenerModule.onKeyUpEvent(keyCode, event);
++    RXNInputModule.onKeyUpEvent(keyCode, event);
 +    super.onKeyDown(keyCode, event);
 +    return true;
 + }

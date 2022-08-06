@@ -19,10 +19,10 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('RXNInputListener_compileSdkVersion', 29)
+    compileSdkVersion safeExtGet('RXNInput_compileSdkVersion', 29)
     defaultConfig {
-        minSdkVersion safeExtGet('RXNInputListener_minSdkVersion', 16)
-        targetSdkVersion safeExtGet('RXNInputListener_targetSdkVersion', 29)
+        minSdkVersion safeExtGet('RXNInput_minSdkVersion', 16)
+        targetSdkVersion safeExtGet('RXNInput_targetSdkVersion', 29)
         versionCode 1
         versionName "1.0"
 

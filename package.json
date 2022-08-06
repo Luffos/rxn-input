@@ -1,14 +1,14 @@
 {
-  "name": "rxn-inputlistener",
+  "name": "rxn-input",
   "version": "0.0.1",
   "private": true,
-  "homepage": "https://github.com/Luffos/rxn-inputlistener#readme",
+  "homepage": "https://github.com/Luffos/rxn-input#readme",
   "bugs": {
-    "url": "https://github.com/Luffos/rxn-inputlistener/issues"
+    "url": "https://github.com/Luffos/rxn-input/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Luffos/rxn-inputlistener.git"
+    "url": "git+https://github.com/Luffos/rxn-input.git"
   },
   "main": "index.js",
   "source": "src/index",
@@ -17,7 +17,7 @@
     "src",
     "android",
     "ios",
-    "rxn-inputlistener.podspec",
+    "rxn-input.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -69,7 +69,7 @@
   },
   "rnpm": {
     "android": {
-      "packageInstance": "new RXNInputListenerPackage()"
+      "packageInstance": "new RXNInputPackage()"
     }
   }
 }

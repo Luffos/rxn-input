@@ -1,4 +1,4 @@
-# rxn-inputlistener
+# rxn-input
 🎮 🖱️ ⌨️‎ ‎ Cross Platform Input Listener for React and React Native.
 
 <br/><a href="#"><img width="260px" src="http://www.animatedgif.net/underconstruction/anim0205-1_e0.gif"/></a>
@@ -18,12 +18,12 @@ Inspired by [react-native-keyevent](https://github.com/kevinejohn/react-native-k
 
 Using NPM
 ```sh
-npm install rxn-inputlistener
+npm install rxn-input
 ```
 
 Using Yarn
 ```sh
-yarn add rxn-inputlistener
+yarn add rxn-input
 ```
 
 ## Setup
@@ -45,7 +45,7 @@ yarn add rxn-inputlistener
 
 ```typescript
 import React, {useCallback, useEffect} from 'react';
-import {KeyListener} from "rxn-inputlistener";
+import {KeyListener} from "rxn-input";
 
 const App = () => {
 
@@ -73,8 +73,8 @@ const App = () => {
 
 ## Contributors
 
-<a href = "https://github.com/Luffos/rxn-inputlistener/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=Luffos/rxn-inputlistener"/>
+<a href = "https://github.com/Luffos/rxn-input/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=Luffos/rxn-input"/>
 </a>
 
 ##  License

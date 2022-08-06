@@ -1,4 +1,4 @@
-package com.rxninputlistenerexample.newarchitecture.components;
+package com.rxninputexample.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

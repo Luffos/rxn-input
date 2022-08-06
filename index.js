@@ -8,13 +8,13 @@ import KeyCode from './src/KeyCode';
 import {AndroidKeyCode, AndroidKeyCodeString} from './src/AndroidKeyCode';
 import Input from './src/Input';
 
-const {RXNInputListener} = NativeModules;
+const {RXNInput} = NativeModules;
 
 export * from './src/hooks';
 
 export {
   Input,
-  RXNInputListener,
+  RXNInput,
   KeyListener,
   KeyEvent,
   KeyCode,
