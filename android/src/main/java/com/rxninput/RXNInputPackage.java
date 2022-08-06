@@ -17,7 +17,7 @@ public class RXNInputPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
-                RXNInputModule.initModule(reactContext)
+            RXNInputModule.initModule(reactContext)
         );
     }
 
