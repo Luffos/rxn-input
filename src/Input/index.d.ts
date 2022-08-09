@@ -5,12 +5,11 @@ export interface iInputFunctions {
 
 export interface iInputVariables {
   /**
-   * Returns if touch inputs are avaible which maybe supported by device but that's not in use at moment.
+   * Returns if touch inputs are avaible, which maybe supported by device but that's not in use at moment.
    *
    * Can change on desktop web browsers, when toggle mobile simulation tools.
    *
    * @hook useTouchAvaible
-   *
    * @event TouchListener.on('changeTouchAvaible')
    * @returns boolean
    */
@@ -20,6 +19,5 @@ export interface iInputVariables {
 type iInput = iInputFunctions & iInputVariables;
 
 const Input: iInput;
-Input.touchAvaible;
 
 export default Input;
