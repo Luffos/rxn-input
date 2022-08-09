@@ -1,7 +1,7 @@
 import {NativeModules} from 'react-native';
 import {EmitterSubscription, NativeEventEmitter} from 'react-native';
 import type {iKeyListener} from '.';
-import {ErrorMessages} from '../ErrorMessages';
+import {ErrorMessages} from '../../ErrorMessages';
 
 const eventEmitter = new NativeEventEmitter(NativeModules.RXNInput);
 
