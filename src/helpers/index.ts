@@ -1,0 +1,1 @@
+import dispatchClick from "./dispatchClick";
