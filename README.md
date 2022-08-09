@@ -12,7 +12,7 @@ Support:
 | Gamepad‎ ‎ 🎮  |    🚧  |  🚧  |            🚧        |                    🚧                   |   ❌  |
 | MIDI‎ ‎ 🎹     |    🚧  |  🚧  |            🚧        |                    🚧                   |   ❌  |
 
-Inspired by [react-native-keyevent](https://github.com/kevinejohn/react-native-keyevent) and [Unity](https://unity.com/pt).
+Inspired by [react-native-keyevent](https://github.com/kevinejohn/react-native-keyevent) and [Unity](https://unity.com).
 
 ##  Install
 
