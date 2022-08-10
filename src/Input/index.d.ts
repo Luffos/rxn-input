@@ -1,6 +1,8 @@
 export interface iInputFunctions {
   isMouseButtonDown: (button: number) => boolean;
   isMouseButtonUp: (button: number) => boolean;
+  getAxis: (axis: number, deviceId?: string) => number;
+  getAxisRaw: (axis: number, deviceId?: string) => number;
 }
 
 export interface iInputVariables {
