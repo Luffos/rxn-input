@@ -23,6 +23,15 @@ export interface iInputVariables {
    * @returns boolean
    */
   mousePresent: boolean;
+
+  /**
+   * The current mouse position in pixel coordinates. (X and Y)
+   *
+   * @hook useMousePosition
+   * @event MouseListener.on('changeMousePosition')
+   * @returns object
+   */
+  mousePosition: {x: number; y: number};
 }
 
 type iInput = iInputFunctions & iInputVariables;
