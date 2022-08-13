@@ -77,5 +77,5 @@ const App = () => {
   <img src = "https://contrib.rocks/image?repo=Luffos/rxn-input"/>
 </a>
 
-##  License
+##  📄 License
 MIT - This module was built with ❤️ by [Luffos](https://github.com/Luffos)<br/>Feel free for modify, edit, copy, fork and share
