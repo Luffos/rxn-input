@@ -1,11 +1,13 @@
+import type getAxis from './getAxis';
+import type getAxisRaw from './getAxisRaw';
 import type isMouseButtonDown from './isMouseButtonDown';
 import type isMouseButtonUp from './isMouseButtonUp';
 
 export interface iInputFunctions {
   isMouseButtonDown: typeof isMouseButtonDown;
   isMouseButtonUp: typeof isMouseButtonUp;
-  getAxis: (axis: number, deviceId?: string) => number;
-  getAxisRaw: (axis: number, deviceId?: string) => number;
+  getAxis: typeof getAxis;
+  getAxisRaw: typeof getAxisRaw;
 }
 
 export interface iInputVariables {
