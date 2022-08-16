@@ -28,7 +28,7 @@ jobs:
         working-directory: ./website
         run: |
           npm ci
-          npm run build -- DISABLE_ESLINT_PLUGIN=true
+          npm run build
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
