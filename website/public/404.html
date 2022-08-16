@@ -1,7 +1,6 @@
 <script>
   window.addEventListener('load', function () {
-    setTimeout(function () {
-      window.location.replace('https://luffos.github.io/rxn-input' + '?redirect=' + window.location.pathname.split('rxn-input').pop());
-    }, 2000);
+    window.location.replace('/' + '?redirect=' + window.location.pathname.split('rxn-input').pop());
+    window.location.reload();
   });
 </script>
