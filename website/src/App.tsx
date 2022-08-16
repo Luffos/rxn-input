@@ -1,4 +1,5 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Redirector from './components/Redirector';
 import TopNavBar from './components/TopNavBar';
 import Documentation from './pages/Documentation';
 import Home from './pages/Home';
@@ -10,6 +11,7 @@ function App() {
       basename={
         process.env.NODE_ENV === 'production' ? 'rxn-input' : undefined
       }>
+      <Redirector />
       <TopNavBar />
       <Routes>
         <Route path="*" element={<NotFound />} />
