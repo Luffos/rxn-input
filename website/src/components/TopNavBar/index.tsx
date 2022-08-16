@@ -1,24 +1,21 @@
 import {memo, useEffect} from 'react';
-import useStyles from './styles';
 import {Link, useLocation} from 'react-router-dom';
+import style from './style.module.css';
 
 const TopNavBar = () => {
-  const styles = useStyles();
   const location = useLocation();
 
-  useEffect(() => {
-    console.log(location);
-  });
-
   return (
-    <div style={styles.topNavBarRoot}>
-      <Link to={'/'} style={styles.topNavBarTitle}>
+    <div id={style.topNavBarRoot}>
+      <Link to={'/'} id={style.topNavBarTitle}>
         RXN Input
       </Link>
 
       <Link to={'/docs'} style={{height: '100%', marginLeft: '5vmin'}}>
-        <div style={location.pathname.toLowerCase() === '/docs' ? styles.navItem : {...styles.navItem, borderBottomColor: 'transparent'}}>
-          <p style={location.pathname.toLowerCase() !== '/docs' ? styles.navItemText : {...styles.navItemText, color: '#00f4ff'}}>Documentation</p>
+        <div
+          data-currentpage={`${location.pathname}`.toLowerCase() === '/docs'}
+          id={style.navItem}>
+          <p>Documentation</p>
         </div>
       </Link>
     </div>
