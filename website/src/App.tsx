@@ -8,7 +8,7 @@ function App() {
   return (
     <Router
       basename={
-        process.env.NODE_ENV === 'development' ? 'rxn-input' : undefined
+        process.env.NODE_ENV === 'production' ? 'rxn-input' : undefined
       }>
       <TopNavBar />
       <Routes>
