@@ -12,8 +12,8 @@ const Redirector = () => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    if (query.get('redict')) {
-      return navigate(`${query.get(`redirect`)}`);
+    if (query.get('redirect')) {
+      navigate(`${query.get(`redirect`)}`);
     }
   }, [navigate, query]);
 
