@@ -43,33 +43,7 @@ yarn add rxn-input
 
 ## Usage
 
-```typescript
-import React, {useCallback, useEffect} from 'react';
-import {KeyListener} from "rxn-input";
-
-const App = () => {
-
-  const handleKeyDown = useCallback((e) => {
-    // Your implementation here
-  }, []);
-
-  const handleKeyUp = useCallback((e) => {
-    // Your implementation here
-  }, []);
-
-  useEffect(() => {
-    const keyDownListener = KeyListener.addListener("keydown", handleKeyDown);
-    const keyUpListener = KeyListener.addListener("keyup", handleKeyUp);
-
-    return () => {
-      KeyListener.removeListener(keyDownListener);
-      KeyListener.removeListener(keyUpListener);
-    };
-  }, [handleKeyDown, handleKeyUp]);
-
-  return <></>;
-};
-```
+See on https://luffos.github.io/rxn-input/docs
 
 ## Contributors
 
