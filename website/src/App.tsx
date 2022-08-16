@@ -6,7 +6,10 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <Router>
+    <Router
+      basename={
+        process.env.NODE_ENV === 'development' ? 'rxn-input' : undefined
+      }>
       <TopNavBar />
       <Routes>
         <Route path="*" element={<NotFound />} />
