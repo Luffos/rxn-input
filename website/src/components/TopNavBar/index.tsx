@@ -4,7 +4,7 @@ import {Link} from 'gatsby';
 import * as style from './style.module.css';
 
 const TopNavBar = () => {
-  const pathname = window.location.pathname;
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
 
   return (
     <div id={style.topNavBarRoot}>
