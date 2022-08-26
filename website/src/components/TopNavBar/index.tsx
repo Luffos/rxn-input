@@ -1,9 +1,10 @@
-import {memo, useEffect} from 'react';
-import {Link, useLocation} from 'react-router-dom';
-import style from './style.module.css';
+import React, {memo, useEffect} from 'react';
+import {Link} from 'gatsby';
+
+import * as style from './style.module.css';
 
 const TopNavBar = () => {
-  const location = useLocation();
+  const pathname = location.pathname;
 
   return (
     <div id={style.topNavBarRoot}>
@@ -13,7 +14,7 @@ const TopNavBar = () => {
 
       <Link to={'/docs'} style={{height: '100%', marginLeft: '5vmin'}}>
         <div
-          data-currentpage={`${location.pathname}`.toLowerCase() === '/docs'}
+          data-currentpage={`${pathname}`.toLowerCase() === '/docs'}
           id={style.navItem}>
           <p>Documentation</p>
         </div>
