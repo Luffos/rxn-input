@@ -19,6 +19,14 @@ const TopNavBar = ({TopBarSelected}: iProps) => {
           <p>Documentation</p>
         </div>
       </Link>
+
+      <Link to={'/examples'} style={{height: '100%', marginLeft: '2.5vmin'}}>
+        <div data-currentpage={TopBarSelected === 'EXAMPLES'} id={style.navItem}>
+          <p>Examples</p>
+        </div>
+      </Link>
+
+      {/* <div style={{height: '100%', marginLeft: '2.5vmin', color: 'wheat'}}>GitHub</div> */}
     </div>
   );
 };

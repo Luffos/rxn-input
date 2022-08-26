@@ -1,1 +1,1 @@
-type iTopBarSelected = 'DOCS' | 'NOT_FOUND' | undefined;
+type iTopBarSelected = 'DOCS' | 'EXAMPLES' | 'NOT_FOUND' | undefined;
