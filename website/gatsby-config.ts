@@ -9,7 +9,7 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   pathPrefix: "/rxn-input",
-  plugins: [`gatsby-plugin-typescript`]
+  plugins: [`gatsby-plugin-typescript`, `gatsby-plugin-sitemap`]
 };
 
 export default config;
