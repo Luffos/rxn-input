@@ -4,7 +4,7 @@ import {Link} from 'gatsby';
 import * as style from './style.module.css';
 
 const TopNavBar = () => {
-  const pathname = typeof window !== 'undefined' ? window.location.pathname.toLowerCase().replace(/\/+$/, '') : '';
+  const pathname = typeof window !== 'undefined' ? window.location.pathname.split('rxn-input').pop()?.toLowerCase().replace(/\/+$/, '') : '';
 
   return (
     <div id={style.topNavBarRoot}>
