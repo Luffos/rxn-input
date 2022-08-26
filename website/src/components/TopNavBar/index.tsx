@@ -3,9 +3,11 @@ import {Link} from 'gatsby';
 
 import * as style from './style.module.css';
 
-const TopNavBar = () => {
-  const pathname = typeof window !== 'undefined' ? window.location.pathname.split('rxn-input').pop()?.toLowerCase().replace(/\/+$/, '') : '';
+interface iProps {
+  TopBarSelected?: iTopBarSelected;
+}
 
+const TopNavBar = ({TopBarSelected}: iProps) => {
   return (
     <div id={style.topNavBarRoot}>
       <Link to={'/'} id={style.topNavBarTitle}>
@@ -13,7 +15,7 @@ const TopNavBar = () => {
       </Link>
 
       <Link to={'/docs'} style={{height: '100%', marginLeft: '5vmin'}}>
-        <div data-currentpage={pathname === '/docs'} id={style.navItem}>
+        <div data-currentpage={TopBarSelected === 'DOCS'} id={style.navItem}>
           <p>Documentation</p>
         </div>
       </Link>

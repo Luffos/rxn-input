@@ -1,10 +1,15 @@
 import React, {memo} from 'react';
 import TopNavBar from '../TopNavBar';
 
-const Layout = ({children}: any) => {
+interface iProps {
+  children?: any;
+  TopBarSelected?: iTopBarSelected;
+}
+
+const Layout = ({children, TopBarSelected}: iProps) => {
   return (
     <>
-      <TopNavBar />
+      <TopNavBar TopBarSelected={TopBarSelected} />
       {children}
     </>
   );
