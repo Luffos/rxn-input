@@ -43,7 +43,7 @@ yarn add rxn-input
 
 ## Usage
 
-See on https://luffos.github.io/rxn-input/docs
+See on [Documentation](https://luffos.github.io/rxn-input/docs)
 
 ## Contributors
 
