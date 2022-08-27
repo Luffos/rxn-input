@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: row;
   user-select: none;
+  align-items: center;
 }
 
 #topNavBarTitle {
@@ -25,7 +26,7 @@
   color: #fadf49;
 }
 
-#navItem[data-currentpage="true"] {
+#navItem[data-currentpage='true'] {
   border-bottom-color: #fadf49;
   color: #eed70c;
 }
@@ -36,7 +37,7 @@
   text-decoration: none;
   align-items: center;
   justify-content: center;
-  border-bottom-color: transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
   border-bottom-width: 0.55vmin;
   border-bottom-style: solid;
   color: white;
@@ -44,6 +45,11 @@
   -ms-transition: color 25ms linear;
   transition: color 25ms linear;
   text-decoration: none;
+}
+
+#navItem p {
+  margin: 0;
+  padding: 0;
 }
 
 #navItem:hover {
@@ -62,6 +68,6 @@
   transition: opacity 0.15s ease-in;
 }
 
-#githubIcon:hover{
+#githubIcon:hover {
   opacity: 0.5;
 }

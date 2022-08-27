@@ -21,15 +21,17 @@ const TopNavBar = ({TopBarSelected}: iProps) => {
         </div>
       </Link>
 
-      <Link to={'/examples'} style={{height: '100%', marginLeft: '2.5vmin'}}>
+      <Link to={'/examples'} style={{height: '100%', marginRight: '2.5vmin'}}>
         <div data-currentpage={TopBarSelected === 'EXAMPLES'} id={style.navItem}>
           <p>Examples</p>
         </div>
       </Link>
 
-      <a id={style.githubIcon} style={{height: '100%', alignSelf: 'center', marginLeft: `2.5vmin`}} href="https://github.com/Luffos/rxn-input">
-        <img style={{pointerEvents: 'none', height: '1.5vw', alignSelf: 'center'}} src={`${githubIcon}`} />
-      </a>
+      <div style={{marginLeft: 'auto'}}>
+        <a id={style.githubIcon} style={{display: 'flex', height: '100%', alignSelf: 'center', justifyContent: `center`, alignItems: 'center', marginRight: `2.5vmin`}} href="https://github.com/Luffos/rxn-input">
+          <img style={{pointerEvents: 'none', width: '3vmin', aspectRatio: `1`}} src={`${githubIcon}`} />
+        </a>
+      </div>
     </div>
   );
 };
