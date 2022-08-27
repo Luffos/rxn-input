@@ -28,7 +28,7 @@ const TopNavBar = ({TopBarSelected}: iProps) => {
       </Link>
 
       <div style={{marginLeft: 'auto'}}>
-        <a id={style.githubIcon} style={{display: 'flex', height: '100%', alignSelf: 'center', justifyContent: `center`, alignItems: 'center', marginRight: `2.5vmin`}} href="https://github.com/Luffos/rxn-input">
+        <a id={style.githubIcon} style={{display: 'flex', height: '100%', alignSelf: 'center', justifyContent: `center`, alignItems: 'center', marginRight: `5.5vmin`}} href="https://github.com/Luffos/rxn-input">
           <img style={{pointerEvents: 'none', width: '3vmin', aspectRatio: `1`}} src={`${githubIcon}`} />
         </a>
       </div>

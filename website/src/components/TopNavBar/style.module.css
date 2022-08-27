@@ -10,9 +10,8 @@
 }
 
 #topNavBarTitle {
-  padding: 1.5vmin;
+  margin-left: 5.5vmin;
   letter-spacing: 0.1vmin;
-  margin: 0;
   font-weight: 700;
   font-size: 2vmin;
   color: white;
