@@ -1,5 +1,6 @@
 import React, {memo, useEffect} from 'react';
 import {Link} from 'gatsby';
+import githubIcon from '../../assets/github-icon.svg';
 
 import * as style from './style.module.css';
 
@@ -26,7 +27,9 @@ const TopNavBar = ({TopBarSelected}: iProps) => {
         </div>
       </Link>
 
-      {/* <div style={{height: '100%', marginLeft: '2.5vmin', color: 'wheat'}}>GitHub</div> */}
+      <a id={style.githubIcon} style={{height: '100%', alignSelf: 'center', marginLeft: `2.5vmin`}} href="https://github.com/Luffos/rxn-input">
+        <img style={{pointerEvents: 'none', height: '1.5vw', alignSelf: 'center'}} src={`${githubIcon}`} />
+      </a>
     </div>
   );
 };

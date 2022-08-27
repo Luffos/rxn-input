@@ -57,3 +57,11 @@
   font-weight: 500;
   font-size: 1.8vmin;
 }
+
+#githubIcon {
+  transition: opacity 0.15s ease-in;
+}
+
+#githubIcon:hover{
+  opacity: 0.5;
+}
