@@ -1,11 +1,39 @@
 html,
 body {
+  scroll-behavior: smooth;
   font-family: 'Optimistic Display', system-ui, -apple-system, sans-serif;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.6vw;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(31, 31, 31);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #8b8b8b
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #8a8a8a;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7e7e7e;
+  border-radius: 20px;
+  border: 6px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #686868;
 }

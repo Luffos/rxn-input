@@ -1,7 +1,9 @@
 #topNavBarRoot {
+  position: fixed;
   margin: 0;
   width: 100%;
-  background-color: #0f1011;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.01) 6%, rgba(0, 0, 0, 0.3) 95%);
+  backdrop-filter: blur(0.2vmin) brightness(140%);
   padding: 0;
   display: flex;
   flex-direction: row;
@@ -13,7 +15,7 @@
   margin-left: 4vmin;
   letter-spacing: 0.1vmin;
   font-weight: 700;
-  font-size: 2vmin;
+  font-size: 2.2vmin;
   color: white;
   -webkit-transition: color 25ms linear;
   -ms-transition: color 25ms linear;
@@ -22,12 +24,12 @@
 }
 
 #topNavBarTitle:hover {
-  color: #fadf49;
+  color: #0c81ee;
 }
 
 #navItem[data-currentpage='true'] {
-  border-bottom-color: #fadf49;
-  color: #eed70c;
+  border-bottom-color: #0c81ee;
+  color: #0c81ee;
 }
 
 #navItem {
@@ -36,9 +38,10 @@
   text-decoration: none;
   align-items: center;
   justify-content: center;
-  border-bottom-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(32, 80, 170, 0.5);
   border-bottom-width: 0.55vmin;
   border-bottom-style: solid;
+  border-width: 0.35vmin;
   color: white;
   -webkit-transition: color 25ms linear;
   -ms-transition: color 25ms linear;
@@ -52,7 +55,7 @@
 }
 
 #navItem:hover {
-  color: #eed70c;
+  color: #1b7dd8;
 }
 
 #navItem > p {
@@ -60,7 +63,7 @@
   letter-spacing: 0.001vmin;
   margin: 0;
   font-weight: 500;
-  font-size: 1.8vmin;
+  font-size: 1.9vmin;
 }
 
 #githubIcon {
