@@ -10733,7 +10733,14 @@
     "object-assign" "^4.1.1"
     "react-is" "^16.12.0 || ^17.0.0 || ^18.0.0"
 
-"react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0", "react@^18.1.0", "react@15.x || 16.x || 17.x || 18.x", "react@18.0.0":
+"react-wavify@^1.6.1":
+  "integrity" "sha512-YZigv6XPazRheK9nz2YDK5q10vCKQy/SPkuGTmSUh8P1HP+3R5cxWzjO8WyxrglFKH+im4lJxbzW9+t1pi6IJQ=="
+  "resolved" "https://registry.npmjs.org/react-wavify/-/react-wavify-1.6.1.tgz"
+  "version" "1.6.1"
+  dependencies:
+    "prop-types" "^15.8.1"
+
+"react@^0.13.0 || ^0.14.0 || >=15", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0", "react@^18.1.0", "react@15.x || 16.x || 17.x || 18.x", "react@18.0.0":
   "integrity" "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   "version" "18.1.0"
