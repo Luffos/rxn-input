@@ -19,7 +19,7 @@ const IndexPage = () => {
           <div style={{position: `absolute`, width: '100%', marginTop: vmin(10)}}>
             <FadeIn>
               <SlideInUp durationMs={500}>
-                <div style={{marginLeft: vmin(20), marginRight: vmin(20), fontSize: vmin(3)}}>
+                <div style={{marginLeft: vmin(20), marginRight: vmin(20), fontSize: vmin(4)}}>
                   <h1 style={{color: `white`, whiteSpace: 'nowrap'}}>
                     Input Handler for <br />{' '}
                     <Typewriter
