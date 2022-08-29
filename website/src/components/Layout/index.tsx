@@ -10,7 +10,12 @@ const Layout = ({children, TopBarSelected}: iProps) => {
   return (
     <>
       <TopNavBar TopBarSelected={TopBarSelected} />
-      {children}
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        {children}
+        <footer style={{width: `100%`, alignSelf: 'flex-end', backgroundColor: `gray`}}>
+          <h1>Luffos</h1>
+        </footer>
+      </div>
     </>
   );
 };

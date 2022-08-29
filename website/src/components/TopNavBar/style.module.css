@@ -3,12 +3,14 @@
   margin: 0;
   width: 100%;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.01) 6%, rgba(0, 0, 0, 0.3) 95%);
-  backdrop-filter: blur(0.2vmin) brightness(140%);
+  backdrop-filter: blur(1.1vmin) brightness(140%);
   padding: 0;
   display: flex;
   flex-direction: row;
   user-select: none;
   align-items: center;
+  top:0;
+  z-index: 900;
 }
 
 #topNavBarTitle {
