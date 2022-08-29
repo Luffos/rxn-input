@@ -26,7 +26,7 @@
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.45",
+    "@types/node": "^18.7.13",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
