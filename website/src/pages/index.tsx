@@ -15,7 +15,7 @@ const IndexPage = () => {
         <div style={{ width: '100%', height: vh(100), backgroundColor: '#01001e'}}>
           <WaveBackground />
 
-          <div style={{position: `absolute`, width: '100%', marginTop: vmin(15)}}>
+          <div style={{position: `absolute`, width: '100%', marginTop: vmin(10)}}>
             <div style={{marginLeft: vmin(20), marginRight: vmin(20), fontSize: vmin(3)}}>
               <h1 style={{color: `white`, whiteSpace: 'nowrap'}}>
                 Input Handler for <br /> React and React Native
