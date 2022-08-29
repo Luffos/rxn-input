@@ -12,7 +12,7 @@ const IndexPage = () => {
   return (
     <>
       <Layout>
-        <div style={{ width: '100%', height: vh(100), backgroundColor: '#1b167b'}}>
+        <div style={{ width: '100%', height: vh(100), backgroundColor: '#01001e'}}>
           <WaveBackground />
 
           <div style={{position: `absolute`, width: '100%', marginTop: vmin(15)}}>

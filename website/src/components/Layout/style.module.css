@@ -1,0 +1,11 @@
+#footer {
+  overflow: hidden;
+  width: 100%;
+  align-self: 'flex-end';
+  background-color: rgb(0, 0, 0)
+}
+
+#wave {
+  position: 'absolute';
+  overflow: 'hidden';
+}
