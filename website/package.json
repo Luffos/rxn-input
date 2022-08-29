@@ -13,6 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource/pt-sans": "^4.5.10",
     "@types/react-native": "^0.69.5",
     "gatsby": "^4.21.1",
     "gatsby-plugin-sitemap": "^5.21.0",

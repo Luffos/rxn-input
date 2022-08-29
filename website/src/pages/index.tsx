@@ -1,8 +1,7 @@
 import * as React from 'react';
 import type {HeadFC} from 'gatsby';
-import useUnits, {vmin} from 'rxn-units';
+import useUnits from 'rxn-units';
 import Layout from '../components/Layout';
-import WaveBackground from '../components/WaveBackground';
 import {useWindowDimensions} from 'react-native';
 
 const IndexPage = () => {
@@ -12,8 +11,7 @@ const IndexPage = () => {
   return (
     <>
       <Layout>
-        <div style={{ width: '100%', height: vh(100), backgroundColor: '#01001e'}}>
-          <WaveBackground />
+        <div style={{ width: '100%', height: vh(100)}}>
 
           <div style={{position: `absolute`, width: '100%', marginTop: vmin(10)}}>
             <div style={{marginLeft: vmin(20), marginRight: vmin(20), fontSize: vmin(3)}}>
