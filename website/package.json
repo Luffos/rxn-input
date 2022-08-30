@@ -2,7 +2,7 @@
   "name": "rxn-input-website",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://luffos.github.io/rxn-input",
+  "homepage": "https://luffos.github.io/rxn-input/",
   "description": "RXNInput Official Website",
   "scripts": {
     "develop": "gatsby develop",
