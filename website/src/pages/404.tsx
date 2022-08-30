@@ -5,7 +5,9 @@ import Layout from '../components/Layout';
 const NotFoundPage = () => {
   return (
     <>
-      <Layout TopBarSelected={'NOT_FOUND'} />
+      <Layout TopBarSelected={'NOT_FOUND'}>
+        <div style={{width: '100%', height: '100vh'}}></div>
+      </Layout>
     </>
   );
 };
