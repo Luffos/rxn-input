@@ -4,7 +4,6 @@ import Layout from '../components/Layout';
 
 import Typewriter from 'typewriter-effect';
 
-import {useWindowDimensions} from 'react-native';
 import {FadeIn, SlideInDown, SlideInLeft, SlideInRight, SlideInUp, wipeInY} from 'react-animated-components';
 
 const IndexPage = () => {
@@ -12,8 +11,8 @@ const IndexPage = () => {
     <>
       <Layout>
         <div style={{position: `absolute`, width: '100%', marginTop: '10vmin'}}>
-          <FadeIn>
-            <SlideInUp durationMs={500}>
+          <FadeIn delayMs={700}>
+            <SlideInUp delayMs={700} durationMs={900}>
               <div style={{marginLeft: '20vmin', marginRight: '20vmin', fontSize: '4vmin'}}>
                 <h1 style={{color: `white`, whiteSpace: 'nowrap'}}>
                   Input Handler for <br />{' '}
