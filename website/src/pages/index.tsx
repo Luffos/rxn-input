@@ -7,13 +7,19 @@ import Typewriter from 'typewriter-effect';
 import {FadeIn, SlideInDown, SlideInLeft, SlideInRight, SlideInUp, wipeInY} from 'react-animated-components';
 
 const IndexPage = () => {
+  const [showText, setShowText] = React.useState(false);
+
+  React.useEffect(() => {
+    setShowText(true);
+  }, []);
+
   return (
     <>
       <Layout>
         <div style={{position: `absolute`, width: '100%', marginTop: '10vmin'}}>
-          <React.Suspense>
-            <FadeIn delayMs={700}>
-              <SlideInUp delayMs={700} durationMs={900}>
+          {showText && (
+            <SlideInUp delayMs={700} durationMs={900}>
+              <FadeIn delayMs={700}>
                 <div style={{marginLeft: '20vmin', marginRight: '20vmin', fontSize: '4vmin'}}>
                   <h1 style={{color: `white`, whiteSpace: 'nowrap'}}>
                     Input Handler for <br />{' '}
@@ -26,9 +32,9 @@ const IndexPage = () => {
                     />
                   </h1>
                 </div>
-              </SlideInUp>
-            </FadeIn>
-          </React.Suspense>
+              </FadeIn>
+            </SlideInUp>
+          )}
         </div>
       </Layout>
     </>
