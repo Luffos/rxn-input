@@ -2,6 +2,7 @@
   position: fixed;
   margin: 0;
   width: 100%;
+  height: 6vmin;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.01) 6%, rgba(0, 0, 0, 0.3) 95%);
   backdrop-filter: blur(1.1vmin) brightness(140%);
   padding: 0;
@@ -9,7 +10,7 @@
   flex-direction: row;
   user-select: none;
   align-items: center;
-  top:0;
+  top: 0;
   z-index: 900;
 }
 
@@ -35,7 +36,7 @@
 }
 
 #navItem {
-  height: 100%;
+  height: 80%;
   display: flex;
   text-decoration: none;
   align-items: center;
