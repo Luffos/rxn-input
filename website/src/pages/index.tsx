@@ -11,22 +11,24 @@ const IndexPage = () => {
     <>
       <Layout>
         <div style={{position: `absolute`, width: '100%', marginTop: '10vmin'}}>
-          <FadeIn delayMs={700}>
-            <SlideInUp delayMs={700} durationMs={900}>
-              <div style={{marginLeft: '20vmin', marginRight: '20vmin', fontSize: '4vmin'}}>
-                <h1 style={{color: `white`, whiteSpace: 'nowrap'}}>
-                  Input Handler for <br />{' '}
-                  <Typewriter
-                    options={{
-                      strings: [`React`, `React and React Native`],
-                      autoStart: true,
-                      loop: true
-                    }}
-                  />
-                </h1>
-              </div>
-            </SlideInUp>
-          </FadeIn>
+          <React.Suspense>
+            <FadeIn delayMs={700}>
+              <SlideInUp delayMs={700} durationMs={900}>
+                <div style={{marginLeft: '20vmin', marginRight: '20vmin', fontSize: '4vmin'}}>
+                  <h1 style={{color: `white`, whiteSpace: 'nowrap'}}>
+                    Input Handler for <br />{' '}
+                    <Typewriter
+                      options={{
+                        strings: [`React`, `React and React Native`],
+                        autoStart: true,
+                        loop: true
+                      }}
+                    />
+                  </h1>
+                </div>
+              </SlideInUp>
+            </FadeIn>
+          </React.Suspense>
         </div>
       </Layout>
     </>
