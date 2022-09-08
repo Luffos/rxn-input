@@ -20,7 +20,9 @@ const IndexPage = () => {
   return (
     <>
       <Layout>
-        <div id={style.lights} />
+        <FadeIn delayMs={300}>
+          <div id={style.lights} />
+        </FadeIn>
         <div id={style.content}>
           {showText && (
             <SlideInUp durationMs={1200}>
@@ -29,7 +31,7 @@ const IndexPage = () => {
                   Cross-Platform Input Handler <br /> for React and React Native
                 </h1>
               </FadeIn>
-              <FadeIn durationMs={2000} delayMs={1700}>
+              <FadeIn durationMs={1500} delayMs={1700}>
                 <SlideInUp delayMs={1500}>
                   <h2 className={style.header2}>
                     Mouse<Gspan>,</Gspan> Touches<Gspan>,</Gspan> Keyboard <Gspan>and</Gspan> Gamepad
