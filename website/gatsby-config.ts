@@ -11,14 +11,22 @@ const config: GatsbyConfig = {
   pathPrefix: '/rxn-input/',
   plugins: [
     `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.svg$/,
+        }
+      }
+    },
     `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `docs`,
-        path: `${__dirname}/src/content/docs`,
-      },
-    },
+        path: `${__dirname}/src/content/docs`
+      }
+    }
   ]
 };
 

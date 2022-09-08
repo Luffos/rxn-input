@@ -2,9 +2,13 @@ import * as React from 'react';
 import type {HeadFC} from 'gatsby';
 import Layout from '../components/Layout';
 
-import Typewriter from 'typewriter-effect';
+import * as style from '../styles/index.module.css';
 
 import {FadeIn, SlideInDown, SlideInLeft, SlideInRight, SlideInUp, wipeInY} from 'react-animated-components';
+
+const Gspan = ({children}: {children: string}) => {
+  return <span style={{color: `#94A3B8`}}>{children}</span>;
+};
 
 const IndexPage = () => {
   const [showText, setShowText] = React.useState(false);
@@ -16,22 +20,21 @@ const IndexPage = () => {
   return (
     <>
       <Layout>
-        <div style={{position: `absolute`, width: '100%', marginTop: '10vmin'}}>
+        <div id={style.lights} />
+        <div id={style.content}>
           {showText && (
-            <SlideInUp delayMs={700} durationMs={900}>
-              <FadeIn delayMs={700}>
-                <div style={{marginLeft: '20vmin', marginRight: '20vmin', fontSize: '4vmin'}}>
-                  <h1 style={{color: `white`, whiteSpace: 'nowrap'}}>
-                    Input Handler for <br />{' '}
-                    <Typewriter
-                      options={{
-                        strings: [`React`, `React and React Native`],
-                        autoStart: true,
-                        loop: true
-                      }}
-                    />
-                  </h1>
-                </div>
+            <SlideInUp durationMs={1200}>
+              <FadeIn delayMs={500}>
+                <h1 className={style.header1}>
+                  Cross-Platform Input Handler <br /> for React and React Native
+                </h1>
+              </FadeIn>
+              <FadeIn durationMs={2000} delayMs={1700}>
+                <SlideInUp delayMs={1500}>
+                  <h2 className={style.header2}>
+                    Mouse<Gspan>,</Gspan> Touches<Gspan>,</Gspan> Keyboard <Gspan>and</Gspan> Gamepad
+                  </h2>
+                </SlideInUp>
               </FadeIn>
             </SlideInUp>
           )}
