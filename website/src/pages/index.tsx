@@ -70,7 +70,7 @@ const IndexPage = () => {
                     </SlideInUp>
                     {MQ_Full && <GetStartedButton marginTop={10} />}
                   </div>
-                  <FadeIn style={{display: `flex`, marginLeft: MQ_Full ? `auto` : undefined, justifyContent: `center`, alignItems: `center`}} durationMs={1000} delayMs={1200}>
+                  <FadeIn style={{display: `flex`, marginLeft: MQ_Full ? `auto` : undefined, justifyContent: `center`, alignItems: `center`}} durationMs={500} delayMs={500}>
                     <div style={{alignSelf: 'center', backgroundImage: `url(${Devices})`, backgroundSize: `contain`, backgroundRepeat: `no-repeat`, minWidth: `10min`, maxHeight: 600, width: MQ_Full ? `600px` : `380px`, aspectRatio: `1`}} />
                   </FadeIn>
                   {!MQ_Full && <GetStartedButton marginTop={-80} />}
