@@ -11,20 +11,22 @@ const Gspan = ({children}: {children: string}) => {
 };
 
 const IndexPage = () => {
-  const [showText, setShowText] = React.useState(false);
+  const [canShowAnimations, setCanShowAnimations] = React.useState(false);
 
   React.useEffect(() => {
-    setShowText(true);
+    setCanShowAnimations(true);
   }, []);
 
   return (
     <>
       <Layout>
-        <FadeIn delayMs={300}>
-          <div id={style.lights} />
-        </FadeIn>
+        {canShowAnimations && (
+          <FadeIn delayMs={300}>
+            <div id={style.lights} />
+          </FadeIn>
+        )}
         <div id={style.content}>
-          {showText && (
+          {canShowAnimations && (
             <SlideInUp durationMs={1200}>
               <FadeIn delayMs={500}>
                 <h1 className={style.header1}>
