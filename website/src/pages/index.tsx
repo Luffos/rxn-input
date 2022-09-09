@@ -25,7 +25,7 @@ const IndexPage = () => {
   const GetStartedButton = ({marginTop}: {marginTop?: number}) => {
     return (
       <Link style={{display: `block`, width: `fit-content`, alignSelf: !MQ_Full ? `center` : undefined}} to="/docs/getting-started">
-         <FadeIn durationMs={1000}>
+        <FadeIn durationMs={1000}>
           <h1
             id={style.getStartedBt}
             style={{
@@ -48,9 +48,9 @@ const IndexPage = () => {
             <div id={style.lights} />
           </FadeIn>
         )}
-        <FadeIn durationMs={2000} delayMs={500}>
-          <div id={style.content}>
-            {canShowAnimations && (
+        {canShowAnimations && (
+          <FadeIn durationMs={2000} delayMs={500}>
+            <div id={style.content}>
               <>
                 <div style={{display: `flex`, flexDirection: MQ_Full ? `row` : 'column'}}>
                   <div style={{marginTop: MQ_Full ? 60 : undefined}}>
@@ -76,9 +76,9 @@ const IndexPage = () => {
                   {!MQ_Full && <GetStartedButton marginTop={-80} />}
                 </div>
               </>
-            )}
-          </div>
-        </FadeIn>
+            </div>
+          </FadeIn>
+        )}
       </Layout>
     </>
   );
