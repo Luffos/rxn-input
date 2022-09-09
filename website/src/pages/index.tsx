@@ -23,9 +23,10 @@ const IndexPage = () => {
   };
 
   const GetStartedButton = ({marginTop}: {marginTop?: number}) => {
+
     return (
       <Link style={{display: `block`, width: `fit-content`, alignSelf: !MQ_Full ? `center` : undefined}} to="/docs/getting-started">
-        <FadeIn durationMs={1000}>
+        <FadeIn delayMs={100} durationMs={300}>
           <h1
             id={style.getStartedBt}
             style={{
@@ -60,12 +61,12 @@ const IndexPage = () => {
                           Cross-Platform Input Handler <br /> for React and React Native
                         </h1>
                       </FadeIn>
-                      <FadeIn durationMs={1300} delayMs={1300}>
-                        <SlideInUp delayMs={1000}>
+                      <FadeIn durationMs={1000} delayMs={1000}>
+                        <SlideInDown delayMs={1000}>
                           <h2 className={style.header2}>
                             Mouse<Gspan>,</Gspan> Touches<Gspan>,</Gspan> Keyboard <Gspan>and</Gspan> Gamepad
                           </h2>
-                        </SlideInUp>
+                        </SlideInDown>
                       </FadeIn>
                     </SlideInUp>
                     {MQ_Full && <GetStartedButton marginTop={10} />}

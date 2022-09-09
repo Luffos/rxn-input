@@ -1,4 +1,4 @@
-import React, {memo, useEffect} from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import {Link} from 'gatsby';
 import GitHubIcon from '../../assets/github-icon.svg';
 import KebabMenuIcon from '../../assets/kebab-menu-icon.svg';
@@ -10,38 +10,41 @@ import useMediaQuery from '../../hooks/useMediaQuery';
 
 interface iProps {
   TopBarSelected?: iTopBarSelected;
+  setMobileMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const TopNavBar = ({TopBarSelected}: iProps) => {
+const TopNavBar = ({TopBarSelected, setMobileMenuOpen}: iProps) => {
   const MQ_isDesktop = useMediaQuery('(min-width: 768px)');
   const sY = useScrollPosition();
 
   return (
-    <div id={style.navBarRoot} style={{position: `fixed`, zIndex: 2, top: 0, left: 0, width: `100vw`, backgroundColor: sY > 40 ? `#0b0921b3` : 'transparent'}}>
-      <div id={style.navBarContent}>
-        <Link to={'/'}>
-          <Logo id={style.logo} height={MQ_isDesktop ? 60 : 55} style={{marginLeft: MQ_isDesktop ? -30 : -35}} />
-        </Link>
-
-        <div id={style.rightItemsDesktop}>
-          <Link to={`/docs`} data-currentpage={TopBarSelected === 'DOCS'} className={style.navItem}>
-            DOCUMENTATION
+    <>
+      <div id={style.navBarRoot} style={{position: `fixed`, zIndex: 2, top: 0, left: 0, width: `100vw`, backgroundColor: sY > 40 ? `#0b0921b3` : 'transparent'}}>
+        <div id={style.navBarContent}>
+          <Link to={'/'}>
+            <Logo id={style.logo} height={MQ_isDesktop ? 60 : 55} style={{marginLeft: MQ_isDesktop ? -30 : -35}} />
           </Link>
 
-          <Link to={`/examples`} data-currentpage={TopBarSelected === 'EXAMPLES'} className={style.navItem}>
-            EXAMPLES
-          </Link>
+          <div id={style.rightItemsDesktop}>
+            <Link to={`/docs`} data-currentpage={TopBarSelected === 'DOCS'} className={style.navItem}>
+              DOCUMENTATION
+            </Link>
 
-          <a style={{display: `flex`, justifyContent: `center`, alignItems: `center`}} href="https://github.com/Luffos/rxn-input">
-            <GitHubIcon height={30} id={style.navIcon} />
-          </a>
-        </div>
+            <Link to={`/examples`} data-currentpage={TopBarSelected === 'EXAMPLES'} className={style.navItem}>
+              EXAMPLES
+            </Link>
 
-        <div id={style.rightItemsMobile}>
-          <KebabMenuIcon style={{paddingLeft: 5}} id={style.navIcon} height={22} />
+            <a style={{display: `flex`, justifyContent: `center`, alignItems: `center`}} href="https://github.com/Luffos/rxn-input">
+              <GitHubIcon height={30} id={style.navIcon} />
+            </a>
+          </div>
+
+          <div onClick={() => setMobileMenuOpen?.(true)} id={style.rightItemsMobile}>
+            <KebabMenuIcon style={{paddingLeft: 5}} id={style.navIcon} height={22} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
