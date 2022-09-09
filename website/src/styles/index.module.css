@@ -1,7 +1,7 @@
 #content {
   position: relative;
   width: '100%';
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .header1 {
@@ -25,14 +25,32 @@
   background-repeat: no-repeat;
 }
 
+#getStartedBt{
+  user-select: none;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(16, 116, 255, 1) 0%, rgba(9, 115, 223, 1) 0.01%, rgba(18, 21, 93, 1) 100%);  border-radius: 17px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 60px;
+  padding-right: 60px;
+  border: 2px solid #27387E;
+  width: fit-content;
+  color: white;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 100ms ease-in-out;
+}
+
+#getStartedBt:hover{
+  opacity: 1;
+}
+
 @media (max-width: 1280px) {
   #lights {
-    min-height: 150vh;
     top: 0;
     left: 0;
-    margin-top: -1vmin;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    min-height: 180vw;
     background-image: url('../assets/lights01_m.png');
     background-size: cover;
   }
