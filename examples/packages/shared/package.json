@@ -8,7 +8,7 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "devDependencies": {
-        "@types/react": "^17.0.19",
+        "@types/react": "^18.0.18",
         "@types/react-native": "^0.69.3",
         "typescript": "^4.6.4"
     },
