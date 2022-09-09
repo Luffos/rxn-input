@@ -1,3 +1,8 @@
+#navBarRoot{
+  transition: background-color 0.1s ease-in-out;
+  backdrop-filter: blur(1.2vmin) ;
+}
+
 #navBarContent {
   margin: auto;
   max-width: 110rem;
@@ -7,6 +12,19 @@
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+#logo{
+  -webkit-transition: 0.1s -webkit-filter linear;
+  -moz-transition: 0.1s -moz-filter linear;
+  -moz-transition: 0.1s filter linear;
+  -ms-transition: 0.1s -ms-filter linear;
+  -o-transition: 0.1s -o-filter linear;
+  transition: 0.1s filter linear, 0.1s -webkit-filter linear;
+}
+
+#logo:hover{
+  filter: brightness(140%);
 }
 
 @media (max-width: 767px) {
@@ -26,7 +44,7 @@
 
 @media (min-width: 768px) {
   #navBarContent {
-    height: 80px;
+    height: 60px;
   }
   #rightItemsMobile {
     display: none;

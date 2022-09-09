@@ -5,17 +5,22 @@ import KebabMenuIcon from '../../assets/kebab-menu-icon.svg';
 import Logo from '../../assets/Logo.svg';
 
 import * as style from './style.module.css';
+import useScrollPosition from '../../hooks/useScrollPosition';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 interface iProps {
   TopBarSelected?: iTopBarSelected;
 }
 
 const TopNavBar = ({TopBarSelected}: iProps) => {
+  const MQ_isDesktop = useMediaQuery('(min-width: 768px)');
+  const sY = useScrollPosition();
+
   return (
-    <div style={{position: `fixed`, zIndex:2, top: 0, left: 0, width: `100vw` /*  backgroundColor: `rgba(0,0,0,0.5)` */}}>
+    <div id={style.navBarRoot} style={{position: `fixed`, zIndex: 2, top: 0, left: 0, width: `100vw`, backgroundColor: sY > 40 ? `#0b0921b3` : 'transparent'}}>
       <div id={style.navBarContent}>
         <Link to={'/'}>
-          <Logo width={190} style={{marginLeft: -9}} />
+          <Logo id={style.logo} height={MQ_isDesktop ? 60 : 55} style={{marginLeft: MQ_isDesktop ? -30 : -35}} />
         </Link>
 
         <div id={style.rightItemsDesktop}>
