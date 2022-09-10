@@ -4886,9 +4886,9 @@ gatsby-plugin-eslint@^4.0.2:
   dependencies:
     webpack-merge "^5.8.0"
 
-gatsby-plugin-mdx@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/gatsby-plugin-mdx/-/gatsby-plugin-mdx-4.1.0.tgz"
+gatsby-plugin-mdx@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-4.1.1.tgz#24fe1363554b6eaf3b7c2b35158dfb0d50801d4b"
   dependencies:
     "@mdx-js/mdx" "^2.1.1"
     acorn "^7.4.1"
