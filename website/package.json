@@ -15,7 +15,7 @@
   "dependencies": {
     "@fontsource/lato": "^4.5.9",
     "@mdx-js/react": "^2.1.3",
-    "@types/react-native": "^0.69.5",
+    "@types/react-native": "^0.69.8",
     "gatsby": "^4.22.1",
     "gatsby-plugin-mdx": "^4.1.0",
     "gatsby-plugin-react-svg": "^3.1.0",
@@ -41,6 +41,6 @@
     "eslint-webpack-plugin": "^3.2.0",
     "gatsby-plugin-eslint": "^4.0.2",
     "prettier": "2.7.1",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.3"
   }
 }
