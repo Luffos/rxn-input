@@ -1,6 +1,6 @@
 #navBarRoot{
   transition: background-color 0.1s ease-in-out;
-  backdrop-filter: blur(1.2vmin) ;
+  backdrop-filter: blur(6px) ;
 }
 
 #navBarContent {

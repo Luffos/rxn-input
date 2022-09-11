@@ -35,6 +35,9 @@ const Layout = ({children, TopBarSelected, withoutDefaultFooter}: iProps) => {
     return (
       <div id={style.MobileMenuWrapper}>
         <div id={style.MobileMenuContent}>
+          <div>
+            
+          </div>
           <ul>
             <li>Documentation</li>
             <li>Examples</li>

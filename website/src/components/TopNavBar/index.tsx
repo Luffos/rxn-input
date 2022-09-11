@@ -19,7 +19,7 @@ const TopNavBar = ({TopBarSelected, setMobileMenuOpen}: iProps) => {
 
   return (
     <>
-      <div id={style.navBarRoot} style={{position: `fixed`, zIndex: 2, top: 0, left: 0, width: `100vw`, backgroundColor: sY > 40 ? `#0b0921b3` : 'transparent'}}>
+      <div id={style.navBarRoot} style={{position: `fixed`, zIndex: 2, top: 0, left: 0, width: `100vw`, backgroundColor: sY > 5 ? `#0b0921e6` : 'transparent'}}>
         <div id={style.navBarContent}>
           <Link to={'/'}>
             <Logo id={style.logo} height={MQ_isDesktop ? 60 : 55} style={{marginLeft: MQ_isDesktop ? -30 : -35}} />

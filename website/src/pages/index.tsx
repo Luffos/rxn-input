@@ -8,9 +8,11 @@ import {Fade, FadeIn, SlideInDown, SlideInLeft, SlideInRight, SlideInUp, wipeInY
 import useMediaQuery from '../hooks/useMediaQuery';
 
 import Devices from '../assets/Devices.png';
+import useImagePreLoader from '../hooks/useImagePreloader';
 
 const IndexPage = () => {
   const [canShowAnimations, setCanShowAnimations] = React.useState(false);
+  const {imagesPreloaded} = useImagePreLoader([Devices]);
 
   const MQ_Full = useMediaQuery('(min-width: 1280px)');
 
@@ -23,7 +25,6 @@ const IndexPage = () => {
   };
 
   const GetStartedButton = ({marginTop}: {marginTop?: number}) => {
-
     return (
       <Link style={{display: `block`, width: `fit-content`, alignSelf: !MQ_Full ? `center` : undefined}} to="/docs/getting-started">
         <FadeIn delayMs={100} durationMs={300}>
@@ -71,9 +72,11 @@ const IndexPage = () => {
                     </SlideInUp>
                     {MQ_Full && <GetStartedButton marginTop={10} />}
                   </div>
-                  <FadeIn style={{display: `flex`, marginLeft: MQ_Full ? `auto` : undefined, justifyContent: `center`, alignItems: `center`}} durationMs={500} delayMs={500}>
-                    <div style={{alignSelf: 'center', backgroundImage: `url(${Devices})`, backgroundSize: `contain`, backgroundRepeat: `no-repeat`, minWidth: `10min`, maxHeight: 600, width: MQ_Full ? `600px` : `380px`, aspectRatio: `1`}} />
-                  </FadeIn>
+                  {imagesPreloaded && (
+                    <FadeIn style={{display: `flex`, marginLeft: MQ_Full ? `auto` : undefined, justifyContent: `center`, alignItems: `center`}} durationMs={500} delayMs={500}>
+                      <div style={{alignSelf: 'center', backgroundImage: `url(${Devices})`, backgroundSize: `contain`, backgroundRepeat: `no-repeat`, minWidth: `10min`, maxHeight: 600, width: MQ_Full ? `600px` : `380px`, aspectRatio: `1`}} />
+                    </FadeIn>
+                  )}
                   {!MQ_Full && <GetStartedButton marginTop={-80} />}
                 </div>
               </>
