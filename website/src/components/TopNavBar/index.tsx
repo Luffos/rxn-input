@@ -1,12 +1,13 @@
-import React, {memo, useEffect, useState} from 'react';
+import React, {memo} from 'react';
 import {Link} from 'gatsby';
 import GitHubIcon from '../../assets/github-icon.svg';
 import KebabMenuIcon from '../../assets/kebab-menu-icon.svg';
 import Logo from '../../assets/Logo.svg';
-
-import * as style from './style.module.css';
 import useScrollPosition from '../../hooks/useScrollPosition';
 import useMediaQuery from '../../hooks/useMediaQuery';
+
+import * as style from './style.module.css';
+import iTopBarSelected from '../../interfaces/TopBarSelected';
 
 interface iProps {
   TopBarSelected?: iTopBarSelected;

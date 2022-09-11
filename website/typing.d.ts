@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module '*.module.css' {
   const styles: {[className: string]: string};
   export = styles;

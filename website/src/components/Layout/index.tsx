@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, {memo, useEffect, useState} from 'react';
-import {FadeIn, SlideInUp} from 'react-animated-components';
+import {FadeIn} from 'react-animated-components';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import iTopBarSelected from '../../interfaces/TopBarSelected';
 import TopNavBar from '../TopNavBar';
 
 import * as style from './style.module.css';
@@ -35,9 +37,7 @@ const Layout = ({children, TopBarSelected, withoutDefaultFooter}: iProps) => {
     return (
       <div id={style.MobileMenuWrapper}>
         <div id={style.MobileMenuContent}>
-          <div>
-            
-          </div>
+          <div></div>
           <ul>
             <li>Documentation</li>
             <li>Examples</li>

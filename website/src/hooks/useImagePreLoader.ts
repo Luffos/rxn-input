@@ -1,51 +1,51 @@
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react';
 
-function preloadImage (src: string) {
+function preloadImage(src: string) {
   return new Promise((resolve, reject) => {
-    const img = new Image()
-    img.onload = function() {
-      resolve(img)
-    }
-    img.onerror = img.onabort = function() {
-      reject(src)
-    }
-    img.src = src
-  })
+    const img = new Image();
+    img.onload = function () {
+      resolve(img);
+    };
+    img.onerror = img.onabort = function () {
+      reject(src);
+    };
+    img.src = src;
+  });
 }
 
 export default function useImagePreLoader(imageList: string[]) {
-  const [imagesPreloaded, setImagesPreloaded] = useState<boolean>(false)
+  const [imagesPreloaded, setImagesPreloaded] = useState<boolean>(false);
 
   useEffect(() => {
-    let isCancelled = false
+    let isCancelled = false;
 
     async function effect() {
-      console.log('PRELOAD')
+      console.log('PRELOAD');
 
       if (isCancelled) {
-        return
+        return;
       }
 
-      const imagesPromiseList: Promise<any>[] = []
+      const imagesPromiseList: Promise<any>[] = [];
       for (const i of imageList) {
-        imagesPromiseList.push(preloadImage(i))
+        imagesPromiseList.push(preloadImage(i));
       }
-  
-      await Promise.all(imagesPromiseList)
+
+      await Promise.all(imagesPromiseList);
 
       if (isCancelled) {
-        return
+        return;
       }
 
-      setImagesPreloaded(true)
+      setImagesPreloaded(true);
     }
 
-    effect()
+    effect();
 
     return () => {
-      isCancelled = true
-    }
-  }, [imageList])
+      isCancelled = true;
+    };
+  }, [imageList]);
 
-  return { imagesPreloaded }
+  return {imagesPreloaded};
 }

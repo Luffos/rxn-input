@@ -1,17 +1,17 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {HeadFC, Link} from 'gatsby';
 import Layout from '../components/Layout';
 
-import * as style from '../styles/index.module.css';
-
-import {Fade, FadeIn, SlideInDown, SlideInLeft, SlideInRight, SlideInUp, wipeInY} from 'react-animated-components';
+import {FadeIn, SlideInDown, SlideInUp} from 'react-animated-components';
 import useMediaQuery from '../hooks/useMediaQuery';
 
 import Devices from '../assets/Devices.png';
-import useImagePreLoader from '../hooks/useImagePreloader';
+import useImagePreLoader from '../hooks/useImagePreLoader';
+
+import * as style from '../styles/index.module.css';
 
 const IndexPage = () => {
-  const [canShowAnimations, setCanShowAnimations] = React.useState(false);
+  const [canShowAnimations, setCanShowAnimations] = useState(false);
   const {imagesPreloaded} = useImagePreLoader([Devices]);
 
   const MQ_Full = useMediaQuery('(min-width: 1280px)');
