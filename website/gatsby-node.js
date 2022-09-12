@@ -1,6 +1,18 @@
 const path = require('path');
 const DocPageTemplate = path.resolve('./src/templates/DocPage.tsx');
 
+if (!String.prototype.replaceAll) {
+	String.prototype.replaceAll = function(str, newStr){
+
+		if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
+			return this.replace(str, newStr);
+		}
+
+		return this.replace(new RegExp(str, 'g'), newStr);
+
+	};
+}
+
 exports.onCreateWebpackConfig = ({stage, rules, loaders, plugins, actions}) => {
   actions.setWebpackConfig({
     resolve: {
