@@ -23,6 +23,7 @@
   position: fixed;
   pointer-events: none;
   background-repeat: no-repeat;
+  background-position: top;
 }
 
 #getStartedBt{

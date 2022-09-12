@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, {memo, useEffect, useState} from 'react';
+import {Link} from 'gatsby';
 import {FadeIn} from 'react-animated-components';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import iTopBarSelected from '../../interfaces/TopBarSelected';
@@ -39,9 +41,15 @@ const Layout = ({children, TopBarSelected, withoutDefaultFooter}: iProps) => {
         <div id={style.MobileMenuContent}>
           <div></div>
           <ul>
-            <li>Documentation</li>
-            <li>Examples</li>
-            <li>GitHub</li>
+            <li>
+              <Link to={`/docs`}>Documentation</Link>
+            </li>
+            <li>
+              <Link to={`/examples`}>Examples</Link>
+            </li>
+            <li>
+              <a href="https://github.com/Luffos/rxn-input">GitHub</a>
+            </li>
           </ul>
         </div>
         <FadeIn durationMs={100}>

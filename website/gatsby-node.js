@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable no-undef */
 const path = require('path');
 const DocPageTemplate = path.resolve('./src/templates/DocPage.tsx');
 
@@ -14,6 +11,14 @@ exports.onCreateWebpackConfig = ({stage, rules, loaders, plugins, actions}) => {
     }
   });
 };
+
+function getDocVersion(fullPath) {
+  return `${fullPath}`.split('docs/').pop().split('/')[0];
+}
+
+function isNextVersion(fullPath, sortedDocsVersions) {
+  return sortedDocsVersions.slice(-1)[0] == getDocVersion(fullPath);
+}
 
 exports.createPages = async ({graphql, actions, reporter}) => {
   const {createPage} = actions;
@@ -32,9 +37,16 @@ exports.createPages = async ({graphql, actions, reporter}) => {
     }
   `);
 
+  let sortedDocsVersions = [...new Set(result.data.allMdx.nodes.map(c => getDocVersion(c.internal.contentFilePath)))];
+
   result.data.allMdx.nodes.forEach(node => {
+    let transformedUrlPath = `/docs/${node.internal.contentFilePath.split(`src/content/docs/`).pop().split(`.mdx`)[0].split(' ').join('-').toLowerCase()}`;
+
+    if(isNextVersion(transformedUrlPath, sortedDocsVersions)) transformedUrlPath = transformedUrlPath.replaceAll(getDocVersion(transformedUrlPath), '').split(`//`).join(`/`);
+
+
     createPage({
-      path: `/docs/${node.internal.contentFilePath.split(`src/content/docs/`).pop().split(`.mdx`)[0]}`,
+      path: transformedUrlPath,
       component: `${DocPageTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         id: node.id

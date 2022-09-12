@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {useEffect, useState} from 'react';
 
 function preloadImage(src: string) {
@@ -20,7 +21,6 @@ export default function useImagePreLoader(imageList: string[]) {
     let isCancelled = false;
 
     async function effect() {
-      console.log('PRELOAD');
 
       if (isCancelled) {
         return;
