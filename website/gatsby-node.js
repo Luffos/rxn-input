@@ -2,15 +2,13 @@ const path = require('path');
 const DocPageTemplate = path.resolve('./src/templates/DocPage.tsx');
 
 if (!String.prototype.replaceAll) {
-	String.prototype.replaceAll = function(str, newStr){
+  String.prototype.replaceAll = function (str, newStr) {
+    if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
+      return this.replace(str, newStr);
+    }
 
-		if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
-			return this.replace(str, newStr);
-		}
-
-		return this.replace(new RegExp(str, 'g'), newStr);
-
-	};
+    return this.replace(new RegExp(str, 'g'), newStr);
+  };
 }
 
 exports.onCreateWebpackConfig = ({stage, rules, loaders, plugins, actions}) => {
@@ -54,8 +52,9 @@ exports.createPages = async ({graphql, actions, reporter}) => {
   result.data.allMdx.nodes.forEach(node => {
     let transformedUrlPath = `/docs/${node.internal.contentFilePath.split(`src/content/docs/`).pop().split(`.mdx`)[0].split(' ').join('-').toLowerCase()}`;
 
-    if(isNextVersion(transformedUrlPath, sortedDocsVersions)) transformedUrlPath = transformedUrlPath.replaceAll(getDocVersion(transformedUrlPath), '').split(`//`).join(`/`);
-
+    if (isNextVersion(transformedUrlPath, sortedDocsVersions)) {
+      transformedUrlPath = transformedUrlPath.replaceAll(getDocVersion(transformedUrlPath), '').split(`//`).join(`/`);
+    }
 
     createPage({
       path: transformedUrlPath,
