@@ -1,9 +1,12 @@
-# rxn-input
-🎮 🖱️ ⌨️‎ ‎ Cross Platform Input Handler for React and React Native.
+![Untitled-1](https://user-images.githubusercontent.com/28831375/190315403-93fb5af7-8362-4b86-bf8d-f72aa6ac58c8.png)
 
-<br/><a href="#"><img width="250px" src="http://www.animatedgif.net/underconstruction/anim0205-1_e0.gif"/></a>
+<img height="22px" alt="GitHub" src="https://img.shields.io/github/license/Luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="22px" alt="GitHub issues" src="https://img.shields.io/github/issues-raw/luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="22px" alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="22px" alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/luffos/rxn-input/main?style=for-the-badge"> ‎ ‎ <img height="22px" alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/luffos/rxn-input?style=for-the-badge">
 
-Support:
+-----------------------------------------------------------
+
+<img src="https://camo.githubusercontent.com/8f5a77113f402feb14ff5ad400ecc54096e2a6dc8add6020373255152f3d0cba/687474703a2f2f7777772e616e696d617465646769662e6e65742f756e646572636f6e737472756374696f6e2f616e696d303230352d315f65302e676966"/>
+
+## Support:
 
 |               | Android | IOS | Web <br/>(react-native-web) | Windows <br/>(react-native-windows) |  Expo  |
 |----------------|:-------:|:---:|:----------------------:|:---------------------------------------:|:------:|
