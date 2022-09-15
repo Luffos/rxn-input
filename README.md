@@ -1,6 +1,6 @@
-![Group 33](https://user-images.githubusercontent.com/28831375/190316662-7fde9816-299d-4076-853f-af8e6a7d9f32.png)
+![Group 33](https://user-images.githubusercontent.com/28831375/190316792-1c1ba82b-956f-4434-a362-84445dbb3b6f.png)
 
-<img height="20px" alt="GitHub" src="https://img.shields.io/github/license/Luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="20px" alt="GitHub issues" src="https://img.shields.io/github/issues-raw/luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="20px" alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="20px" alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/luffos/rxn-input/main?style=for-the-badge"> ‎ ‎ <img height="20px" alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/luffos/rxn-input?style=for-the-badge">
+<img height="22px" alt="GitHub" src="https://img.shields.io/github/license/Luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="22px" alt="GitHub issues" src="https://img.shields.io/github/issues-raw/luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="22px" alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="22px" alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/luffos/rxn-input/main?style=for-the-badge"> ‎ ‎ <img height="22px" alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/luffos/rxn-input?style=for-the-badge">
 
 <br/>
 
