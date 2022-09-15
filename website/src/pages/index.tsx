@@ -27,7 +27,7 @@ const IndexPage = () => {
   const GetStartedButton = ({marginTop}: {marginTop?: number}) => {
     return (
       <Link style={{display: `block`, width: `fit-content`, alignSelf: !MQ_Full ? `center` : undefined}} to="/docs/getting-started">
-        <FadeIn delayMs={100} durationMs={300}>
+        <FadeIn durationMs={900}>
           <h1
             id={style.getStartedBt}
             style={{
@@ -46,17 +46,17 @@ const IndexPage = () => {
     <>
       <Layout>
         {canShowAnimations && (
-          <FadeIn delayMs={300}>
+          <FadeIn durationMs={1000}>
             <div id={style.lights} />
           </FadeIn>
         )}
-        {canShowAnimations && (
+        {canShowAnimations && imagesPreloaded && (
           <FadeIn durationMs={2000} delayMs={500}>
             <div id={style.content}>
               <>
                 <div style={{display: `flex`, flexDirection: MQ_Full ? `row` : 'column'}}>
                   <div style={{marginTop: MQ_Full ? 60 : undefined}}>
-                    <SlideInUp durationMs={1200}>
+                    <SlideInUp durationMs={800}>
                       <FadeIn delayMs={500}>
                         <h1 className={style.header1}>
                           Cross-Platform Input Handler <br /> for React and React Native
@@ -72,11 +72,9 @@ const IndexPage = () => {
                     </SlideInUp>
                     {MQ_Full && <GetStartedButton marginTop={10} />}
                   </div>
-                  {imagesPreloaded && (
-                    <FadeIn style={{display: `flex`, marginLeft: MQ_Full ? `auto` : undefined, justifyContent: `center`, alignItems: `center`}} durationMs={500} delayMs={500}>
-                      <div style={{alignSelf: 'center', backgroundImage: `url(${Devices})`, backgroundSize: `contain`, backgroundRepeat: `no-repeat`, minWidth: `10min`, maxHeight: 600, width: MQ_Full ? `500px` : `330px`, aspectRatio: `1`}} />
-                    </FadeIn>
-                  )}
+                  <FadeIn style={{display: `flex`, marginLeft: MQ_Full ? `auto` : undefined, justifyContent: `center`, alignItems: `center`}} durationMs={500} delayMs={500}>
+                    <div style={{alignSelf: 'center', backgroundImage: `url(${Devices})`, backgroundSize: `contain`, backgroundRepeat: `no-repeat`, minWidth: `10min`, maxHeight: 600, width: MQ_Full ? `500px` : `330px`, aspectRatio: `1`}} />
+                  </FadeIn>
                   {!MQ_Full && <GetStartedButton marginTop={-20} />}
                 </div>
               </>
