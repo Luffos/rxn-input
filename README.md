@@ -1,8 +1,8 @@
-![Group 33](https://user-images.githubusercontent.com/28831375/190316196-0e451de9-84f9-4750-bbbf-9a9521c5bb39.png)
+![Group 33](https://user-images.githubusercontent.com/28831375/190316662-7fde9816-299d-4076-853f-af8e6a7d9f32.png)
 
 <img height="20px" alt="GitHub" src="https://img.shields.io/github/license/Luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="20px" alt="GitHub issues" src="https://img.shields.io/github/issues-raw/luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="20px" alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="20px" alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/luffos/rxn-input/main?style=for-the-badge"> ‎ ‎ <img height="20px" alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/luffos/rxn-input?style=for-the-badge">
 
------------------------------------------------------------
+<br/>
 
 <img src="https://camo.githubusercontent.com/8f5a77113f402feb14ff5ad400ecc54096e2a6dc8add6020373255152f3d0cba/687474703a2f2f7777772e616e696d617465646769662e6e65742f756e646572636f6e737472756374696f6e2f616e696d303230352d315f65302e676966"/>
 
