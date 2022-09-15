@@ -12,4 +12,4 @@ const DocsPage = () => {
 
 export default DocsPage;
 
-export const Head: HeadFC = () => <title>RXNInput - Documentation</title>;
+export const Head: HeadFC = () => <title>RXN Input - Documentation</title>;

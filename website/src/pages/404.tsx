@@ -12,4 +12,4 @@ const NotFoundPage = () => {
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>RXNInput - Documentation</title>;
+export const Head: HeadFC = () => <title>RXN Input - Documentation</title>;

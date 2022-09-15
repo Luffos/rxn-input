@@ -74,10 +74,10 @@ const IndexPage = () => {
                   </div>
                   {imagesPreloaded && (
                     <FadeIn style={{display: `flex`, marginLeft: MQ_Full ? `auto` : undefined, justifyContent: `center`, alignItems: `center`}} durationMs={500} delayMs={500}>
-                      <div style={{alignSelf: 'center', backgroundImage: `url(${Devices})`, backgroundSize: `contain`, backgroundRepeat: `no-repeat`, minWidth: `10min`, maxHeight: 600, width: MQ_Full ? `600px` : `380px`, aspectRatio: `1`}} />
+                      <div style={{alignSelf: 'center', backgroundImage: `url(${Devices})`, backgroundSize: `contain`, backgroundRepeat: `no-repeat`, minWidth: `10min`, maxHeight: 600, width: MQ_Full ? `500px` : `330px`, aspectRatio: `1`}} />
                     </FadeIn>
                   )}
-                  {!MQ_Full && <GetStartedButton marginTop={-80} />}
+                  {!MQ_Full && <GetStartedButton marginTop={-20} />}
                 </div>
               </>
             </div>
@@ -90,4 +90,4 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>RXNInput - Cross Platform Input Handler for React and React Native.</title>;
+export const Head: HeadFC = () => <title>RXN Input - Cross Platform Input Handler for React and React Native.</title>;

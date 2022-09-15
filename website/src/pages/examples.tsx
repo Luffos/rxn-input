@@ -12,4 +12,4 @@ const ExamplesPage = () => {
 
 export default ExamplesPage;
 
-export const Head: HeadFC = () => <title>RXNInput - Examples</title>;
+export const Head: HeadFC = () => <title>RXN Input - Examples</title>;

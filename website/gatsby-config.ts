@@ -10,6 +10,12 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   pathPrefix: '/rxn-input/',
   plugins: [
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/assets/icon.png'
+      }
+    },
     `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-react-svg',

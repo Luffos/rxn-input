@@ -4892,6 +4892,27 @@ gatsby-core-utils@^3.22.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
+gatsby-core-utils@^3.23.0:
+  version "3.23.0"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.23.0.tgz#0c8879ffb655f2d8cfe485f03beed7db6441dc69"
+  integrity sha512-ABVTAkjZh+2H4u6GZ+r1uZrdcWuT5KG2nEpKmBWBp21GWEE+yvUqtGOocBgUeGac1A3ggvn02UzcE6BIEm9PYg==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    ci-info "2.0.0"
+    configstore "^5.0.1"
+    fastq "^1.13.0"
+    file-type "^16.5.3"
+    fs-extra "^10.1.0"
+    got "^11.8.5"
+    import-from "^4.0.0"
+    lmdb "2.5.3"
+    lock "^1.1.0"
+    node-object-hash "^2.3.10"
+    proper-lockfile "^4.1.2"
+    resolve-from "^5.0.0"
+    tmp "^0.2.1"
+    xdg-basedir "^4.0.0"
+
 gatsby-graphiql-explorer@^2.22.0:
   version "2.22.0"
   resolved "https://registry.npmjs.org/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-2.22.0.tgz"
@@ -4953,6 +4974,17 @@ gatsby-plugin-eslint@^4.0.2:
   resolved "https://registry.npmjs.org/gatsby-plugin-eslint/-/gatsby-plugin-eslint-4.0.2.tgz"
   dependencies:
     webpack-merge "^5.8.0"
+
+gatsby-plugin-manifest@^4.23.0:
+  version "4.23.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-4.23.0.tgz#3a3674fb66e91d198ef5a78d7d64c2e780539fae"
+  integrity sha512-1/ReBm9/fsQXP+vo4iOrmzwFbo4Me5M8qCMKDsBgWwT8GjFNvk9/Vt/qH8LMav6yy0mZVquRU2uqfrbk7jhyhg==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    gatsby-core-utils "^3.23.0"
+    gatsby-plugin-utils "^3.17.0"
+    semver "^7.3.7"
+    sharp "^0.30.7"
 
 gatsby-plugin-mdx@^4.1.1:
   version "4.1.1"
@@ -5038,6 +5070,24 @@ gatsby-plugin-utils@^3.16.0:
     mini-svg-data-uri "^1.4.4"
     svgo "^2.8.0"
 
+gatsby-plugin-utils@^3.17.0:
+  version "3.17.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.17.0.tgz#02106fa52ccef70b915f1fe00e085ea363642317"
+  integrity sha512-THfQJ9y5V5pdUPkTRExK/3pI1OMTN8srA40dL7HeEoSVhiaEs+Bk45q1d8O1G6P7ulmLFinhOOBi56H4cAdqBg==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    "@gatsbyjs/potrace" "^2.3.0"
+    fastq "^1.13.0"
+    fs-extra "^10.1.0"
+    gatsby-core-utils "^3.23.0"
+    gatsby-sharp "^0.17.0"
+    graphql-compose "^9.0.7"
+    import-from "^4.0.0"
+    joi "^17.4.2"
+    mime "^3.0.0"
+    mini-svg-data-uri "^1.4.4"
+    svgo "^2.8.0"
+
 gatsby-react-router-scroll@^5.22.0:
   version "5.22.0"
   resolved "https://registry.npmjs.org/gatsby-react-router-scroll/-/gatsby-react-router-scroll-5.22.0.tgz"
@@ -5052,6 +5102,14 @@ gatsby-script@^1.7.0:
 gatsby-sharp@^0.16.0:
   version "0.16.0"
   resolved "https://registry.npmjs.org/gatsby-sharp/-/gatsby-sharp-0.16.0.tgz"
+  dependencies:
+    "@types/sharp" "^0.30.5"
+    sharp "^0.30.7"
+
+gatsby-sharp@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/gatsby-sharp/-/gatsby-sharp-0.17.0.tgz#cc48e51d396cc4049f902ba60de6e78075241a3a"
+  integrity sha512-k1iGqqox19nD70cEPwVI8grAgbtXswZtuonlROAV02J7kpUP6ayfdvx7as6Phdr5jam+ZQ1vfsOu60yZZgr/LQ==
   dependencies:
     "@types/sharp" "^0.30.5"
     sharp "^0.30.7"
