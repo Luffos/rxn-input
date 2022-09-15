@@ -17,9 +17,13 @@ interface iProps {
 }
 
 const Layout = ({children, TopBarSelected, withoutDefaultFooter}: iProps) => {
+  const [renderChildren, setRenderChildren] = useState(false);
+
   const MQ_isDesktop = useMediaQuery('(min-width: 768px)');
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => setRenderChildren(true));
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -64,7 +68,7 @@ const Layout = ({children, TopBarSelected, withoutDefaultFooter}: iProps) => {
       {mobileMenuOpen && <MobileMenu />}
       <div style={{margin: `0 auto`, maxWidth: `110rem`, paddingLeft: 20, paddingRight: 20}}>
         <TopNavBar setMobileMenuOpen={setMobileMenuOpen} TopBarSelected={TopBarSelected} />
-        {children}
+        {renderChildren && <>{children}</>}
       </div>
     </>
   );
