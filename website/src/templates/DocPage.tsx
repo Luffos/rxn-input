@@ -11,7 +11,7 @@ function DocPage({pageContext, children}: any) {
 
   return (
     <>
-      <Layout withoutDefaultFooter TopBarSelected={'DOCS'}>
+      <Layout SelectedPage={'DOCS'}>
         <div style={{overflowY: `auto`, backdropFilter: `blur(1.1vmin) brightness(140%)`, backgroundColor: `#00000094`, position: `fixed`, width: `30vmin`, top: `6vmin`, bottom: `6vmin`, height: vh(100) - vmin(6), alignSelf: `flex-end`, display: `flex`}}>
           <div style={{marginTop: `1vmin`, marginBottom: `1vmin`, color: `white`}}>ID: {context.id}</div>
         </div>

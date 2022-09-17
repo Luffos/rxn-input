@@ -1,29 +1,30 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import React, {memo, useEffect, useState} from 'react';
-import {Link} from 'gatsby';
-import {FadeIn} from 'react-animated-components';
+import React, {memo, useState} from 'react';
+import {useEffect} from 'react';
 import useMediaQuery from '../../hooks/useMediaQuery';
-import iTopBarSelected from '../../interfaces/TopBarSelected';
-import TopNavBar from '../TopNavBar';
-
-import * as style from './style.module.css';
+import iSelectedPage from '../../interfaces/SelectedPage';
+import BreakPoints from '../../styles/BreakPoints';
+import MediaQueries from '../../styles/MediaQueries';
+import MobileMenu from './MobileMenu';
+import TopBar from './TopBar';
 
 interface iProps {
   children?: any;
-  TopBarSelected?: iTopBarSelected;
-  PageMinHeight?: string;
-  withoutDefaultFooter?: boolean;
+  SelectedPage?: iSelectedPage;
 }
 
-const Layout = ({children, TopBarSelected, withoutDefaultFooter}: iProps) => {
-  const [renderChildren, setRenderChildren] = useState(false);
-
-  const MQ_isDesktop = useMediaQuery('(min-width: 768px)');
+const Layout = ({children, SelectedPage}: iProps) => {
+  const isDesktop = useMediaQuery(MediaQueries.isDesktop);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => setRenderChildren(true));
+  const childrenStyle: React.CSSProperties = {
+    marginTop: '8rem',
+    color: 'white',
+    width: '100%',
+    maxWidth: BreakPoints.maxWide,
+    paddingLeft: isDesktop ? '2rem' : '1rem',
+    paddingRight: isDesktop ? '2rem' : '1rem'
+  };
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -34,41 +35,17 @@ const Layout = ({children, TopBarSelected, withoutDefaultFooter}: iProps) => {
   }, [mobileMenuOpen]);
 
   useEffect(() => {
-    if (MQ_isDesktop) {
+    if (isDesktop) {
       setMobileMenuOpen(false);
     }
-  }, [MQ_isDesktop]);
-
-  const MobileMenu = () => {
-    return (
-      <div id={style.MobileMenuWrapper}>
-        <div id={style.MobileMenuContent}>
-          <div></div>
-          <ul>
-            <li>
-              <Link to={`/docs`}>Documentation</Link>
-            </li>
-            <li>
-              <Link to={`/examples`}>Examples</Link>
-            </li>
-            <li>
-              <a href="https://github.com/Luffos/rxn-input">GitHub</a>
-            </li>
-          </ul>
-        </div>
-        <FadeIn durationMs={100}>
-          <div id={style.MobileMenuBackground} onClick={() => setMobileMenuOpen(false)} />
-        </FadeIn>
-      </div>
-    );
-  };
+  }, [isDesktop]);
 
   return (
     <>
-      {mobileMenuOpen && <MobileMenu />}
-      <div style={{margin: `0 auto`, maxWidth: `110rem`, paddingLeft: 20, paddingRight: 20}}>
-        <TopNavBar setMobileMenuOpen={setMobileMenuOpen} TopBarSelected={TopBarSelected} />
-        {renderChildren && <>{children}</>}
+      <TopBar setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} />
+      {mobileMenuOpen && <MobileMenu setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} />}
+      <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
+        <div style={childrenStyle}>{children}</div>
       </div>
     </>
   );

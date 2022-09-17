@@ -10,6 +10,7 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   pathPrefix: '/rxn-input/',
   plugins: [
+    `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
