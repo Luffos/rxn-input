@@ -34,7 +34,7 @@ const BigTitle = styled.h1`
 
     @media ${MediaQueries.isMobile} {
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -52,7 +52,7 @@ const SubBigTitle = styled.h2`
 
     @media ${MediaQueries.isMobile} {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 1.0rem;
   }
 
   & > span {
@@ -68,7 +68,7 @@ const DevicesImage = styled.div`
   & > svg {
     position: absolute;
     width: 500px;
-    margin-top: -25px;
+    margin-top: -35px;
   }
 
   @media (max-width: ${devices_br_range_width}) {

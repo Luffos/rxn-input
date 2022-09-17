@@ -18,8 +18,8 @@ export const MobileMenuBackground = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, #010a2b 0%, rgba(7, 3, 34, 0.31) 100%);
-  backdrop-filter: blur(1px);
+  background: linear-gradient(180deg, rgba(1, 10, 43, 0.3) 0%, rgba(7, 3, 34, 0.2) 100%);
+  backdrop-filter: blur(2px);
 `;
 
 export const MobileMenuBox = styled.div`

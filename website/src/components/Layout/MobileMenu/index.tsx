@@ -14,7 +14,7 @@ interface iProps {
 const MobileMenu = ({SelectedPage, setMobileMenuOpen}: iProps) => {
   return (
     <MobileMenuWrapper>
-      <FadeIn durationMs={100}>
+      <FadeIn durationMs={50}>
         <MobileMenuBackground onClick={() => setMobileMenuOpen(false)} />
       </FadeIn>
       <MobileMenuBox>
