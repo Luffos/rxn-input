@@ -10,9 +10,10 @@ import TopBar from './TopBar';
 interface iProps {
   children?: any;
   SelectedPage?: iSelectedPage;
+  MobileExtraTopBar?: JSX.Element;
 }
 
-const Layout = ({children, SelectedPage}: iProps) => {
+const Layout = ({children, SelectedPage, MobileExtraTopBar}: iProps) => {
   const isDesktop = useMediaQuery(MediaQueries.isDesktop);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,7 +43,7 @@ const Layout = ({children, SelectedPage}: iProps) => {
 
   return (
     <>
-      <TopBar setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} />
+      <TopBar setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} MobileExtraTopBar={MobileExtraTopBar} />
       {mobileMenuOpen && <MobileMenu setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} />}
       <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
         <div style={childrenStyle}>{children}</div>

@@ -2,15 +2,13 @@ import styled from 'styled-components';
 import BreakPoints from '../../../styles/BreakPoints';
 import MediaQueries from '../../../styles/MediaQueries';
 
-const TopBarHeight = 70;
-
 export const TopBarWrapper = styled.div`
   position: fixed;
   top: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
 
   z-index: 99901;
@@ -19,18 +17,29 @@ export const TopBarWrapper = styled.div`
   backdrop-filter: blur(6px);
 `;
 
+export const TopBarBase = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  width: 100%;
+`;
+
 export const TopBarContent = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
-  height: ${TopBarHeight}px;
+  justify-content: center;
+
   max-width: ${BreakPoints.maxWide};
+
+  width: 100%;
+  height: 100%;
 
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+
 
   @media ${MediaQueries.isMobile} {
     padding-left: 1rem;

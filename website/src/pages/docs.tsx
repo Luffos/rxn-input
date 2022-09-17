@@ -1,14 +1,9 @@
 import React from 'react';
 import type {HeadFC} from 'gatsby';
 import Layout from '../components/Layout';
+import DocPage from '../templates/DocPage';
 
-const DocsPage = () => {
-  return (
-    <>
-      <Layout SelectedPage={'DOCS'}></Layout>
-    </>
-  );
-};
+const DocsPage = () => <DocPage />
 
 export default DocsPage;
 
