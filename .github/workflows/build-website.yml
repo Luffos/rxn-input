@@ -17,8 +17,9 @@ jobs:
         with:
           node-version: '14.x'
       - name: Install dependencies
+        working-directory: ./website
         run: |
-          yarn
+          yarn install --frozen-lockfile
       - name: Build website
         working-directory: ./website
         run: |
