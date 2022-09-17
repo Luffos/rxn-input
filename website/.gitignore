@@ -1,4 +1,9 @@
-node_modules/
 .cache/
 public
 src/gatsby-types.d.ts
+
+# Node
+node_modules
+*.log
+.nvm
+package-lock.json
