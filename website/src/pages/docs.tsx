@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 const DocsPage = () => {
   return (
     <>
-      <Layout TopBarSelected={'DOCS'}></Layout>
+      <Layout SelectedPage={'DOCS'}></Layout>
     </>
   );
 };

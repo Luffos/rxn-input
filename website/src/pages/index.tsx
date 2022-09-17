@@ -1,88 +1,117 @@
-import React, {useEffect, useState} from 'react';
-import {HeadFC, Link} from 'gatsby';
+import React from 'react';
+import {HeadFC} from 'gatsby';
+import styled from 'styled-components';
 import Layout from '../components/Layout';
-
-import {FadeIn, SlideInDown, SlideInUp} from 'react-animated-components';
+import BreakPoints from '../styles/BreakPoints';
 import useMediaQuery from '../hooks/useMediaQuery';
 
-import Devices from '../assets/Devices.png';
-import useImagePreLoader from '../hooks/useImagePreLoader';
+import DeviceSVG from '../assets/Devices.svg';
+import MediaQueries from '../styles/MediaQueries';
 
-import * as style from '../styles/index.module.css';
+const devices_br_range_width = '1160px';
+
+// ----- x ----- --=-- ----- x --------=-------- x ----- --=-- ----- x ----- //
+
+const Section1 = styled.h1`
+  display: flex;
+  flex-direction: row;
+  align-items: unset;
+
+  @media (max-width: ${devices_br_range_width}) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+const BigTitle = styled.h1`
+  padding: 0;
+  margin: 0;
+  color: 'white';
+  font-size: 2.8rem;
+
+  @media (max-width: ${devices_br_range_width}) {
+    text-align: center;
+  }
+
+    @media ${MediaQueries.isMobile} {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+`;
+
+const SubBigTitle = styled.h2`
+  padding: 0;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #94a3b8;
+  font-size: 1.8rem;
+
+  @media (max-width: ${devices_br_range_width}) {
+    text-align: center;
+  }
+
+    @media ${MediaQueries.isMobile} {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  & > span {
+    color: #1cb0fa;
+  }
+`;
+
+const DevicesImage = styled.div`
+  margin-left: auto;
+  width: 500px;
+  height: 400px;
+
+  & > svg {
+    position: absolute;
+    width: 500px;
+    margin-top: -25px;
+  }
+
+  @media (max-width: ${devices_br_range_width}) {
+    margin-left: unset;
+
+    & > svg {
+      margin-top: 0px;
+    }
+  }
+
+    @media ${MediaQueries.isMobile} {
+    width: 250px;
+    height: 150px;
+
+    & > svg {
+      margin-top: -20px;
+      width: 250px;
+      height: 150px;
+    }
+  }
+`;
+
+// ----- x ----- --=-- ----- x --------=-------- x ----- --=-- ----- x ----- //
 
 const IndexPage = () => {
-  const [canShowAnimations, setCanShowAnimations] = useState(false);
-  const {imagesPreloaded} = useImagePreLoader([Devices]);
-
-  const MQ_Full = useMediaQuery('(min-width: 1280px)');
-
-  useEffect(() => {
-    setCanShowAnimations(true);
-  }, []);
-
-  const Gspan = ({children}: {children: string}) => {
-    return <span style={{color: `#94A3B8`}}>{children}</span>;
-  };
-
-  const GetStartedButton = ({marginTop}: {marginTop?: number}) => {
-    return (
-      <Link style={{display: `block`, width: `fit-content`, alignSelf: !MQ_Full ? `center` : undefined}} to="/docs/getting-started">
-        <FadeIn delayMs={100} durationMs={300}>
-          <h1
-            id={style.getStartedBt}
-            style={{
-              marginTop: marginTop,
-              alignSelf: !MQ_Full ? 'center' : undefined,
-              fontSize: MQ_Full ? 25 : 20
-            }}>
-            Get started
-          </h1>
-        </FadeIn>
-      </Link>
-    );
-  };
+  const shoulBreakDevicesImage = useMediaQuery(`(max-width: ${devices_br_range_width})`);
 
   return (
     <>
       <Layout>
-        {canShowAnimations && (
-          <FadeIn delayMs={300}>
-            <div id={style.lights} />
-          </FadeIn>
-        )}
-        {canShowAnimations && (
-          <FadeIn durationMs={2000} delayMs={500}>
-            <div id={style.content}>
-              <>
-                <div style={{display: `flex`, flexDirection: MQ_Full ? `row` : 'column'}}>
-                  <div style={{marginTop: MQ_Full ? 60 : undefined}}>
-                    <SlideInUp durationMs={1200}>
-                      <FadeIn delayMs={500}>
-                        <h1 className={style.header1}>
-                          Cross-Platform Input Handler <br /> for React and React Native
-                        </h1>
-                      </FadeIn>
-                      <FadeIn durationMs={1000} delayMs={1000}>
-                        <SlideInDown delayMs={1000}>
-                          <h2 className={style.header2}>
-                            Mouse<Gspan>,</Gspan> Touches<Gspan>,</Gspan> Keyboard <Gspan>and</Gspan> Gamepad
-                          </h2>
-                        </SlideInDown>
-                      </FadeIn>
-                    </SlideInUp>
-                    {MQ_Full && <GetStartedButton marginTop={10} />}
-                  </div>
-                  {imagesPreloaded && (
-                    <FadeIn style={{display: `flex`, marginLeft: MQ_Full ? `auto` : undefined, justifyContent: `center`, alignItems: `center`}} durationMs={500} delayMs={500}>
-                      <div style={{alignSelf: 'center', backgroundImage: `url(${Devices})`, backgroundSize: `contain`, backgroundRepeat: `no-repeat`, minWidth: `10min`, maxHeight: 600, width: MQ_Full ? `500px` : `330px`, aspectRatio: `1`}} />
-                    </FadeIn>
-                  )}
-                  {!MQ_Full && <GetStartedButton marginTop={-20} />}
-                </div>
-              </>
-            </div>
-          </FadeIn>
-        )}
+        <Section1>
+          <div>
+            <BigTitle>
+              Cross-Platform Input Handler <br /> for React and React Native.
+            </BigTitle>
+            <SubBigTitle>
+              <span>Mouse</span>, <span>Touches</span>, <span>Keyboard</span> and <span>Gamepad</span>
+            </SubBigTitle>
+          </div>
+          <DevicesImage>
+            <DeviceSVG />
+          </DevicesImage>
+        </Section1>
       </Layout>
     </>
   );
