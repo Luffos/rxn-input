@@ -13,8 +13,11 @@ export const TopBarWrapper = styled.div`
 
   z-index: 99901;
 
-  transition: background-color 0.1s ease-in-out;
-  backdrop-filter: blur(6px);
+  &[data-scrolled='true'] {
+    background: linear-gradient(rgba(11, 9, 33, 0.5) 0%, rgba(8, 6, 24, 0.8) 100%);
+    transition: background 0.1s ease-in-out;
+    backdrop-filter: blur(8px);
+  }
 `;
 
 export const TopBarBase = styled.div`
@@ -39,7 +42,6 @@ export const TopBarContent = styled.div`
 
   padding-left: 2rem;
   padding-right: 2rem;
-
 
   @media ${MediaQueries.isMobile} {
     padding-left: 1rem;

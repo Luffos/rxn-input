@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useEffect} from 'react';
 import {Link} from 'gatsby';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import BreakPoints from '../../../styles/BreakPoints';
@@ -8,6 +8,7 @@ import GitHubSVG from '../../../assets/github-icon.svg';
 import KebabSVG from '../../../assets/kebab-icon.svg';
 import iSelectedPage from '../../../interfaces/SelectedPage';
 import MediaQueries from '../../../styles/MediaQueries';
+import useScrollPosition from '../../../hooks/useScrollPosition';
 
 interface iProps {
   SelectedPage?: iSelectedPage;
@@ -16,12 +17,13 @@ interface iProps {
 }
 
 const TopBar = ({SelectedPage, setMobileMenuOpen, MobileExtraTopBar}: iProps) => {
+  const scrollPosition = useScrollPosition();
   const isDesktop = useMediaQuery(MediaQueries.isDesktop);
 
   return (
-    <TopBarWrapper>
+    <TopBarWrapper data-scrolled={scrollPosition < 60 ? undefined : true}>
       <TopBarBase>
-        <TopBarContent style={{paddingTop: '1rem', paddingBottom: '1rem'}}>
+        <TopBarContent style={{paddingTop: '0.4rem', paddingBottom: '0.4rem'}}>
           <LeftItems>
             <Link className={'logoWrapper'} to={'/'}>
               <Logo />
