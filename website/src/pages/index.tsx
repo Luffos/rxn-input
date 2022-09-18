@@ -25,14 +25,27 @@ const Section1 = styled.h1`
 const BigTitle = styled.h1`
   padding: 0;
   margin: 0;
-  color: 'white';
+  color: white;
   font-size: 2.8rem;
+
+  @keyframes BigTitle_myAnim {
+    0% {
+      transform: rotateY(1deg) translateY(2.5rem);
+      opacity: 0;
+    }
+    100% {
+      transform: rotateY(0deg) translateY(0);
+      opacity: 1;
+    }
+  }
+
+  animation: BigTitle_myAnim  1.5s;
 
   @media (max-width: ${devices_br_range_width}) {
     text-align: center;
   }
 
-    @media ${MediaQueries.isMobile} {
+  @media ${MediaQueries.isMobile} {
     text-align: center;
     font-size: 1.5rem;
   }
@@ -46,13 +59,29 @@ const SubBigTitle = styled.h2`
   color: #94a3b8;
   font-size: 1.8rem;
 
+  
+  @keyframes SubBigTitle_myAnim {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  animation: SubBigTitle_myAnim 3s;
+
+
   @media (max-width: ${devices_br_range_width}) {
     text-align: center;
   }
 
-    @media ${MediaQueries.isMobile} {
+  @media ${MediaQueries.isMobile} {
     text-align: center;
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
 
   & > span {
@@ -79,7 +108,7 @@ const DevicesImage = styled.div`
     }
   }
 
-    @media ${MediaQueries.isMobile} {
+  @media ${MediaQueries.isMobile} {
     width: 250px;
     height: 150px;
 
