@@ -28,7 +28,7 @@
     "react-animated-components": "^4.0.0",
     "react-dom": "^18.1.0",
     "react-native-web": "^0.18.9",
-    "react-wavify": "^1.6.1",
+    "react-wavify": "^1.6.2",
     "rxn-units": "^0.1.5",
     "styled-components": "^5.3.5"
   },
