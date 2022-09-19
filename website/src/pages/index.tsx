@@ -2,22 +2,21 @@ import React from 'react';
 import {HeadFC} from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
-import BreakPoints from '../styles/BreakPoints';
-import useMediaQuery from '../hooks/useMediaQuery';
 
 import DeviceSVG from '../assets/Devices.svg';
 import MediaQueries from '../styles/MediaQueries';
 
-const devices_br_range_width = '1160px';
 
 // ----- x ----- --=-- ----- x --------=-------- x ----- --=-- ----- x ----- //
+
+const devicesBreakingRangeWidth = '1160px';
 
 const Section1 = styled.h1`
   display: flex;
   flex-direction: row;
   align-items: unset;
 
-  @media (max-width: ${devices_br_range_width}) {
+  @media (max-width: ${devicesBreakingRangeWidth}) {
     flex-direction: column;
     align-items: center;
   }
@@ -41,7 +40,7 @@ const BigTitle = styled.h1`
 
   animation: BigTitle_myAnim  1.5s;
 
-  @media (max-width: ${devices_br_range_width}) {
+  @media (max-width: ${devicesBreakingRangeWidth}) {
     text-align: center;
   }
 
@@ -74,8 +73,7 @@ const SubBigTitle = styled.h2`
 
   animation: SubBigTitle_myAnim 3s;
 
-
-  @media (max-width: ${devices_br_range_width}) {
+  @media (max-width: ${devicesBreakingRangeWidth}) {
     text-align: center;
   }
 
@@ -100,7 +98,7 @@ const DevicesImage = styled.div`
     margin-top: -35px;
   }
 
-  @media (max-width: ${devices_br_range_width}) {
+  @media (max-width: ${devicesBreakingRangeWidth}) {
     margin-left: unset;
 
     & > svg {
@@ -123,8 +121,6 @@ const DevicesImage = styled.div`
 // ----- x ----- --=-- ----- x --------=-------- x ----- --=-- ----- x ----- //
 
 const IndexPage = () => {
-  const shoulBreakDevicesImage = useMediaQuery(`(max-width: ${devices_br_range_width})`);
-
   return (
     <>
       <Layout>
