@@ -1990,9 +1990,9 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-native@^0.69.8":
-  version "0.69.8"
-  resolved "https://registry.npmjs.org/@types/react-native/-/react-native-0.69.8.tgz"
+"@types/react-native@^0.70.1":
+  version "0.70.1"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.70.1.tgz#462008dcf39354b0bd0383daa236980187138d02"
   dependencies:
     "@types/react" "*"
 
