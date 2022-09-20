@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import useUnits from 'rxn-units';
 import Layout from '../components/Layout';
 import {MDXProvider} from '@mdx-js/react';
 
 function DocPage({pageContext, children}: any) {
   const context = pageContext;
 
-  const {vmin, vw, vh} = useUnits();
 
   return (
     <>
