@@ -23,6 +23,7 @@ export const BigTitle = styled.h1`
   margin: 0;
   color: white;
   font-size: 2.8rem;
+  font-weight: bolder;
 
   @keyframes BigTitle_myAnim {
     0% {
@@ -149,18 +150,16 @@ export const GetStartedButton = styled.div`
   font-size: 1.5rem;
   letter-spacing: 0.08rem;
 
-  width: 300px;
-  height: 65px;
-  left: 100px;
-  top: 471px;
+  width: 16rem;
+  height: 4rem;
 
   background: linear-gradient(180deg, rgba(16, 117, 255, 0.9) 0%, rgba(9, 115, 223, 0.9) 0.01%, rgba(18, 21, 93, 0.9) 100%);
   border: 0.1rem solid #0b4ea8;
-  border-radius: 1.4rem;
+  border-radius: 1rem;
 
   @media ${MediaQueries.isMobile} {
-    width: 250px;
-    height: 50px;
+    width: 13rem;
+    height: 2.8rem;
     font-size: 0.9rem;
   }
 `;
