@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import BreakPoints from '../../../styles/BreakPoints';
-import MediaQueries from '../../../styles/MediaQueries';
+import BreakPoints from '../../../styles/ts/BreakPoints';
+import MediaQueries from '../../../styles/ts/MediaQueries';
 
 export const TopBarWrapper = styled.div`
   position: fixed;

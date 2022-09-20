@@ -1,2 +1,2 @@
 import '@fontsource/lato';
-import './src/styles/global.css';
+import './src/styles/css/global.css';

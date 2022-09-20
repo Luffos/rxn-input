@@ -1,13 +1,13 @@
 import React, {memo, useEffect} from 'react';
 import {Link} from 'gatsby';
 import useMediaQuery from '../../../hooks/useMediaQuery';
-import BreakPoints from '../../../styles/BreakPoints';
+import BreakPoints from '../../../styles/ts/BreakPoints';
 import {LeftItems, MobileKebab, RightItems, TopBarBase, TopBarWrapper, TopBarContent} from './styled';
 import Logo from '../../../assets/Logo.svg';
 import GitHubSVG from '../../../assets/github-icon.svg';
 import KebabSVG from '../../../assets/kebab-icon.svg';
 import iSelectedPage from '../../../interfaces/SelectedPage';
-import MediaQueries from '../../../styles/MediaQueries';
+import MediaQueries from '../../../styles/ts/MediaQueries';
 import useScrollPosition from '../../../hooks/useScrollPosition';
 
 interface iProps {

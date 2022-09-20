@@ -2,8 +2,8 @@ import React, {memo, useState} from 'react';
 import {useEffect} from 'react';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import iSelectedPage from '../../interfaces/SelectedPage';
-import BreakPoints from '../../styles/BreakPoints';
-import MediaQueries from '../../styles/MediaQueries';
+import BreakPoints from '../../styles/ts/BreakPoints';
+import MediaQueries from '../../styles/ts/MediaQueries';
 import MobileMenu from './MobileMenu';
 import TopBar from './TopBar';
 
