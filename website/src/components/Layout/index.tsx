@@ -19,7 +19,7 @@ const Layout = ({children, SelectedPage, MobileExtraTopBar}: iProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const childrenStyle: React.CSSProperties = {
-    marginTop: '8rem',
+    marginTop: '8.5rem',
     color: 'white',
     width: '100%',
     maxWidth: BreakPoints.maxWide,

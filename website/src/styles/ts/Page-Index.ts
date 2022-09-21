@@ -110,7 +110,7 @@ export const DevicesImage = styled.div`
     animation: DevicesImage_myAnim 4s;
     position: absolute;
     width: 500px;
-    margin-top: -35px;
+    margin-top: -38px;
   }
 
   @media (max-width: ${devicesBreakingRangeWidth}) {
