@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import DeviceSVG from '../assets/Devices.svg';
 import MediaQueries from './MediaQueries';
+import BreakPoints from '../../styles/ts/BreakPoints';
 
 export const devicesBreakingRangeWidth = '1250px';
 
@@ -16,6 +17,19 @@ export const Section1 = styled.h1`
     flex-direction: column;
     align-items: center;
   }
+`;
+
+export const Section1Background = styled.div`
+  position: absolute;
+  width: 100%;
+  max-width: ${BreakPoints.maxWide};
+  height: 250px;
+  filter: blur(8rem);
+  background: radial-gradient(50% 41.03% at 50% 58.97%, rgba(0, 131, 255, 0) 50%, rgb(0, 131, 255) 28.65%, rgba(0, 25, 245, 0.62) 81.25%, rgba(0, 131, 255, 0) 99.99%);
+  left: 50%;
+  margin-top: 20px;
+  opacity: 0.8;
+  transform: translateX(-50%);
 `;
 
 export const BigTitle = styled.h1`

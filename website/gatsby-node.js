@@ -35,14 +35,19 @@ exports.createPages = async ({graphql, actions, reporter}) => {
 
   const result = await graphql(`
     query MyQuery {
-      allMdx {
+      allMdx(sort: {order: ASC, fields: internal___contentFilePath}) {
         nodes {
           body
           id
           internal {
             contentFilePath
           }
+          frontmatter {
+            title
+            order
+          }
         }
+        distinct(field: frontmatter___order)
       }
     }
   `);
@@ -55,6 +60,8 @@ exports.createPages = async ({graphql, actions, reporter}) => {
     if (isNextVersion(transformedUrlPath, sortedDocsVersions)) {
       transformedUrlPath = transformedUrlPath.replaceAll(getDocVersion(transformedUrlPath), '').split(`//`).join(`/`);
     }
+
+    console.log(node);
 
     createPage({
       path: transformedUrlPath,
