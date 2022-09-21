@@ -31,7 +31,7 @@ const IndexPage = () => {
                   maxWidth: BreakPoints.maxWide,
                   height: 250,
                   filter: 'blur(8rem)',
-                  background: 'radial-gradient(50% 41.03% at 50% 58.97%, rgba(0, 131, 255, 0) 0%, #0083FF 28.65%, rgba(1, 105, 202, 0.82) 51.56%, #3C00BB 81.25%, rgba(0, 131, 255, 0) 99.99%)',
+                  background: 'radial-gradient(50% 41.03% at 50% 58.97%, rgba(0, 131, 255, 0) 50%, #0083FF 28.65%, #1900f59e 81.25%, rgba(0, 131, 255, 0) 99.99%)',
                   left: '50%',
                   marginTop:20,
                   opacity: 0.8,
