@@ -51,6 +51,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
     }
   `);
 
+  if (!fs.existsSync(path.resolve(__dirname, 'public/docs/'))) fs.mkdirSync(path.resolve(__dirname, 'public/docs/'), {recursive: true});
   fs.writeFileSync(path.resolve(__dirname, 'public/docs/test.json'), JSON.stringify({test: 2}));
 
   let sortedDocsVersions = [...new Set(result.data.allMdx.nodes.map(c => getDocVersion(c.internal.contentFilePath)))];
@@ -78,7 +79,6 @@ exports.createPages = async ({graphql, actions, reporter}) => {
 
 exports.onPostBuild = async ({graphql}) => {
   try {
-  
   } catch (error) {
     console.log('error test.json');
   } finally {
