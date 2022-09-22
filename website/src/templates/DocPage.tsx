@@ -2,7 +2,7 @@
 import React, {useEffect} from 'react';
 import Layout from '../components/Layout';
 
-import * as c from '../../public/docs/test.json';
+import c from '../../public/docs/test.json';
 
 function DocPage({pageContext, children}: any) {
   const context = pageContext;
