@@ -44,7 +44,7 @@ const Layout = ({children, SelectedPage, MobileExtraTopBar}: iProps) => {
   return (
     <>
       <TopBar setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} MobileExtraTopBar={MobileExtraTopBar} />
-      {mobileMenuOpen && <MobileMenu setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} />}
+      {mobileMenuOpen === true && <MobileMenu setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} />}
       <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
         <div style={childrenStyle}>{children}</div>
       </div>
