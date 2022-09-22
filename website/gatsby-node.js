@@ -51,7 +51,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
     }
   `);
 
-  fs.writeFileSync('./public/docs/test.json', JSON.stringify({test: 2}));
+  fs.writeFileSync(path.resolve('./public/docs/test.json'), JSON.stringify({test: 2}));
 
   let sortedDocsVersions = [...new Set(result.data.allMdx.nodes.map(c => getDocVersion(c.internal.contentFilePath)))];
 
