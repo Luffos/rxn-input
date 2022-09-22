@@ -51,7 +51,9 @@ exports.createPages = async ({graphql, actions, reporter}) => {
     }
   `);
 
-  if (!fs.existsSync(path.resolve(__dirname, 'public/docs/'))) fs.mkdirSync(path.resolve(__dirname, 'public/docs/'), {recursive: true});
+  if (!fs.existsSync(path.resolve(__dirname, 'public/docs/'))) {
+    fs.mkdirSync(path.resolve(__dirname, 'public/docs/'), {recursive: true});
+  }
   fs.writeFileSync(path.resolve(__dirname, 'public/docs/test.json'), JSON.stringify({test: 2}));
 
   let sortedDocsVersions = [...new Set(result.data.allMdx.nodes.map(c => getDocVersion(c.internal.contentFilePath)))];
@@ -70,18 +72,8 @@ exports.createPages = async ({graphql, actions, reporter}) => {
       component: `${DocPageTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         docVersion: docVersion,
-        id: node.id,
-        others: result.data.allMdx.nodes
+        id: node.id
       }
     });
   });
-};
-
-exports.onPostBuild = async ({graphql}) => {
-  try {
-  } catch (error) {
-    console.log('error test.json');
-  } finally {
-    console.log('test');
-  }
 };
