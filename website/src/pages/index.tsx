@@ -1,11 +1,10 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {HeadFC, Link} from 'gatsby';
-import styled from 'styled-components';
 import Layout from '../components/Layout';
 
 import DeviceSVG from '../assets/Devices.svg';
 import MediaQueries from '../styles/ts/MediaQueries';
-import {BigTitle, devicesBreakingRangeWidth, DevicesImage, GetStartedButton, Section1, Section1Background, SubBigTitle} from '../styles/ts/Page-Index';
+import {BigTitle, devicesBreakingRangeWidth, DevicesImage, GetStartedButton, Section1, Section1Background, SubBigTitle} from '../styles/ts/pages-index.styled';
 import useMediaQuery from '../hooks/useMediaQuery';
 import {FadeIn, wipeInY} from 'react-animated-components';
 import BreakPoints from '../styles/ts/BreakPoints';

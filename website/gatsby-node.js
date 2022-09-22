@@ -1,5 +1,6 @@
 const path = require('path');
 const DocPageTemplate = path.resolve('./src/templates/DocPage.tsx');
+const fs = require('fs');
 
 if (!String.prototype.replaceAll) {
   String.prototype.replaceAll = function (str, newStr) {
@@ -44,31 +45,43 @@ exports.createPages = async ({graphql, actions, reporter}) => {
           }
           frontmatter {
             title
-            order
           }
         }
-        distinct(field: frontmatter___order)
       }
     }
   `);
 
+  fs.writeFileSync('./public/docs/test.json', JSON.stringify({test: 2}));
+
   let sortedDocsVersions = [...new Set(result.data.allMdx.nodes.map(c => getDocVersion(c.internal.contentFilePath)))];
 
   result.data.allMdx.nodes.forEach(node => {
-    let transformedUrlPath = `/docs/${node.internal.contentFilePath.split(`src/content/docs/`).pop().split(`.mdx`)[0].split(' ').join('-').toLowerCase()}`;
+    let pagePath = `/docs/${node.internal.contentFilePath.split(`src/content/docs/`).pop().split(`.mdx`)[0].split(' ').join('-').toLowerCase()}`;
+    let docVersion = getDocVersion(pagePath);
 
-    if (isNextVersion(transformedUrlPath, sortedDocsVersions)) {
-      transformedUrlPath = transformedUrlPath.replaceAll(getDocVersion(transformedUrlPath), '').split(`//`).join(`/`);
+    // Remove vXXXXX from url if is "next" (latest)
+    if (isNextVersion(pagePath, sortedDocsVersions)) {
+      pagePath = pagePath.replaceAll(docVersion, '').split(`//`).join(`/`);
     }
 
-    console.log(node);
-
     createPage({
-      path: transformedUrlPath,
+      path: pagePath,
       component: `${DocPageTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
-        id: node.id
+        docVersion: docVersion,
+        id: node.id,
+        others: result.data.allMdx.nodes
       }
     });
   });
+};
+
+exports.onPostBuild = async ({graphql}) => {
+  try {
+  
+  } catch (error) {
+    console.log('error test.json');
+  } finally {
+    console.log('test');
+  }
 };

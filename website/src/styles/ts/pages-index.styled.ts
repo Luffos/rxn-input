@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import DeviceSVG from '../assets/Devices.svg';
 import MediaQueries from './MediaQueries';
-import BreakPoints from '../../styles/ts/BreakPoints';
+import BreakPoints from './BreakPoints';
 
 export const devicesBreakingRangeWidth = '1250px';
 
@@ -170,6 +170,12 @@ export const GetStartedButton = styled.div`
   background: linear-gradient(180deg, rgba(16, 117, 255, 0.9) 0%, rgba(9, 115, 223, 0.9) 0.01%, rgba(18, 21, 93, 0.9) 100%);
   border: 0.1rem solid #0b4ea8;
   border-radius: 1rem;
+
+  transition: 0.1s filter linear;
+
+  &:hover {
+    filter: brightness(140%);
+  }
 
   @media ${MediaQueries.isMobile} {
     width: 13rem;
