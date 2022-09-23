@@ -4959,9 +4959,9 @@ gatsby-plugin-manifest@^4.23.0:
     semver "^7.3.7"
     sharp "^0.30.7"
 
-gatsby-plugin-mdx@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.npmjs.org/gatsby-plugin-mdx/-/gatsby-plugin-mdx-4.1.1.tgz"
+gatsby-plugin-mdx@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-4.2.1.tgz#a068b6d0c5fa753638b8d6532230acdaff71af07"
   dependencies:
     "@mdx-js/mdx" "^2.1.1"
     acorn "^7.4.1"
@@ -4970,8 +4970,8 @@ gatsby-plugin-mdx@^4.1.1:
     deepmerge "^4.2.2"
     estree-util-build-jsx "^2.1.0"
     fs-extra "^10.1.0"
-    gatsby-core-utils "^3.22.0"
-    gatsby-plugin-utils "^3.16.0"
+    gatsby-core-utils "^3.23.0"
+    gatsby-plugin-utils "^3.17.1"
     gray-matter "^4.0.3"
     mdast-util-mdx "^2.0.0"
     mdast-util-to-hast "^10.2.0"
