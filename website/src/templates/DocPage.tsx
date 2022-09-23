@@ -2,13 +2,13 @@
 import React, {useEffect} from 'react';
 import Layout from '../components/Layout';
 
-import c from '../../public/docs/test.json';
+import docsData from '../../public/docs/data.json';
 
 function DocPage({pageContext, children}: any) {
   const context = pageContext;
 
   console.log(context);
-  console.log(c);
+  console.log(docsData);
 
   return (
     <>

@@ -1,6 +1,8 @@
 const path = require('path');
 const DocPageTemplate = path.resolve('./src/templates/DocPage.tsx');
 const fs = require('fs');
+const docsSchema = require(`./src/content/docs/schema.json`);
+const internal = require('stream');
 
 if (!String.prototype.replaceAll) {
   String.prototype.replaceAll = function (str, newStr) {
@@ -11,17 +13,6 @@ if (!String.prototype.replaceAll) {
     return this.replace(new RegExp(str, 'g'), newStr);
   };
 }
-
-exports.onCreateWebpackConfig = ({stage, rules, loaders, plugins, actions}) => {
-  actions.setWebpackConfig({
-    resolve: {
-      alias: {
-        'react-native$': 'react-native-web'
-      },
-      extensions: ['.tsx', '.ts', '.jsx', '.js', '.web.tsx', '.web.ts', '.web.jsx', '.web.js']
-    }
-  });
-};
 
 function getDocVersion(fullPath) {
   return `${fullPath}`.split('docs/').pop().split('/')[0];
@@ -34,7 +25,7 @@ function isNextVersion(fullPath, sortedDocsVersions) {
 exports.createPages = async ({graphql, actions, reporter}) => {
   const {createPage} = actions;
 
-  const result = await graphql(`
+  const allMdxQuery = await graphql(`
     query MyQuery {
       allMdx(sort: {order: ASC, fields: internal___contentFilePath}) {
         nodes {
@@ -51,14 +42,33 @@ exports.createPages = async ({graphql, actions, reporter}) => {
     }
   `);
 
+  const docsData = docsSchema;
+  Object.keys(docsData).forEach(version => {
+    Object.keys(docsData[version]).forEach(folder => {
+      if (String(docsData[version][folder]).toLowerCase() == 'asc') {
+        let filtered = allMdxQuery.data.allMdx.nodes.filter(node => node.internal.contentFilePath.startsWith(node.internal.contentFilePath.split(`src/content/docs/${version}/${folder}`)));
+        filtered = filtered.map(o => ({
+          id: o.id,
+          body: o.body,
+          frontmatter: o.frontmatter
+        }));
+        docsData[version][folder] = filtered;
+        return;
+      }
+    });
+  });
+
+  console.log(docsData);
+  console.log('----------------------------');
+
   if (!fs.existsSync(path.resolve(__dirname, 'public/docs/'))) {
     fs.mkdirSync(path.resolve(__dirname, 'public/docs/'), {recursive: true});
   }
-  fs.writeFileSync(path.resolve(__dirname, 'public/docs/test.json'), JSON.stringify({test: 2}));
+  fs.writeFileSync(path.resolve(__dirname, 'public/docs/data.json'), JSON.stringify(docsData, null, 4), 'utf-8');
 
-  let sortedDocsVersions = [...new Set(result.data.allMdx.nodes.map(c => getDocVersion(c.internal.contentFilePath)))];
+  let sortedDocsVersions = [...new Set(allMdxQuery.data.allMdx.nodes.map(c => getDocVersion(c.internal.contentFilePath)))];
 
-  result.data.allMdx.nodes.forEach(node => {
+  allMdxQuery.data.allMdx.nodes.forEach(node => {
     let pagePath = `/docs/${node.internal.contentFilePath.split(`src/content/docs/`).pop().split(`.mdx`)[0].split(' ').join('-').toLowerCase()}`;
     let docVersion = getDocVersion(pagePath);
 
