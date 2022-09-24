@@ -17,7 +17,21 @@ function DocPage({pageContext, children}: any) {
           {/* <div style={{marginTop: 10, marginBottom: 10, color: `white`}}>ID: {context?.id}</div>
           <MDXProvider>{children}</MDXProvider> */}
 
-          <h1 style={{textAlign: 'center', fontSize:'1rem'}}>Working on it...</h1>
+          { <h1 style={{textAlign: 'center', fontSize:'1rem'}}>Working on it...</h1> }
+          {Object.keys(docsData['v2.0.0']).map(a => {
+            return (
+              <ul>
+                <h2>{a}</h2>
+
+                {
+                  //@ts-ignore
+                  docsData['v2.0.0'][a].map((f: any) => {
+                    return <li>{f?.frontmatter?.title || `test`}</li>;
+                  })
+                }
+              </ul>
+            );
+          })}
         </div>
       </Layout>
     </>

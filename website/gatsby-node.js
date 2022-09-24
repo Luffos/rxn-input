@@ -46,7 +46,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
   Object.keys(docsData).forEach(version => {
     Object.keys(docsData[version]).forEach(folder => {
       if (String(docsData[version][folder]).toLowerCase() == 'asc') {
-        let filtered = allMdxQuery.data.allMdx.nodes.filter(node => node.internal.contentFilePath.startsWith(node.internal.contentFilePath.split(`src/content/docs/${version}/${folder}`)));
+        let filtered = allMdxQuery.data.allMdx.nodes.filter(node => node.internal.contentFilePath.split(`src/content/docs/`).pop().startsWith(`${version}/${folder}`));
         filtered = filtered.map(o => ({
           id: o.id,
           body: o.body,
@@ -54,6 +54,21 @@ exports.createPages = async ({graphql, actions, reporter}) => {
         }));
         docsData[version][folder] = filtered;
         return;
+      }
+
+      if (Array.isArray(docsData[version][folder])) {
+        const data = [];
+        
+        docsData[version][folder].map(o => {
+          let founded = allMdxQuery.data.allMdx.nodes.find(node => node.internal.contentFilePath.split(`src/content/docs/`).pop().startsWith(`${version}/${folder}/${o}`));
+          data.push({
+            id: founded.id,
+            body: founded.body,
+            frontmatter: founded.frontmatter
+          });
+        });
+
+        docsData[version][folder] = data;
       }
     });
   });

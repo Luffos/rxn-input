@@ -1,6 +1,7 @@
 {
   "v1.0.0": {
-    "Testing": ["a.mdx"]
+    "Testing": ["beforeA.mdx", "a.mdx"],
+    "Data": "asc"
   },
   "v2.0.0": {
     "Getting Started": ["Installation.mdx", "Setup Android.mdx"],
