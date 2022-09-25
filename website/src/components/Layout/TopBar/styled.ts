@@ -14,7 +14,7 @@ export const TopBarWrapper = styled.div`
   z-index: 99901;
 
   &[data-scrolled='true'] {
-    background: linear-gradient(rgba(11, 9, 34, 0.5) 0%, rgba(8, 6, 34, 0.8) 100%);
+    background: linear-gradient(rgba(11, 9, 34, 0.3) 0%, rgba(8, 6, 34, 0.4) 100%);
     transition: background 0.1s ease-in-out;
     backdrop-filter: blur(0.7rem);
   }

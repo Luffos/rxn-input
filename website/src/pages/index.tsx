@@ -20,35 +20,37 @@ const IndexPage = () => {
   return (
     <>
       <Layout>
-        {showSection1Anims && (
-          <FadeIn durationMs={3000}>
-            <Section1>
-              <Section1Background />
-              <div style={{position: 'relative'}}>
-                <BigTitle>
-                  Cross-Platform Input Handler <br /> for React and React Native.
-                </BigTitle>
-                <SubBigTitle>
-                  <span>Mouse</span>, <span>Touches</span>, <span>Keyboard</span> and <span>Gamepad</span>
-                </SubBigTitle>
+        <div style={{marginTop: '9rem'}}>
+          {showSection1Anims && (
+            <FadeIn durationMs={3000}>
+              <Section1>
+                <Section1Background />
+                <div style={{position: 'relative'}}>
+                  <BigTitle>
+                    Cross-Platform Input Handler <br /> for React and React Native.
+                  </BigTitle>
+                  <SubBigTitle>
+                    <span>Mouse</span>, <span>Touches</span>, <span>Keyboard</span> and <span>Gamepad</span>
+                  </SubBigTitle>
+                  <FadeIn delayMs={1500} durationMs={2500}>
+                    <Link style={{display: breakDevices ? 'none' : 'flex', width: 'fit-content'}} to={'/docs/getting-started/installation'}>
+                      <GetStartedButton>Get started</GetStartedButton>
+                    </Link>
+                  </FadeIn>
+                </div>
+
+                <DevicesImage>
+                  <DeviceSVG />
+                </DevicesImage>
                 <FadeIn delayMs={1500} durationMs={2500}>
-                  <Link style={{display: breakDevices ? 'none' : 'flex', width: 'fit-content'}} to={'/docs'}>
+                  <Link style={{display: !breakDevices ? 'none' : 'flex', width: 'fit-content'}} to={'/docs/getting-started/installation'}>
                     <GetStartedButton>Get started</GetStartedButton>
                   </Link>
                 </FadeIn>
-              </div>
-
-              <DevicesImage>
-                <DeviceSVG />
-              </DevicesImage>
-              <FadeIn delayMs={1500} durationMs={2500}>
-                <Link style={{display: !breakDevices ? 'none' : 'flex', width: 'fit-content'}} to={'/docs'}>
-                  <GetStartedButton>Get started</GetStartedButton>
-                </Link>
-              </FadeIn>
-            </Section1>
-          </FadeIn>
-        )}
+              </Section1>
+            </FadeIn>
+          )}
+        </div>
       </Layout>
     </>
   );

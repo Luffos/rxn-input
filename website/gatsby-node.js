@@ -58,7 +58,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
 
       if (Array.isArray(docsData[version][folder])) {
         const data = [];
-        
+
         docsData[version][folder].map(o => {
           let founded = allMdxQuery.data.allMdx.nodes.find(node => node.internal.contentFilePath.split(`src/content/docs/`).pop().startsWith(`${version}/${folder}/${o}`));
           data.push({
@@ -97,7 +97,8 @@ exports.createPages = async ({graphql, actions, reporter}) => {
       component: `${DocPageTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         docVersion: docVersion,
-        id: node.id
+        id: node.id,
+        frontmatter: node.frontmatter
       }
     });
   });

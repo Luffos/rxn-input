@@ -5,6 +5,7 @@
   },
   "v2.0.0": {
     "Getting Started": ["Installation.mdx", "Setup Android.mdx"],
+    "Input": "asc",
     "Hooks": "asc",
     "Listeners": "asc"
   }
