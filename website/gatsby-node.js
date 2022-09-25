@@ -1,5 +1,5 @@
 const path = require('path');
-const DocPageTemplate = path.resolve('./src/templates/DocPage.tsx');
+const DocPageTemplate = path.resolve('./src/templates/DocPage/index.tsx');
 const fs = require('fs');
 const docsSchema = require(`./src/content/docs/schema.json`);
 const internal = require('stream');

@@ -1,33 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, {useEffect} from 'react';
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
 
-import docsData from '../../public/docs/data.json';
 import {MDXProvider} from '@mdx-js/react';
-import useWindowSize from '../hooks/useWIndowSize';
-
-// {Object.keys(docsData['v2.0.0']).map(a => {
-//   return (
-//     <ul>
-//       <h2>{a}</h2>
-
-//       {
-//         //@ts-ignore
-//         docsData['v2.0.0'][a].map((f: any) => {
-//           return <li>{f?.frontmatter?.title || `test`}</li>;
-//         })
-//       }
-//     </ul>
-//   );
-// })}
+import useWindowSize from '../../hooks/useWIndowSize';
+import NavigationMenuContent from './NavigationMenuContent';
 
 function DocPage({pageContext, children}: any) {
   const context = pageContext;
 
   const {height} = useWindowSize();
 
-  console.log(context);
-  console.log(docsData);
+  //console.log(context);
 
   return (
     <>
@@ -36,20 +20,7 @@ function DocPage({pageContext, children}: any) {
 
         <div style={{position: `fixed`, height: height - 72, top: 72, width: 250, overflowY: `scroll`, overflowX: `hidden`}}>
           <div style={{marginTop: 45}}>
-            {Object.keys(docsData['v2.0.0']).map(a => {
-              return (
-                <ul>
-                  <h3>{a}</h3>
-
-                  {
-                    //@ts-ignore
-                    docsData['v2.0.0'][a].map((f: any) => {
-                      return <li>{f?.frontmatter?.title || `test`}</li>;
-                    })
-                  }
-                </ul>
-              );
-            })}
+           <NavigationMenuContent />
           </div>
         </div>
 
