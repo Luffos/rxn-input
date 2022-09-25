@@ -78,6 +78,36 @@
                 }
             }
         ],
+        "Input": [
+            {
+                "id": "76b1c598-4ea3-5eee-be66-02329c1cbe2a",
+                "body": "",
+                "frontmatter": {
+                    "title": "getAxis"
+                }
+            },
+            {
+                "id": "0f3f91d8-e50c-5716-815f-829c7c25d981",
+                "body": "",
+                "frontmatter": {
+                    "title": "getAxisRaw"
+                }
+            },
+            {
+                "id": "11dba255-8f85-532b-b2f7-439549aec2bb",
+                "body": "",
+                "frontmatter": {
+                    "title": "isMouseButtonDown"
+                }
+            },
+            {
+                "id": "1b83baff-910a-504d-b9a9-93a0c417f1c6",
+                "body": "",
+                "frontmatter": {
+                    "title": "isMouseButtonUp"
+                }
+            }
+        ],
         "Hooks": [
             {
                 "id": "8e216dcb-ab96-5c9c-a6dc-30ff04de8f52",
