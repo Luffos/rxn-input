@@ -5,10 +5,13 @@ import Layout from '../../components/Layout';
 import {MDXProvider} from '@mdx-js/react';
 import useWindowSize from '../../hooks/useWIndowSize';
 import NavigationMenuContent from './NavigationMenuContent';
+import MediaQueries from '../../styles/ts/MediaQueries';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 function DocPage({pageContext, children}: any) {
   const context = pageContext;
 
+  const isDesktop = useMediaQuery(MediaQueries.isDesktop);
   const {height} = useWindowSize();
 
   //console.log(context);
@@ -16,15 +19,16 @@ function DocPage({pageContext, children}: any) {
   return (
     <>
       <Layout SelectedPage={'DOCS'} MobileExtraTopBar={<h1>Test test</h1>}>
-        {/* <div style={{marginTop: 10, marginBottom: 10, color: `white`}}>ID: {context?.id}</div>*/}
 
-        <div style={{position: `fixed`, height: height - 72, top: 72, width: 250, overflowY: `scroll`, overflowX: `hidden`}}>
-          <div style={{marginTop: 45}}>
-           <NavigationMenuContent />
+        {isDesktop && (
+          <div style={{position: `fixed`, height: height - 72, top: 72, width: 250, overflowY: `scroll`, overflowX: `hidden`}}>
+            <div style={{marginTop: 45}}>
+              <NavigationMenuContent />
+            </div>
           </div>
-        </div>
+        )}
 
-        <div style={{marginLeft: `22rem`, marginTop: 100}}>
+        <div style={{marginLeft: isDesktop ? `22rem` : undefined, marginTop: 100}}>
           {children && (
             <>
               <h1 style={{fontSize: `3rem`, margin: 0, marginBottom: `2rem`, padding: 0}}>{context.frontmatter.title}</h1>
