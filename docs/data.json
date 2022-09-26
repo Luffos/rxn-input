@@ -65,14 +65,14 @@
         "Getting Started": [
             {
                 "id": "89a64731-fc90-5091-8394-cc6365380b4d",
-                "body": "\r\nSo, let's get started...\r\n\r\n## Installing with NPM\r\n```\r\nnpm install rxn-input\r\n```\r\n\r\n## Installing with Yarn\r\n```\r\nyarn add rxn-input\r\n```",
+                "body": "\r\nSo, let's get started...\r\n\r\n# Installing with NPM\r\n```\r\nnpm install rxn-input\r\n```\r\n\r\n# Installing with Yarn\r\n```\r\nyarn add rxn-input\r\n```\r\n\r\n### After that, we need to setup the dependencies to use the project on [Android](docs/getting-started/setup-android).",
                 "frontmatter": {
                     "title": "Installation"
                 }
             },
             {
                 "id": "206db9f6-1774-58b5-b208-7abbdfcff0cd",
-                "body": "\r\nTest Setup Android",
+                "body": "\r\nOnce you have installed rxn-input [(as described here)](docs/getting-started/installation), you need to manually add some code lines to get things working as expected.\r\n\r\nThe only thing you need to do is edit the file named ```MainActivity.java``` at your project root ```PROJECT_ROOT/android/app/src/main/java/.../.../MainActivity.java```\r\n\r\n```diff\r\npackage com.YOUR_APP;\r\n\r\n+ import android.util.Log;\r\n+ import android.view.KeyEvent;\r\n\r\n+ import com.rxninput.RXNInputModule;\r\n\r\npublic class MainActivity extends ReactActivity {\r\n\r\n+  @Override\r\n+  public boolean onKeyDown(int keyCode, KeyEvent event) {\r\n+    RXNInputModule.onKeyDownEvent(keyCode, event);\r\n+    super.onKeyDown(keyCode, event);\r\n+    return true;\r\n+  }\r\n\r\n+  @Override\r\n+  public boolean onKeyUp(int keyCode, KeyEvent event) {\r\n+    RXNInputModule.onKeyUpEvent(keyCode, event);\r\n+    super.onKeyDown(keyCode, event);\r\n+    return true;\r\n+ }\r\n\r\n  . . .\r\n```\r\n",
                 "frontmatter": {
                     "title": "Setup Android"
                 }
