@@ -5032,7 +5032,7 @@ gatsby-plugin-typescript@^4.23.0:
     "@babel/runtime" "^7.15.4"
     babel-plugin-remove-graphql-queries "^4.23.0"
 
-gatsby-plugin-utils@^3.16.0, gatsby-plugin-utils@^3.17.0, gatsby-plugin-utils@^3.17.1:
+gatsby-plugin-utils@^3.17.0, gatsby-plugin-utils@^3.17.1:
   version "3.17.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.17.1.tgz#e662a0536aa9324ae9f1c51345feaf2f5e728a26"
   dependencies:
