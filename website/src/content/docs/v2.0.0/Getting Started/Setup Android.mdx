@@ -2,4 +2,33 @@
 title: Setup Android
 ---
 
-Test Setup Android
+Once you have installed rxn-input [(as described here)](docs/getting-started/installation), you need to manually add some code lines to get things working as expected.
+
+The only thing you need to do is edit the file named ```MainActivity.java``` at your project root ```PROJECT_ROOT/android/app/src/main/java/.../.../MainActivity.java```
+
+```diff
+package com.YOUR_APP;
+
++ import android.util.Log;
++ import android.view.KeyEvent;
+
++ import com.rxninput.RXNInputModule;
+
+public class MainActivity extends ReactActivity {
+
++  @Override
++  public boolean onKeyDown(int keyCode, KeyEvent event) {
++    RXNInputModule.onKeyDownEvent(keyCode, event);
++    super.onKeyDown(keyCode, event);
++    return true;
++  }
+
++  @Override
++  public boolean onKeyUp(int keyCode, KeyEvent event) {
++    RXNInputModule.onKeyUpEvent(keyCode, event);
++    super.onKeyDown(keyCode, event);
++    return true;
++ }
+
+  . . .
+```

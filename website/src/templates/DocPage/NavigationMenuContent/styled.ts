@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  margin: 0;
+  padding: 0;
+  padding-bottom: 2rem;
+`;
+
 export const Ul = styled.ul`
   list-style: none;
   padding: 0;
@@ -23,6 +29,16 @@ export const Li = styled.li`
   width: fit-content;
   margin-bottom: 0.3rem;
 
+  &[data-current-doc='true'] {
+    & > a > p {
+      color: #1cb0fa;
+
+      &::before {
+        background-color: #1cb0fa;
+      }
+    }
+  }
+
   & p {
     margin: 0;
     padding: 0;
@@ -31,13 +47,14 @@ export const Li = styled.li`
     font-size: 1.02rem;
 
     &::before {
+      display: inline;
       content: ' ';
       margin-right: 1.1rem;
       padding-bottom: 0.2rem;
       padding-top: 0.2rem;
       white-space: pre;
       background-color: #94a3b8;
-      width: 3rem;
+      width: 1.2rem;
       height: 100%;
     }
 

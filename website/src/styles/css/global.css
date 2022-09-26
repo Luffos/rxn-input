@@ -22,7 +22,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0.6vw;
+  width: 0.4rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -31,13 +31,13 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: #8a8a8a;
-  border-radius: 20px;
+  border-radius: 2rem;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #94a3b8;
   border-radius: 20px;
-  border: 6px solid transparent;
+  border: 1rem solid transparent;
 }
 
 ::-webkit-scrollbar-thumb:hover {
