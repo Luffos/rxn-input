@@ -4949,13 +4949,13 @@ gatsby-plugin-eslint@^4.0.2:
   dependencies:
     webpack-merge "^5.8.0"
 
-gatsby-plugin-manifest@^4.23.0:
-  version "4.23.0"
-  resolved "https://registry.npmjs.org/gatsby-plugin-manifest/-/gatsby-plugin-manifest-4.23.0.tgz"
+gatsby-plugin-manifest@^4.23.1:
+  version "4.23.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-4.23.1.tgz#738d189904e64ae8b4a8346c74d31fe7d0e1be06"
   dependencies:
     "@babel/runtime" "^7.15.4"
     gatsby-core-utils "^3.23.0"
-    gatsby-plugin-utils "^3.17.0"
+    gatsby-plugin-utils "^3.17.1"
     semver "^7.3.7"
     sharp "^0.30.7"
 
@@ -5032,7 +5032,7 @@ gatsby-plugin-typescript@^4.23.0:
     "@babel/runtime" "^7.15.4"
     babel-plugin-remove-graphql-queries "^4.23.0"
 
-gatsby-plugin-utils@^3.17.0, gatsby-plugin-utils@^3.17.1:
+gatsby-plugin-utils@^3.17.1:
   version "3.17.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.17.1.tgz#e662a0536aa9324ae9f1c51345feaf2f5e728a26"
   dependencies:
