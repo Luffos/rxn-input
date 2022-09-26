@@ -20,7 +20,7 @@ const IndexPage = () => {
   return (
     <>
       <Layout>
-        <div style={{marginTop: '9rem'}}>
+        <div style={{marginTop: '11rem'}}>
           {showSection1Anims && (
             <FadeIn durationMs={3000}>
               <Section1>
