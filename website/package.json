@@ -2,6 +2,8 @@
   "name": "rxn-input-website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://luffos.github.io/rxn-input/",
+  "description": "RXNInput Official Website",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
