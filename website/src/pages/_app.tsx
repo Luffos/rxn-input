@@ -1,3 +1,4 @@
+import '@fontsource/lato';
 import '../styles/css/globals.css'
 import type { AppProps } from 'next/app'
 

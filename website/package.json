@@ -11,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/lato": "^4.5.9",
     "@svgr/webpack": "^6.3.1",
     "next": "12.3.1",
     "react": "18.2.0",

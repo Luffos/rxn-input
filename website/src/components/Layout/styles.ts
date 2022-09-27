@@ -1,7 +1,15 @@
-import styled from "styled-components";
-import Sizes from "../../styles/theme/Sizes";
+import styled from 'styled-components';
+import Sizes from '../../styles/theme/Sizes';
 
-export const LayoutContent = styled.div`
+export const LayoutContentWrapper = styled.div`
+  display: inline;
+  padding-left: 2rem;
+  padding-right: 2rem;
+`;
+
+export const LayoutContentInner = styled.div`
+  display: block;
+  box-sizing: border-box;
   max-width: ${Sizes.maxWidth};
   margin-left: auto;
   margin-right: auto;

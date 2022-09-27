@@ -1,29 +1,37 @@
-import styled from "styled-components";
-import Sizes from "../../../styles/theme/Sizes";
+import styled from 'styled-components';
+import Sizes from '../../../styles/theme/Sizes';
+
+export const AreaProtector = styled.div`
+  display: list-item;
+`;
 
 export const Wrapper = styled.div`
-  position: sticky;
+  position: fixed;
   top: 0;
-  display: block;
   flex: none;
   align-items: center;
   justify-content: center;
-  box-sizing: content-box;
+  box-sizing: border-box;
   width: 100%;
 `;
 
+export const InnerWrapper = styled.div`
+  display: contents;
+`;
+
 export const ContentWrapper = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
-  background: darkgray;
+  margin-top: auto;
+  margin-bottom: auto;
   width: 100vw;
-  min-height: 2rem;
-  min-width: 300px;
   max-width: ${Sizes.maxWidth};
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 
   /* @media {MediaQueries.isMobile} {
     padding-left: 1rem;
@@ -35,8 +43,8 @@ export const ContentWrapper = styled.div`
     vertical-align: middle;
     justify-content: center;
     align-items: center;
-    width: 160px;
-    height: 25px;
+    width: 180px;
+    height: 30px;
 
     & > svg {
       pointer-events: none;

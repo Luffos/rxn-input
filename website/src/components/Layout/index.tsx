@@ -1,11 +1,12 @@
-import React, { memo } from "react";
-import TopBar from "./TopBar";
+import React, {memo} from 'react';
+import {LayoutContentInner, LayoutContentWrapper} from './styles';
+import TopBar from './TopBar';
 
 interface iProps {
   children: JSX.Element;
 }
 
-const Layout = ({ children }: iProps) => {
+const Layout = ({children}: iProps) => {
   return (
     <>
       <TopBar />
@@ -14,6 +15,12 @@ const Layout = ({ children }: iProps) => {
   );
 };
 
-export {LayoutContent} from './styles';
+export const LayoutContent = ({children}: iProps) => {
+  return (
+    <LayoutContentWrapper>
+      <LayoutContentInner>{children}</LayoutContentInner>
+    </LayoutContentWrapper>
+  );
+};
 
 export default Layout;
