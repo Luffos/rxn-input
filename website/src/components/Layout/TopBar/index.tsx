@@ -1,7 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
-import Logo from '../../../assets/Logo.svg';
-import {AreaProtector, ContentWrapper, InnerWrapper, Wrapper} from './styles';
+import LogoSVG from '../../../assets/Logo.svg';
+import GitHubSVG from '../../../assets/github-icon.svg';
+import {
+  AreaProtector,
+  ContentWrapper,
+  InnerWrapper,
+  RItems,
+  Wrapper
+} from './styles';
 
 const TopBar = () => {
   return (
@@ -11,21 +18,33 @@ const TopBar = () => {
           <ContentWrapper>
             <Link href={'/'}>
               <a className={'logoWrapper'}>
-                <Logo viewBox="0 0 247 54" />
+                <LogoSVG viewBox="0 0 247 54" />
               </a>
             </Link>
 
-            <ul
-              style={{
-                display: `flex`,
-                flexDirection: `row`,
-                listStyle: `none`,
-                padding: 0,
-                marginLeft: `auto`
-              }}>
-              <li>aaaaaaaa</li>
-              <li>bbbbbbbb</li>
-            </ul>
+            <RItems>
+              <li>
+                <Link href={`/docs`}>
+                  <a>
+                    <p>DOCUMENTATION</p>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href={`/examples`}>
+                  <a>
+                    <p>EXAMPLES</p>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <a
+                  className="gitHubWrapper"
+                  href="https://github.com/Luffos/rxn-input">
+                  <GitHubSVG />
+                </a>
+              </li>
+            </RItems>
           </ContentWrapper>
         </InnerWrapper>
       </Wrapper>
