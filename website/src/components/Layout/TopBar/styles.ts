@@ -2,10 +2,6 @@ import styled from 'styled-components';
 import Colors from '../../../styles/theme/Colors';
 import Sizes from '../../../styles/theme/Sizes';
 
-export const AreaProtector = styled.div`
-  display: list-item;
-`;
-
 export const Wrapper = styled.div`
   position: fixed;
   top: 0;
@@ -27,7 +23,7 @@ export const ContentWrapper = styled.div`
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: auto;
+  margin-top: 0.2rem;
   margin-bottom: auto;
   width: 100vw;
   max-width: ${Sizes.maxWidth};

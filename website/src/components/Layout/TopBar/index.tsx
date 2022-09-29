@@ -3,7 +3,6 @@ import React from 'react';
 import LogoSVG from '../../../assets/Logo.svg';
 import GitHubSVG from '../../../assets/github-icon.svg';
 import {
-  AreaProtector,
   ContentWrapper,
   InnerWrapper,
   RItems,
@@ -12,7 +11,6 @@ import {
 
 const TopBar = () => {
   return (
-    <AreaProtector>
       <Wrapper>
         <InnerWrapper>
           <ContentWrapper>
@@ -48,7 +46,6 @@ const TopBar = () => {
           </ContentWrapper>
         </InnerWrapper>
       </Wrapper>
-    </AreaProtector>
   );
 };
 

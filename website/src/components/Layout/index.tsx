@@ -1,5 +1,4 @@
 import React, {memo} from 'react';
-import {LayoutContentInner, LayoutContentWrapper} from './styles';
 import TopBar from './TopBar';
 
 interface iProps {
@@ -15,12 +14,6 @@ const Layout = ({children}: iProps) => {
   );
 };
 
-export const LayoutContent = ({children}: iProps) => {
-  return (
-    <LayoutContentWrapper>
-      <LayoutContentInner>{children}</LayoutContentInner>
-    </LayoutContentWrapper>
-  );
-};
+export {LayoutContent} from './styles';
 
 export default Layout;
