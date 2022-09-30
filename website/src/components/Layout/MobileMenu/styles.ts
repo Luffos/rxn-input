@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import BreakPoints from '../../../styles/theme/BreakPoints';
+import Colors from '../../../styles/theme/Colors';
 
 export const MobileMenuWrapper = styled.div`
   display: none;
@@ -60,7 +61,7 @@ export const MobileMenuBox = styled.div`
       transition: fill 0.1s ease-in-out;
     }
     &:hover > svg > path {
-      fill: #d9e8fb;
+      fill: ${Colors.CLOUDLESS};
     }
   }
   & > ul {
@@ -86,10 +87,10 @@ export const MobileMenuBox = styled.div`
       }
       & > a:not(.github):hover {
         & > p {
-          color: #1cb0fa;
+          color: ${Colors.ZIMABLUE};
         }
         & > svg > path {
-          fill: #1cb0fa;
+          fill: ${Colors.ZIMABLUE};
         }
       }
       & > a {
@@ -100,7 +101,7 @@ export const MobileMenuBox = styled.div`
         flex-direction: row;
         &[data-currentpage='true'] {
           & > p {
-            color: #1cb0fa;
+            color: ${Colors.ZIMABLUE};
           }
         }
         & > p {
@@ -108,7 +109,7 @@ export const MobileMenuBox = styled.div`
           font-size: 16px;
           letter-spacing: 0.01rem;
           display: inline;
-          color: #94a3b8;
+          color: ${Colors.BLUEBLOUSE};
           font-weight: 600;
           transition: color 0.1s ease-in-out;
         }
