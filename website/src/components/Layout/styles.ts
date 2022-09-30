@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import BreakPoints from '../../styles/theme/BreakPoints';
 import Sizes from '../../styles/theme/Sizes';
 
 export const LayoutContent = styled.div`
@@ -12,4 +13,9 @@ export const LayoutContent = styled.div`
   margin-right: auto;
   padding-left: 2rem;
   padding-right: 2rem;
+
+  ${BreakPoints.down('md')} {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;

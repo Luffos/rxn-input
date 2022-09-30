@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import BreakPoints from '../../../styles/theme/BreakPoints';
 import Colors from '../../../styles/theme/Colors';
 import Sizes from '../../../styles/theme/Sizes';
 
@@ -23,17 +24,17 @@ export const ContentWrapper = styled.div`
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0.2rem;
   margin-bottom: auto;
   width: 100vw;
   max-width: ${Sizes.maxWidth};
   padding-left: 2rem;
   padding-right: 2rem;
 
-  /* @media {MediaQueries.isMobile} {
+  ${BreakPoints.down('md')} {
+    margin-top: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
-  } */
+  }
 
   .logoWrapper {
     display: inline-flex;
@@ -64,6 +65,10 @@ export const RItems = styled.ul`
   list-style: none;
   padding: 0;
   margin-left: auto;
+
+  ${BreakPoints.down('md')} {
+    display: none;
+  }
 
   li,
   a,
@@ -133,5 +138,25 @@ export const RItems = styled.ul`
     &:hover > svg > path {
       fill: #d9e8fb;
     }
+  }
+`;
+
+export const MobileKebab = styled.div`
+  cursor: pointer;
+  display: none;
+  margin-left: auto;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+
+  & > svg > path {
+    transition: fill 0.1s ease-in-out;
+  }
+
+  &:hover > svg > path {
+    fill: #d9e8fb;
+  }
+
+  ${BreakPoints.down('md')} {
+    display: block;
   }
 `;
