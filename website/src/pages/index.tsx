@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Layout, {LayoutContent} from '../components/Layout';
 import Colors from '../styles/theme/Colors';
-import {Title, SubTitle} from './index.styles';
+import {Title, SubTitle} from '../styles/pages/index.styles';
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
           <Title>
             Cross-Platform Input Handler
             <br />
-            for React and React Native.
+            for React and React Native
           </Title>
           <SubTitle>
             Mouse<span>,</span> Touches<span>,</span> Keyboard <span>and</span>{' '}

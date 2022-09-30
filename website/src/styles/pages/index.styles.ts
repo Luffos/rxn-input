@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import BreakPoints from '../styles/theme/BreakPoints';
-import Colors from '../styles/theme/Colors';
+import BreakPoints from '../theme/BreakPoints';
+import Colors from '../theme/Colors';
 
 export const Title = styled.h1`
   margin: 0px;

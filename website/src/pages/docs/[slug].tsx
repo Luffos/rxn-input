@@ -1,30 +1,35 @@
-import { GetStaticPaths, GetStaticProps } from "next";
-import React from "react";
+import {GetStaticPaths, GetStaticProps} from 'next';
+import React from 'react';
+import Layout, {LayoutContent} from '../../components/Layout';
 
-export default function DocPage({ post }: any) {
-
+export default function DocPage({post}: any) {
   return (
-    <>
-      <h1>{post}</h1>
-    </>
+    <Layout>
+      <LayoutContent style={{marginTop: `8rem`}}>
+        <h1>{post}</h1>
+      </LayoutContent>
+    </Layout>
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({params}) => {
   return {
     props: {
-      post: params?.slug + "####",
-    },
+      post: params?.slug + '####'
+    }
   };
 };
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+export const getStaticPaths: GetStaticPaths<{slug: string}> = async () => {
   return {
     paths: [
-      { params: { slug: "getting-started" } },
-      { params: { slug: "a" } },
-      { params: { slug: "b" } },
-    ], //indicates that no page needs be created at build time
-    fallback: "blocking", //indicates the type of fallback
+      {
+        params: {slug: ''}
+      },
+      {params: {slug: 'getting-started'}},
+      {params: {slug: 'a'}},
+      {params: {slug: 'b'}}
+    ], 
+    fallback: 'blocking'
   };
 };

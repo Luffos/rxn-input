@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import LogoSVG from '../../../assets/Logo.svg';
 import GitHubSVG from '../../../assets/github-icon.svg';
 import KebabSVG from '../../../assets/kebab-icon.svg';
@@ -13,8 +13,17 @@ import {
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import BreakPoints from '../../../styles/theme/BreakPoints';
 
-const TopBar = () => {
+const TopBar = ({
+  setMobileMenuOpen
+}: {
+  setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
+  const [canShowKebab, setCanShowKebab] = useState(false);
   const showKebab = useMediaQuery(BreakPoints.down('md'));
+
+  useEffect(() => {
+    setCanShowKebab(true);
+  }, []);
 
   return (
     <Wrapper>
@@ -50,8 +59,8 @@ const TopBar = () => {
             </li>
           </RItems>
 
-          {showKebab && (
-            <MobileKebab>
+          {canShowKebab && showKebab && (
+            <MobileKebab onClick={() => setMobileMenuOpen(true)}>
               <KebabSVG />
             </MobileKebab>
           )}
