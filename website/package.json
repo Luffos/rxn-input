@@ -13,6 +13,7 @@
   "dependencies": {
     "@fontsource/lato": "^4.5.9",
     "@svgr/webpack": "^6.3.1",
+    "glob": "^8.0.3",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-animated-components": "^4.0.0",
@@ -24,9 +25,12 @@
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
     "typescript": "4.8.3"
   }
 }

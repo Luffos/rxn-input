@@ -23,13 +23,13 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 export const getStaticPaths: GetStaticPaths<{
   slug: string;
 }> = async () => {
+
   return {
     paths: [
-      {params: {slug: `false`}},
       {params: {slug: 'getting-started'}},
       {params: {slug: 'a'}},
       {params: {slug: 'b'}}
     ],
-    fallback: 'blocking'
+    fallback: false
   };
 };

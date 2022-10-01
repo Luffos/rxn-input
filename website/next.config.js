@@ -1,17 +1,29 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-var-requires */
+var path = require('path');
+var MyPlugin = require('./.webpack/plugins/MyPlugin');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
-  webpack(config) {
+  webpack: (config, { isServer }) => {
+
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
-    });
+      use: ['@svgr/webpack'],
+    })
 
-    return config;
+    config.plugins.push(new MyPlugin({ options: true }));
+
+    return config
   },
-};
 
-module.exports = nextConfig;
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+}
+
+module.exports = nextConfig
