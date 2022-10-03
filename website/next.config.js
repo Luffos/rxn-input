@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-var-requires */
 var path = require('path');
-var MyPlugin = require('./.webpack/plugins/MyPlugin');
+var DocsDataPlugin = require('./.webpack/plugins/DocsDataPlugin');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -16,7 +16,7 @@ const nextConfig = {
       use: ['@svgr/webpack'],
     })
 
-    config.plugins.push(new MyPlugin({ options: true }));
+    config.plugins.push(new DocsDataPlugin());
 
     return config
   },

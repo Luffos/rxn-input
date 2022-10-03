@@ -1,8 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {GetStaticPaths, GetStaticProps} from 'next';
 import React from 'react';
 import Layout, {LayoutContent} from '../../components/Layout';
+import DocsData from '../../content/docs/data.json';
 
 export default function DocPage({post}: any) {
+
+  console.log(DocsData)
+
   return (
     <Layout>
       <LayoutContent style={{marginTop: `8rem`}}>

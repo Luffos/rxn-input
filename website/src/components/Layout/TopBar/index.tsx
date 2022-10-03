@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, {useEffect, useState} from 'react';
+import React, {memo, useState} from 'react';
 import LogoSVG from '../../../assets/Logo.svg';
 import GitHubSVG from '../../../assets/github-icon.svg';
 import KebabSVG from '../../../assets/kebab-icon.svg';
@@ -12,6 +12,7 @@ import {
 } from './styles';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import BreakPoints from '../../../styles/theme/BreakPoints';
+import useEffectOnce from '../../../hooks/useEffectOnce';
 
 const TopBar = ({
   setMobileMenuOpen
@@ -21,9 +22,9 @@ const TopBar = ({
   const [canShowKebab, setCanShowKebab] = useState(false);
   const showKebab = useMediaQuery(BreakPoints.down('md'));
 
-  useEffect(() => {
+  useEffectOnce(() => {
     setCanShowKebab(true);
-  }, []);
+  });
 
   return (
     <Wrapper>
@@ -70,4 +71,4 @@ const TopBar = ({
   );
 };
 
-export default TopBar;
+export default memo(TopBar);
