@@ -1958,9 +1958,9 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*", "@types/node@>=10.0.0", "@types/node@^18.7.16":
-  version "18.7.16"
-  resolved "https://registry.npmjs.org/@types/node/-/node-18.7.16.tgz"
+"@types/node@*", "@types/node@>=10.0.0", "@types/node@^18.8.0":
+  version "18.8.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.8.0.tgz#b8ee8d83a99470c0661bd899417fcd77060682fe"
 
 "@types/node@^17.0.5":
   version "17.0.45"
