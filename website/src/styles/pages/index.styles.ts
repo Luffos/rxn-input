@@ -1,14 +1,42 @@
 import styled from 'styled-components';
 import BreakPoints from '../theme/BreakPoints';
 import Colors from '../theme/Colors';
+import Sizes from '../theme/Sizes';
 
 export const Section1 = styled.div`
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  animation: fadeIn 5s;
+`;
+
+export const Section1Content = styled.div`
   display: flex;
   flex-direction: row;
 
   ${BreakPoints.down('lg')} {
     flex-direction: column;
   }
+`;
+
+export const Section1Background = styled.div`
+  position: absolute;
+  width: 100%;
+  max-width: ${Sizes.maxWidth};
+  height: 250px;
+  filter: blur(8rem);
+  background: radial-gradient(50% 41.03% at 50% 58.97%, rgba(0, 131, 255, 0) 50%, rgb(0, 131, 255) 28.65%, rgba(0, 25, 245, 0.62) 81.25%, rgba(0, 131, 255, 0) 99.99%);
+  left: 50%;
+  margin-top: 20px;
+  opacity: 0.8;
+  transform: translateX(-50%);
+  z-index: 0;
 `;
 
 export const Title = styled.h1`
