@@ -11,6 +11,14 @@ export const Wrapper = styled.div`
   justify-content: center;
   box-sizing: border-box;
   width: 100%;
+
+  &[data-scrolled='true'] {
+    background: linear-gradient(#0b091f 0%, rgba(8, 6, 31, 0.9) 100%);
+    transition: background 0.2s ease-in-out;
+    backdrop-filter: blur(0.3rem);
+    border-bottom: solid rgba(255, 255, 255, 0.01) 1px;
+    box-shadow: 0rem 0rem 1rem rgba(8, 6, 31, 0.85);
+  }
 `;
 
 export const InnerWrapper = styled.div`
@@ -32,6 +40,7 @@ export const ContentWrapper = styled.div`
 
   ${BreakPoints.down('md')} {
     margin-top: 1rem;
+    margin-bottom: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -85,6 +94,16 @@ export const RItems = styled.ul`
 
   li:not(:first-child) {
     margin-left: 3.5rem;
+  }
+
+  a[data-currentpage='true'] {
+    & > p {
+      color: ${Colors.ZIMABLUE};
+
+      &::after {
+        background: ${Colors.ZIMABLUE};
+      }
+    }
   }
 
   a {
