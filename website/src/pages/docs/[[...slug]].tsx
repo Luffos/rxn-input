@@ -5,8 +5,10 @@ import React from 'react';
 import Layout, { LayoutContent } from '../../components/Layout';
 import DocsData from '../../content/docs/data.json';
 
-export default function Docs({ url, version }: any) {
+export default function Docs({ url, doc }: any) {
   console.log(DocsData);
+
+  console.log(doc);
 
   return (
     <>
@@ -17,18 +19,32 @@ export default function Docs({ url, version }: any) {
       <Layout SelectedPage={'DOCS'}>
         <LayoutContent style={{ marginTop: `8rem` }}>
           <h1>{url}</h1>
-          <h1>{version}</h1>
         </LayoutContent>
       </Layout>
     </>
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: any) => {
+  let doc = {};
+
+  Object.keys(DocsData).forEach((version) => {
+    Object.keys((DocsData as any)[version]).forEach((folder) => {
+      Object.keys((DocsData as any)[version][folder]).forEach((docName) => {
+        (DocsData as any)[version][folder][docName].slugs.map((slug: string, index: number) => {
+          if ((slug.split('docs/').pop() == undefined && params?.slug == undefined) || Array.from(params?.slug || []).join(`/`) == slug.split('docs/').pop()) {
+            doc = (DocsData as any)[version][folder][docName];
+            console.log(index, (doc as any).slugs?.length);
+          }
+        });
+      });
+    });
+  });
+
   return {
     props: {
       url: params?.slug ? Array.from(params.slug).join('/') : '/',
-      version: 3,
+      doc: doc,
     },
   };
 };
