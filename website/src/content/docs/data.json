@@ -2,12 +2,19 @@
   "v1.0.0": {
     "Testing": {
       "beforeA": {
+        "slugs": [
+          "docs/v1.0.0/testing",
+          "docs/v1.0.0/testing/beforea"
+        ],
         "body": "---\r\ntitle: Before A\r\n---\r\n\r\nTest Before A",
         "frontmatter": {
           "title": "Before A"
         }
       },
       "a": {
+        "slugs": [
+          "docs/v1.0.0/testing/a"
+        ],
         "body": "---\r\ntitle: A\r\n---\r\n\r\nTest A",
         "frontmatter": {
           "title": "A"
@@ -16,26 +23,45 @@
     },
     "Data": {
       "1": {
+        "slugs": [
+          "docs/v1.0.0/data",
+          "docs/v1.0.0/data/1"
+        ],
         "body": "",
         "frontmatter": {}
       },
       "2": {
+        "slugs": [
+          "docs/v1.0.0/data/2"
+        ],
         "body": "",
         "frontmatter": {}
       },
       "bTestingSomeTest": {
+        "slugs": [
+          "docs/v1.0.0/data/btestingsometest"
+        ],
         "body": "",
         "frontmatter": {}
       },
       "original": {
+        "slugs": [
+          "docs/v1.0.0/data/original"
+        ],
         "body": "",
         "frontmatter": {}
       },
       "somebodyOnceToldMe": {
+        "slugs": [
+          "docs/v1.0.0/data/somebodyoncetoldme"
+        ],
         "body": "",
         "frontmatter": {}
       },
       "testingSomeTest": {
+        "slugs": [
+          "docs/v1.0.0/data/testingsometest"
+        ],
         "body": "",
         "frontmatter": {}
       }
@@ -44,12 +70,23 @@
   "v2.0.0": {
     "Getting Started": {
       "Installation": {
+        "slugs": [
+          "docs/",
+          "docs/getting-started",
+          "docs/getting-started/installation",
+          "docs/v2.0.0/getting-started",
+          "docs/v2.0.0/getting-started/installation"
+        ],
         "body": "---\r\ntitle: Installation\r\n---\r\n\r\nSo, let's get started...\r\n\r\n# Installing with NPM\r\n```\r\nnpm install rxn-input\r\n```\r\n\r\n# Installing with Yarn\r\n```\r\nyarn add rxn-input\r\n```\r\n\r\n### After that, we need to setup the dependencies to use the project on [Android](docs/getting-started/setup-android).",
         "frontmatter": {
           "title": "Installation"
         }
       },
       "Setup Android": {
+        "slugs": [
+          "docs/getting-started/setup-android",
+          "docs/v2.0.0/getting-started/setup-android"
+        ],
         "body": "---\r\ntitle: Setup Android\r\n---\r\n\r\nOnce you have installed rxn-input [(as described here)](docs/getting-started/installation), you need to manually add some code lines to get things working as expected.\r\n\r\nThe only thing you need to do is edit the file named ```MainActivity.java``` at your project root ```PROJECT_ROOT/android/app/src/main/java/.../.../MainActivity.java```\r\n\r\n```diff\r\npackage com.YOUR_APP;\r\n\r\n+ import android.util.Log;\r\n+ import android.view.KeyEvent;\r\n\r\n+ import com.rxninput.RXNInputModule;\r\n\r\npublic class MainActivity extends ReactActivity {\r\n\r\n+  @Override\r\n+  public boolean onKeyDown(int keyCode, KeyEvent event) {\r\n+    RXNInputModule.onKeyDownEvent(keyCode, event);\r\n+    super.onKeyDown(keyCode, event);\r\n+    return true;\r\n+  }\r\n\r\n+  @Override\r\n+  public boolean onKeyUp(int keyCode, KeyEvent event) {\r\n+    RXNInputModule.onKeyUpEvent(keyCode, event);\r\n+    super.onKeyDown(keyCode, event);\r\n+    return true;\r\n+ }\r\n\r\n  . . .\r\n```\r\n",
         "frontmatter": {
           "title": "Setup Android"
@@ -58,24 +95,42 @@
     },
     "Input": {
       "getAxis": {
+        "slugs": [
+          "docs/input",
+          "docs/input/getaxis",
+          "docs/v2.0.0/input",
+          "docs/v2.0.0/input/getaxis"
+        ],
         "body": "---\r\ntitle: getAxis\r\n---",
         "frontmatter": {
           "title": "getAxis"
         }
       },
       "getAxisRaw": {
+        "slugs": [
+          "docs/input/getaxisraw",
+          "docs/v2.0.0/input/getaxisraw"
+        ],
         "body": "---\r\ntitle: getAxisRaw\r\n---",
         "frontmatter": {
           "title": "getAxisRaw"
         }
       },
       "isMouseButtonDown": {
+        "slugs": [
+          "docs/input/ismousebuttondown",
+          "docs/v2.0.0/input/ismousebuttondown"
+        ],
         "body": "---\r\ntitle: isMouseButtonDown\r\n---",
         "frontmatter": {
           "title": "isMouseButtonDown"
         }
       },
       "isMouseButtonUp": {
+        "slugs": [
+          "docs/input/ismousebuttonup",
+          "docs/v2.0.0/input/ismousebuttonup"
+        ],
         "body": "---\r\ntitle: isMouseButtonUp\r\n---",
         "frontmatter": {
           "title": "isMouseButtonUp"
@@ -84,12 +139,22 @@
     },
     "Hooks": {
       "useMousePresent": {
+        "slugs": [
+          "docs/hooks",
+          "docs/hooks/usemousepresent",
+          "docs/v2.0.0/hooks",
+          "docs/v2.0.0/hooks/usemousepresent"
+        ],
         "body": "---\r\ntitle: useMousePresent\r\n---\r\n\r\nTest useMousePresent",
         "frontmatter": {
           "title": "useMousePresent"
         }
       },
       "useTouchPresent": {
+        "slugs": [
+          "docs/hooks/usetouchpresent",
+          "docs/v2.0.0/hooks/usetouchpresent"
+        ],
         "body": "---\r\ntitle: useTouchPresent\r\n---\r\n\r\nTest useTouchPresent",
         "frontmatter": {
           "title": "useTouchPresent"
@@ -98,18 +163,32 @@
     },
     "Listeners": {
       "KeyListener": {
+        "slugs": [
+          "docs/listeners",
+          "docs/listeners/keylistener",
+          "docs/v2.0.0/listeners",
+          "docs/v2.0.0/listeners/keylistener"
+        ],
         "body": "---\r\ntitle: KeyListener\r\n---\r\n\r\nTest KeyListener",
         "frontmatter": {
           "title": "KeyListener"
         }
       },
       "MouseListener": {
+        "slugs": [
+          "docs/listeners/mouselistener",
+          "docs/v2.0.0/listeners/mouselistener"
+        ],
         "body": "---\r\ntitle: MouseListener\r\n---\r\n\r\nTeste MouseListener",
         "frontmatter": {
           "title": "MouseListener"
         }
       },
       "TouchListener": {
+        "slugs": [
+          "docs/listeners/touchlistener",
+          "docs/v2.0.0/listeners/touchlistener"
+        ],
         "body": "---\r\ntitle: TouchListener\r\n---\r\n\r\nTest TouchListener",
         "frontmatter": {
           "title": "TouchListener"

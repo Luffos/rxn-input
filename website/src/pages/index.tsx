@@ -28,7 +28,7 @@ const Home: NextPage = () => {
           {showSection1 && (
             <Section1>
               <Section1Background />
-              <div style={{ position: 'relative', zIndex:0 }}>
+              <div style={{ position: 'relative', zIndex: 0 }}>
                 <Section1Content>
                   <div>
                     <Title>
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
                   </DevicesWrapper>
                   {downLg && (
                     <Link href={'/docs/getting-started/installation'}>
-                      <a style={{ display: !downLg ? 'none' : 'flex', width: 'fit-content', margin: '0 auto', paddingBottom:`3rem` }}>
+                      <a style={{ display: !downLg ? 'none' : 'flex', width: 'fit-content', margin: '0 auto', paddingBottom: `3rem` }}>
                         <GetStartedButton>Get started</GetStartedButton>
                       </a>
                     </Link>
