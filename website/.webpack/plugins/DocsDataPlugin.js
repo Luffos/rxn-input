@@ -44,6 +44,7 @@ const handleDocFile = (data, version, folder, docPath, contextIndex) => {
     data[version][folder][docFileName] = {
       slugs: generateSlugs(data, version, folder, docPath, docFileName, contextIndex),
       body: body,
+      version: version,
       frontmatter: matter(body).data,
     };
   } catch (error) {

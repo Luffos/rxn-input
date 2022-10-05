@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths } from 'next';
 import Head from 'next/head';
 import React from 'react';
 import Layout, { LayoutContent } from '../../components/Layout';
 import DocsData from '../../content/docs/data.json';
+import getDocBySlug from '../../helpers/getDocBySlug';
 
 export default function Docs({ url, doc }: any) {
   console.log(DocsData);
@@ -26,25 +27,10 @@ export default function Docs({ url, doc }: any) {
 }
 
 export const getStaticProps = async ({ params }: any) => {
-  let doc = {};
-
-  Object.keys(DocsData).forEach((version) => {
-    Object.keys((DocsData as any)[version]).forEach((folder) => {
-      Object.keys((DocsData as any)[version][folder]).forEach((docName) => {
-        (DocsData as any)[version][folder][docName].slugs.map((slug: string, index: number) => {
-          if ((slug.split('docs/').pop() == undefined && params?.slug == undefined) || Array.from(params?.slug || []).join(`/`) == slug.split('docs/').pop()) {
-            doc = (DocsData as any)[version][folder][docName];
-            console.log(index, (doc as any).slugs?.length);
-          }
-        });
-      });
-    });
-  });
-
   return {
     props: {
       url: params?.slug ? Array.from(params.slug).join('/') : '/',
-      doc: doc,
+      doc: getDocBySlug(params?.slug),
     },
   };
 };
