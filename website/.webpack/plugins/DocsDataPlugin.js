@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const glob = require('glob');
-var chokidar = require('chokidar');
+const chokidar = require('chokidar');
 const { v4: uuidv4 } = require('uuid');
 const matter = require('gray-matter');
 
