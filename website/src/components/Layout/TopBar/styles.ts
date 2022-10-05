@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import BreakPoints from '../../../styles/theme/BreakPoints';
 import Colors from '../../../styles/theme/Colors';
 import Sizes from '../../../styles/theme/Sizes';
+import zIndex from '../../../styles/theme/zIndex';
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -10,10 +11,11 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  z-index: ${zIndex.TopBar-1};
   width: 100%;
 
   &[data-scrolled='true'] {
-    background: linear-gradient(#0b091f 0%, rgba(8, 6, 31, 0.9) 100%);
+    background: linear-gradient(#0b091f 0%, rgba(8, 6, 31, 0.4) 100%);
     transition: background 0.2s ease-in-out;
     backdrop-filter: blur(0.3rem);
     border-bottom: solid rgba(255, 255, 255, 0.01) 1px;
@@ -26,6 +28,8 @@ export const InnerWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
+  position: relative;
+  z-index: ${zIndex.TopBar};
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
