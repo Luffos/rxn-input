@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import DocsData from '../content/docs/data.json';
 
-const getDocBySlug = (s: string | undefined) => {
+const getDocBySlug = (DocsData: object, s: string | undefined) => {
   let doc = {};
 
   Object.keys(DocsData).forEach((version) => {
