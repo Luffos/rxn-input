@@ -9,21 +9,25 @@ const nextConfig = {
   swcMinify: true,
 
   webpack: (config, { isServer }) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'styled-components': path.resolve('./node_modules/styled-components'),
+    };
 
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
-    })
+    });
 
     config.plugins.push(new DocsDataPlugin());
 
-    return config
+    return config;
   },
 
   eslint: {
     ignoreDuringBuilds: true,
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
