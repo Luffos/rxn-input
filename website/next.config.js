@@ -3,10 +3,17 @@
 var path = require('path');
 var DocsDataPlugin = require('./scripts/.webpack/plugins/DocsDataPlugin');
 
+const isProd = process.env.NODE_ENV === 'production'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  assetPrefix: isProd ? '/rxn-input/' : '',
   reactStrictMode: true,
   swcMinify: true,
+
+  images: {
+    unoptimized: true,
+  },
 
   webpack: (config, { isServer }) => {
     config.resolve.alias = {
