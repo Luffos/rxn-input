@@ -4,12 +4,13 @@ import { GetStaticPaths } from 'next';
 import Head from 'next/head';
 import React from 'react';
 import Layout, { LayoutContent } from '../../components/Layout';
-import DocsData from '../../content/docs/data.json';
 import getDocBySlug from '../../helpers/getDocBySlug';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import MdxComponents from '../../components/MdxComponents';
 import DocsNavigator from '../../components/DocsNavigator';
+
+import DocsData from '../../content/docs/data.json';
 
 export default function Docs({ url, doc, source }: any) {
   return (
@@ -46,8 +47,6 @@ export const getStaticProps = async ({ params }: any) => {
 
 export const getStaticPaths: GetStaticPaths<{ slug: Array<string> | undefined }> = async () => {
   const paths: Array<{ params: { slug: Array<string> | undefined } }> = [];
-
-  console.log(DocsData);
 
   Object.keys(DocsData).forEach((version) => {
     Object.keys((DocsData as any)[version]).forEach((folder) => {

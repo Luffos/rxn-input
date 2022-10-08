@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-var-requires */
 var path = require('path');
-var DocsDataPlugin = require('./.webpack/plugins/DocsDataPlugin');
+var DocsDataPlugin = require('./scripts/.webpack/plugins/DocsDataPlugin');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

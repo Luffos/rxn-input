@@ -5,9 +5,13 @@
   "homepage": "https://luffos.github.io/rxn-input/",
   "description": "RXNInput Official Website",
   "scripts": {
+    "predev": "node ./scripts/preGenFiles.js",
     "dev": "next dev",
+    "prebuild": "node ./scripts/preGenFiles.js",
     "build": "next build && next export",
+    "prestart": "node ./scripts/preGenFiles.js",
     "start": "next start",
+    "prelint": "node ./scripts/preGenFiles.js",
     "lint": "next lint"
   },
   "dependencies": {

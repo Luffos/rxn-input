@@ -33,6 +33,10 @@ class DocsDataPlugin {
       callback();
     });
   }
+
+  preBuild(){
+    buildData()
+  }
 }
 
 const handleDocFile = (data, version, folder, docPath, contextIndex) => {
@@ -74,8 +78,6 @@ const buildData = () => {
       }
     });
   });
-
-  console.log(data);
 
   if (lastBuildHash !== buildHash) return;
 
