@@ -75,7 +75,7 @@ const buildData = () => {
     });
   });
 
-  //console.log(data);
+  console.log(data);
 
   if (lastBuildHash !== buildHash) return;
 
