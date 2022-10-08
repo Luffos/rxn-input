@@ -80,7 +80,6 @@ const buildData = () => {
   if (lastBuildHash !== buildHash) return;
 
   fs.writeFileSync(`${docsPath}/data.json`, JSON.stringify(data, null, 2), 'utf-8');
-  console.log(`build data`);
 };
 
 const generateSlugs = (data, version, folder, docPath, docFileName, contextIndex) => {

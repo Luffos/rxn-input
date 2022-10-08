@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { GetStaticPaths } from 'next';
 import Head from 'next/head';
@@ -7,10 +8,10 @@ import DocsData from '../../content/docs/data.json';
 import getDocBySlug from '../../helpers/getDocBySlug';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import MdxComponents from '../../components/MdxComponents';
+import DocsNavigator from '../../components/DocsNavigator';
 
 export default function Docs({ url, doc, source }: any) {
-  console.log(doc);
-
   return (
     <>
       <Head>
@@ -18,10 +19,13 @@ export default function Docs({ url, doc, source }: any) {
       </Head>
 
       <Layout SelectedPage={'DOCS'}>
-        <LayoutContent style={{ marginTop: `6rem` }}>
-          <h1>{url}</h1>
-          <MDXRemote {...source} />
-        </LayoutContent>
+        <>
+          <DocsNavigator />
+          <LayoutContent style={{ marginTop: `6rem` }}>
+            <h1>{doc.frontmatter.title}</h1>
+            <MDXRemote components={MdxComponents} {...source} />
+          </LayoutContent>
+        </>
       </Layout>
     </>
   );
