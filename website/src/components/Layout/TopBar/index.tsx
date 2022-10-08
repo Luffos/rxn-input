@@ -1,71 +1,69 @@
-import React, {memo, useEffect} from 'react';
-import {Link} from 'gatsby';
-import useMediaQuery from '../../../hooks/useMediaQuery';
-import BreakPoints from '../../../styles/ts/BreakPoints';
-import {LeftItems, MobileKebab, RightItems, TopBarBase, TopBarWrapper, TopBarContent} from './styled';
-import Logo from '../../../assets/Logo.svg';
+import Link from 'next/link';
+import React, { memo, useState } from 'react';
+import LogoSVG from '../../../assets/Logo.svg';
 import GitHubSVG from '../../../assets/github-icon.svg';
 import KebabSVG from '../../../assets/kebab-icon.svg';
+import { ContentWrapper, InnerWrapper, MobileKebab, RItems, Wrapper } from './styles';
+import useMediaQuery from '../../../hooks/useMediaQuery';
+import BreakPoints from '../../../styles/theme/BreakPoints';
+import useEffectOnce from '../../../hooks/useEffectOnce';
 import iSelectedPage from '../../../interfaces/SelectedPage';
-import MediaQueries from '../../../styles/ts/MediaQueries';
 import useScrollPosition from '../../../hooks/useScrollPosition';
 
 interface iProps {
   SelectedPage?: iSelectedPage;
   setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  MobileExtraTopBar?: JSX.Element;
 }
 
-const TopBar = ({SelectedPage, setMobileMenuOpen, MobileExtraTopBar}: iProps) => {
+const TopBar = ({ SelectedPage, setMobileMenuOpen }: iProps) => {
+  const [canShowKebab, setCanShowKebab] = useState(false);
+  const showKebab = useMediaQuery(BreakPoints.down('md'));
   const scrollPosition = useScrollPosition();
-  const isDesktop = useMediaQuery(MediaQueries.isDesktop);
+
+  useEffectOnce(() => {
+    setCanShowKebab(true);
+  });
 
   return (
-    <TopBarWrapper data-scrolled={scrollPosition < 60 ? undefined : true}>
-      <TopBarBase>
-        <TopBarContent style={{paddingTop: '0.4rem', paddingBottom: '0.4rem'}}>
-          <LeftItems>
-            <Link className={'logoWrapper'} to={'/'}>
-              <Logo />
-            </Link>
-          </LeftItems>
+    <Wrapper data-scrolled={scrollPosition < 20 ? undefined : true}>
+      <InnerWrapper>
+        <ContentWrapper>
+          <Link href={'/'}>
+            <a className={'logoWrapper'}>
+              <LogoSVG viewBox="0 0 247 54" />
+            </a>
+          </Link>
 
-          <RightItems>
-            {isDesktop && (
-              <ul>
-                <li>
-                  <Link data-currentpage={SelectedPage === 'DOCS'} to={`/docs`}>
-                    <p>DOCUMENTATION</p>
-                  </Link>
-                </li>
-                <li>
-                  <Link data-currentpage={SelectedPage === 'EXAMPLES'} to={`/examples`}>
-                    <p>EXAMPLES</p>
-                  </Link>
-                </li>
-                <li>
-                  <a className="gitHub" href="https://github.com/Luffos/rxn-input">
-                    <GitHubSVG />
-                  </a>
-                </li>
-              </ul>
-            )}
+          <RItems>
+            <li>
+              <Link href={`/docs`}>
+                <a data-currentpage={SelectedPage === 'DOCS'}>
+                  <p>DOCUMENTATION</p>
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href={`/examples`}>
+                <a data-currentpage={SelectedPage === 'EXAMPLES'}>
+                  <p>EXAMPLES</p>
+                </a>
+              </Link>
+            </li>
+            <li>
+              <a className="gitHubWrapper" href="https://github.com/Luffos/rxn-input">
+                <GitHubSVG />
+              </a>
+            </li>
+          </RItems>
 
-            {!isDesktop && (
-              <MobileKebab onClick={() => setMobileMenuOpen(true)}>
-                <KebabSVG height={22} />
-              </MobileKebab>
-            )}
-          </RightItems>
-        </TopBarContent>
-      </TopBarBase>
-
-      {/* {MobileExtraTopBar && !isDesktop && (
-        <TopBarBase>
-          <TopBarContent style={{paddingTop: 0, paddingBottom: 0}}>{MobileExtraTopBar}</TopBarContent>
-        </TopBarBase>
-      )} */}
-    </TopBarWrapper>
+          {canShowKebab && showKebab && (
+            <MobileKebab onClick={() => setMobileMenuOpen(true)}>
+              <KebabSVG />
+            </MobileKebab>
+          )}
+        </ContentWrapper>
+      </InnerWrapper>
+    </Wrapper>
   );
 };
 

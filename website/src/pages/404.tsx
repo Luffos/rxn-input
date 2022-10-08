@@ -1,15 +1,22 @@
-import React from 'react';
-import type {HeadFC} from 'gatsby';
-import Layout from '../components/Layout';
+/* eslint-disable @next/next/no-document-import-in-page */
+import { NextPage } from 'next';
+import Head from 'next/head';
+import Layout, { LayoutContent } from '../components/Layout';
 
-const NotFoundPage = () => {
+const Page404: NextPage = () => {
   return (
     <>
-      <Layout SelectedPage={'NOT_FOUND'}></Layout>
+      <Head>
+        <title>Page Not Found | RXN Input</title>
+      </Head>
+
+      <Layout>
+        <LayoutContent style={{ marginTop: `9rem` }}>
+          <h1 style={{ fontSize: `3rem` }}>Page Not Found</h1>
+        </LayoutContent>
+      </Layout>
     </>
   );
 };
 
-export default NotFoundPage;
-
-export const Head: HeadFC = () => <title>RXN Input - Documentation</title>;
+export default Page404;

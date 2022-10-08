@@ -1,37 +1,26 @@
-import React, {memo, useState} from 'react';
-import {useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import iSelectedPage from '../../interfaces/SelectedPage';
-import BreakPoints from '../../styles/ts/BreakPoints';
-import MediaQueries from '../../styles/ts/MediaQueries';
+import BreakPoints from '../../styles/theme/BreakPoints';
 import MobileMenu from './MobileMenu';
 import TopBar from './TopBar';
 
 interface iProps {
-  children?: any;
+  children?: JSX.Element;
   SelectedPage?: iSelectedPage;
-  MobileExtraTopBar?: JSX.Element;
 }
 
-const Layout = ({children, SelectedPage, MobileExtraTopBar}: iProps) => {
-  const isDesktop = useMediaQuery(MediaQueries.isDesktop);
-
+const Layout = ({children, SelectedPage}: iProps) => {
+  const isDesktop = useMediaQuery(BreakPoints.up('sm'));
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const childrenStyle: React.CSSProperties = {
-    
-    color: 'white',
-    width: '100%',
-    maxWidth: BreakPoints.maxWide,
-    paddingLeft: isDesktop ? '2rem' : '1rem',
-    paddingRight: isDesktop ? '2rem' : '1rem'
-  };
-
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.documentElement.style.overflow = 'hidden';
-    } else {
-      document.documentElement.style.overflow = 'auto';
+    if (typeof window !== 'undefined') {
+      if (mobileMenuOpen) {
+        document.documentElement.style.overflow = 'hidden';
+      } else {
+        document.documentElement.style.overflow = 'auto';
+      }
     }
   }, [mobileMenuOpen]);
 
@@ -43,13 +32,18 @@ const Layout = ({children, SelectedPage, MobileExtraTopBar}: iProps) => {
 
   return (
     <>
-      <TopBar setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} MobileExtraTopBar={MobileExtraTopBar} />
-      {mobileMenuOpen === true && <MobileMenu setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} />}
-      <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
-        <div style={childrenStyle}>{children}</div>
-      </div>
+      {mobileMenuOpen && (
+        <MobileMenu
+          setMobileMenuOpen={setMobileMenuOpen}
+          SelectedPage={SelectedPage}
+        />
+      )}
+      <TopBar setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} />
+      {children}
     </>
   );
 };
 
-export default memo(Layout);
+export {LayoutContent} from './styles';
+
+export default Layout;

@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react';
 
 function useMediaQuery(query: string): boolean {
+  query = query.replaceAll('@media', '').trim();
+
   const getMatches = (query: string): boolean => {
     // Prevents SSR issues
     if (typeof window !== 'undefined') {
@@ -16,6 +18,10 @@ function useMediaQuery(query: string): boolean {
   }
 
   useEffect(() => {
+    if (typeof window == 'undefined') {
+      return;
+    }
+
     const matchMedia = window.matchMedia(query);
 
     // Triggered at the first client-side load and if query changes

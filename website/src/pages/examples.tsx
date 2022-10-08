@@ -1,15 +1,14 @@
-import React from 'react';
-import type {HeadFC} from 'gatsby';
-import Layout from '../components/Layout';
+import type {NextPage} from 'next';
+import Layout, {LayoutContent} from '../components/Layout';
 
-const ExamplesPage = () => {
+const Examples: NextPage = () => {
   return (
-    <>
-      <Layout SelectedPage={'EXAMPLES'}></Layout>
-    </>
+    <Layout SelectedPage='EXAMPLES'>
+      <LayoutContent style={{marginTop: `8rem`}}>
+        <></>
+      </LayoutContent>
+    </Layout>
   );
 };
 
-export default ExamplesPage;
-
-export const Head: HeadFC = () => <title>RXN Input - Examples</title>;
+export default Examples;

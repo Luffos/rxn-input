@@ -1,17 +1,18 @@
-import React, {memo, useEffect} from 'react';
-import {MobileMenuBackground, MobileMenuBox, MobileMenuWrapper} from './styled';
+import React, { memo } from 'react';
+import { MobileMenuBackground, MobileMenuBox, MobileMenuWrapper } from './styles';
 import CloseSVG from '../../../assets/close-icon.svg';
-import {FadeIn, SlideInRight, SlideInLeft, SlideInUp} from 'react-animated-components';
-import {Link} from 'gatsby';
+import Link from 'next/link';
 import GitHubSVG from '../../../assets/github-icon.svg';
+import { FadeIn } from 'react-animated-components';
 import iSelectedPage from '../../../interfaces/SelectedPage';
+//import iSelectedPage from '../../../interfaces/SelectedPage';
 
 interface iProps {
   SelectedPage?: iSelectedPage;
   setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const MobileMenu = ({SelectedPage, setMobileMenuOpen}: iProps) => {
+const MobileMenu = ({ SelectedPage, setMobileMenuOpen }: iProps) => {
   return (
     <MobileMenuWrapper>
       <FadeIn durationMs={50}>
@@ -23,13 +24,17 @@ const MobileMenu = ({SelectedPage, setMobileMenuOpen}: iProps) => {
         </div>
         <ul>
           <li>
-            <Link data-currentpage={SelectedPage === 'DOCS'} to={`/docs`}>
-              <p>Documentation</p>
+            <Link href={`/docs`}>
+              <a data-currentpage={SelectedPage === 'DOCS'}>
+                <p>Documentation</p>
+              </a>
             </Link>
           </li>
           <li>
-            <Link data-currentpage={SelectedPage === 'EXAMPLES'} to={`/examples`}>
-              <p>Examples</p>
+            <Link href={`/examples`}>
+              <a data-currentpage={SelectedPage === 'EXAMPLES'}>
+                <p>Examples</p>
+              </a>
             </Link>
           </li>
           <li>

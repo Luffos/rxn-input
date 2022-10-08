@@ -1,6 +1,10 @@
 import styled from 'styled-components';
+import BreakPoints from '../../../styles/theme/BreakPoints';
+import Colors from '../../../styles/theme/Colors';
 
 export const MobileMenuWrapper = styled.div`
+  display: none;
+
   position: fixed;
   z-index: 99905;
   overflow: hidden;
@@ -8,6 +12,10 @@ export const MobileMenuWrapper = styled.div`
   height: 100%;
   top: 0;
   left: 0;
+
+  ${BreakPoints.down('md')} {
+    display: block;
+  }
 `;
 
 export const MobileMenuBackground = styled.div`
@@ -18,7 +26,11 @@ export const MobileMenuBackground = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(1, 10, 43, 0.3) 0%, rgba(7, 3, 34, 0.2) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(1, 10, 43, 0.3) 0%,
+    rgba(7, 3, 34, 0.2) 100%
+  );
   backdrop-filter: blur(2px);
 `;
 
@@ -34,7 +46,6 @@ export const MobileMenuBox = styled.div`
   backdrop-filter: blur(10px);
   border: 2px solid rgba(148, 163, 184, 0.12);
   border-radius: 24px 0px 24px 12px;
-
   & .closeWrapper {
     cursor: pointer;
     display: flex;
@@ -46,16 +57,13 @@ export const MobileMenuBox = styled.div`
     margin-right: 8px;
     margin-top: 18px;
     margin-left: auto;
-
     & > svg > path {
       transition: fill 0.1s ease-in-out;
     }
-
     &:hover > svg > path {
-      fill: #d9e8fb;
+      fill: ${Colors.CLOUDLESS};
     }
   }
-
   & > ul {
     width: 100%;
     margin: 0;
@@ -63,63 +71,52 @@ export const MobileMenuBox = styled.div`
     padding: 0;
     list-style: none;
     text-align: center;
-
     & > li {
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-
       & > a:hover {
         & > p {
           color: white;
         }
-
         & > svg > path {
           fill: white;
         }
       }
-
       & > a:not(.github):hover {
         & > p {
-          color: #1cb0fa;
+          color: ${Colors.ZIMABLUE};
         }
-
         & > svg > path {
-          fill: #1cb0fa;
+          fill: ${Colors.ZIMABLUE};
         }
       }
-
       & > a {
         width: fit-content;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
-
         &[data-currentpage='true'] {
           & > p {
-            color: #1cb0fa;
+            color: ${Colors.ZIMABLUE};
           }
         }
-
         & > p {
           user-select: none;
           font-size: 16px;
           letter-spacing: 0.01rem;
           display: inline;
-          color: #94a3b8;
+          color: ${Colors.BLUEBLOUSE};
           font-weight: 600;
-
           transition: color 0.1s ease-in-out;
         }
-
         & > svg {
           margin-left: 8px;
           width: 22px;
           height: 22px;
-
           & > path {
             transition: fill 0.1s ease-in-out;
           }
