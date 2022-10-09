@@ -7,8 +7,8 @@ const isProd = process.env.NODE_ENV === 'production'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath:  isProd ? '/rxn-input' : '',
-  assetPrefix: isProd ? '/rxn-input/' : '',
+  basePath:  isProd ? '/rxn-input' : undefined,
+  assetPrefix: isProd ? '/rxn-input/' : undefined,
   reactStrictMode: true,
   swcMinify: true,
 
