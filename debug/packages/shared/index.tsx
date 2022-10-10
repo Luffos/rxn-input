@@ -5,9 +5,19 @@ import { Text, StatusBar, View } from 'react-native';
 import { KeyEvent, KeyListener } from '../../../src/index';
 
 const App = () => {
-  KeyListener.addListener('keydown', (e) => {
-    console.log(e);
-  });
+  useEffect(() => {
+    KeyListener.addListener('keydown', (e) => {
+      console.log('keydown', e);
+    });
+
+    KeyListener.addListener('keyup', (e) => {
+      console.log('keyup', e);
+    });
+
+    return () => {
+      KeyListener.clearAllListeners();
+    };
+  }, []);
 
   return (
     <View

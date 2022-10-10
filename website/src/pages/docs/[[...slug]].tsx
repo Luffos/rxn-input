@@ -9,6 +9,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import MdxComponents from '../../components/MdxComponents';
 import DocsNavigator from '../../components/DocsNavigator';
+import remarkGfm from 'remark-gfm';
 
 import DocsData from '../../content/docs/data.json';
 import useMediaQuery from '../../hooks/useMediaQuery';
@@ -48,7 +49,7 @@ export default function Docs({ url, doc, source }: any) {
 
 export const getStaticProps = async ({ params }: any) => {
   const doc = getDocBySlug(DocsData, params?.slug) as any;
-  const mdxSource = await serialize(doc?.body, { parseFrontmatter: true });
+  const mdxSource = await serialize(doc?.body, { parseFrontmatter: true, mdxOptions: { remarkPlugins: [remarkGfm] } });
 
   return {
     props: {
