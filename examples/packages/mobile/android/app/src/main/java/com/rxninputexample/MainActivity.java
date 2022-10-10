@@ -19,7 +19,7 @@ public class MainActivity extends ReactActivity {
   @Override
   public boolean onKeyUp(int keyCode, KeyEvent event) {
     RXNInputModule.onKeyUpEvent(keyCode, event);
-    super.onKeyDown(keyCode, event);
+    super.onKeyUp(keyCode, event);
     return true;
   }
 
