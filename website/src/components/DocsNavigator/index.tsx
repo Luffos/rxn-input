@@ -22,7 +22,7 @@ const DocsNavigator = () => {
 
   const isCurrentDoc = useCallback(
     (slugs: Array<string>) => {
-      return slugs.find((i: any) => i.split('docs/').pop() == router.asPath.split('docs/').pop()) ? true : false;
+      return slugs.find((i: any) => i.split('docs/').pop().split('/docs').pop() == router.asPath?.split('docs/').pop()?.split('/docs').pop()) ? true : false;
     },
     [router]
   );

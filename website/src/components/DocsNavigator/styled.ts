@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import Colors from '../../styles/theme/Colors';
 
 export const MainUl = styled.ul`
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+  list-style: none;
+
   & > p {
     display: inline-block;
     margin-left: 0.5rem;
@@ -9,11 +14,6 @@ export const MainUl = styled.ul`
     font-size: 1.2rem;
     font-weight: 800;
   }
-
-  margin: 0;
-  padding: 0;
-  margin-bottom: 2rem;
-  list-style: none;
 
   &[data-navclosed] {
     & > li {
