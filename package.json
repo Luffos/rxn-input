@@ -52,7 +52,7 @@
     "react-native": "0.68.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.10",
+    "@babel/core": "^7.19.3",
     "@babel/runtime": "^7.19.0",
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^29.0.3",
