@@ -22,8 +22,8 @@ export const Code = styled.div`
   min-width: 25rem;
   padding-bottom: 1rem;
   padding-top: 1rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   background-color: rgba(0, 0, 0, 0.2);

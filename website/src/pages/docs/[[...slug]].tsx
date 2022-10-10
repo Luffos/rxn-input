@@ -27,7 +27,7 @@ export default function Docs({ url, doc, source }: any) {
         <LayoutContent style={{ marginTop: `7.5rem` }}>
           {!isMobile && (
             <div style={{position: `fixed`, width: `16rem`, height: `80vh` }}>
-              <DocsNavigator DocsData={DocsData} />
+              <DocsNavigator />
             </div>
           )}
           <div style={{ position: 'absolute', marginLeft: isMobile ? undefined : `16rem`, paddingLeft: isMobile ? undefined : '2rem' }}>

@@ -24,7 +24,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Layout>
-        <LayoutContent style={{ marginTop: `9rem` }}>
+        <LayoutContent style={{ marginTop: `9.5rem` }}>
           {showSection1 && (
             <Section1>
               <Section1Background />

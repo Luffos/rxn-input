@@ -2,14 +2,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { memo } from 'react';
 import Colors from '../../styles/theme/Colors';
+import { MainUl } from './styled';
+import Link from 'next/link';
 
-interface iProps {
-  DocsData: object;
-}
+import DocsData from '../../content/docs/data.json';
 
-const DocsNavigator = ({ DocsData }: iProps) => {
+const DocsNavigator = () => {
   return (
-    <div style={{ width: `100%`, height: `98%`, overflowY:'scroll'}}>
+    <div style={{ width: `100%`, height: `98%`, overflowY: 'scroll' }}>
       {(() => {
         const d: Array<JSX.Element> = [];
         Object.keys(DocsData).forEach((version) => {
@@ -17,17 +17,26 @@ const DocsNavigator = ({ DocsData }: iProps) => {
 
           Object.keys((DocsData as any)[version]).map((folder, index) => {
             d.push(
-              <ul key={`${version}-${folder}`} style={{ margin: 0, padding: 0, marginBottom: `2rem`, listStyle: 'none' }}>
-                <p style={{ marginLeft: '0.5rem', marginTop:'0.75rem', fontSize: '1.2rem', fontWeight: 800 }}>{folder}</p>
+              <MainUl key={`${version}-${folder}`}>
+                <p
+                  onClick={(e) => {
+                    e.currentTarget.parentElement?.toggleAttribute('data-navclosed');
+                  }}
+                  style={{ marginLeft: '0.5rem', marginTop: '0.75rem', fontSize: '1.2rem', fontWeight: 800 }}
+                >
+                  {folder}
+                </p>
 
                 {Object.keys((DocsData as any)[version][folder]).map((docName, index) => {
                   return (
                     <li key={`${version}-${folder}-${docName}`}>
-                      <p style={{ margin: 0, marginLeft: '0.5rem', fontSize: '0.95rem', color: Colors.BLUEBLOUSE }}>{docName}</p>
+                      <Link href="#">
+                        <a style={{ margin: 0, marginLeft: '0.5rem', fontSize: '0.95rem', color: Colors.BLUEBLOUSE }}>{docName}</a>
+                      </Link>
                     </li>
                   );
                 })}
-              </ul>
+              </MainUl>
             );
           });
         });
