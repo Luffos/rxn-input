@@ -38,7 +38,7 @@ export interface iInputVariables {
    * @event MouseListener.on('changeMousePosition')
    * @returns object
    */
-  mousePosition: {x: number; y: number};
+  mousePosition: { x: number; y: number };
 }
 
 type iInput = iInputFunctions & iInputVariables;

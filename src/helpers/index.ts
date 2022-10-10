@@ -1,1 +1,1 @@
-import dispatchClick from "./dispatchClick";
+export * from './dispatchClick';

@@ -34,4 +34,4 @@ enum AndroidKeyCodeString {
   POUND = 'POUND',
 }
 
-export {AndroidKeyCode, AndroidKeyCodeString};
+export { AndroidKeyCode, AndroidKeyCodeString };
