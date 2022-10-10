@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import iSelectedPage from '../../interfaces/SelectedPage';
 import BreakPoints from '../../styles/theme/BreakPoints';
@@ -10,7 +10,7 @@ interface iProps {
   SelectedPage?: iSelectedPage;
 }
 
-const Layout = ({children, SelectedPage}: iProps) => {
+const Layout = ({ children, SelectedPage }: iProps) => {
   const isDesktop = useMediaQuery(BreakPoints.up('sm'));
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -32,18 +32,13 @@ const Layout = ({children, SelectedPage}: iProps) => {
 
   return (
     <>
-      {mobileMenuOpen && (
-        <MobileMenu
-          setMobileMenuOpen={setMobileMenuOpen}
-          SelectedPage={SelectedPage}
-        />
-      )}
+      {mobileMenuOpen && <MobileMenu setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} />}
       <TopBar setMobileMenuOpen={setMobileMenuOpen} SelectedPage={SelectedPage} />
       {children}
     </>
   );
 };
 
-export {LayoutContent} from './styles';
+export { LayoutContent } from './styles';
 
 export default Layout;
