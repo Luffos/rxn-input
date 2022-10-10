@@ -16,21 +16,21 @@ updates:
       interval: "weekly"        
 
   - package-ecosystem: "npm"
-    directory: "examples/"
+    directory: "debug/"
     schedule:
       interval: "weekly"      
 
   - package-ecosystem: "npm"
-    directory: "examples/packages/mobile"
+    directory: "debug/packages/mobile"
     schedule:
       interval: "weekly"     
 
   - package-ecosystem: "npm"
-    directory: "examples/packages/shared"
+    directory: "debug/packages/shared"
     schedule:
       interval: "weekly"         
 
   - package-ecosystem: "npm"
-    directory: "examples/packages/web"
+    directory: "debug/packages/web"
     schedule:
       interval: "weekly"     

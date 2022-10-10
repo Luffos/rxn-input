@@ -27,11 +27,11 @@
   ],
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "mobile:android": "cd ./examples/packages/mobile & yarn android",
-    "mobile:ios": "cd ./examples/packages/mobile & yarn ios",
-    "mobile:start": "cd ./examples/packages/mobile & yarn start",
+    "mobile:android": "cd ./debug/packages/mobile & yarn android",
+    "mobile:ios": "cd ./debug/packages/mobile & yarn ios",
+    "mobile:start": "cd ./debug/packages/mobile & yarn start",
     "test": "jest",
-    "web:start": "cd ./examples/packages/web & yarn start"
+    "web:start": "cd ./debug/packages/web & yarn start"
   },
   "jest": {
     "moduleFileExtensions": [
