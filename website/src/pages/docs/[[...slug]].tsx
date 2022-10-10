@@ -11,8 +11,12 @@ import MdxComponents from '../../components/MdxComponents';
 import DocsNavigator from '../../components/DocsNavigator';
 
 import DocsData from '../../content/docs/data.json';
+import useMediaQuery from '../../hooks/useMediaQuery';
+import BreakPoints from '../../styles/theme/BreakPoints';
 
 export default function Docs({ url, doc, source }: any) {
+  const isMobile = useMediaQuery(BreakPoints.down('md'));
+
   return (
     <>
       <Head>
@@ -20,12 +24,16 @@ export default function Docs({ url, doc, source }: any) {
       </Head>
 
       <Layout SelectedPage={'DOCS'}>
-        <LayoutContent style={{ marginTop: `6rem` }}>
-          <DocsNavigator DocsData={DocsData} />
-          <>
-            <h1>{doc.frontmatter.title}</h1>
+        <LayoutContent style={{ marginTop: `7.5rem` }}>
+          {!isMobile && (
+            <div style={{position: `fixed`, width: `15rem`, height: `80vh` }}>
+              <DocsNavigator DocsData={DocsData} />
+            </div>
+          )}
+          <div style={{ position: 'absolute', marginLeft: isMobile ? undefined : `15rem`, paddingLeft: isMobile ? undefined : '2rem' }}>
+            <h1 style={{ fontSize: '3.2rem', marginTop: 0 }}>{doc.frontmatter.title}</h1>
             <MDXRemote components={MdxComponents} {...source} />
-          </>
+          </div>
         </LayoutContent>
       </Layout>
     </>
@@ -51,7 +59,7 @@ export const getStaticPaths: GetStaticPaths<{ slug: Array<string> | undefined }>
   Object.keys(DocsData).forEach((version) => {
     Object.keys((DocsData as any)[version]).forEach((folder) => {
       Object.keys((DocsData as any)[version][folder]).forEach((docName) => {
-        (DocsData as any)[version][folder][docName].slugs.map((slug: string) => {
+        (DocsData as any)[version][folder][docName].slugs.forEach((slug: string) => {
           paths.push({ params: { slug: slug.split('/').slice(1)[0] == '' ? undefined : slug.split('/').slice(1) } });
         });
       });

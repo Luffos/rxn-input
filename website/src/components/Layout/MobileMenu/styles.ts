@@ -6,7 +6,7 @@ export const MobileMenuWrapper = styled.div`
   display: none;
 
   position: fixed;
-  z-index: 99905;
+  z-index: 9999905;
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -20,7 +20,7 @@ export const MobileMenuWrapper = styled.div`
 
 export const MobileMenuBackground = styled.div`
   position: fixed;
-  z-index: 99903;
+  z-index: 9999903;
   flex: 1;
   top: 0;
   left: 0;
@@ -36,7 +36,7 @@ export const MobileMenuBackground = styled.div`
 
 export const MobileMenuBox = styled.div`
   position: fixed;
-  z-index: 99904;
+  z-index: 9999904;
   color: white;
   width: 200px;
   height: 250px;
