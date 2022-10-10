@@ -20,13 +20,13 @@ export default function Docs({ url, doc, source }: any) {
       </Head>
 
       <Layout SelectedPage={'DOCS'}>
-        <>
-          <DocsNavigator />
-          <LayoutContent style={{ marginTop: `6rem` }}>
+        <LayoutContent style={{ marginTop: `6rem` }}>
+          <DocsNavigator DocsData={DocsData} />
+          <>
             <h1>{doc.frontmatter.title}</h1>
             <MDXRemote components={MdxComponents} {...source} />
-          </LayoutContent>
-        </>
+          </>
+        </LayoutContent>
       </Layout>
     </>
   );

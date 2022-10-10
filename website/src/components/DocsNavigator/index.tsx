@@ -1,6 +1,13 @@
 import { memo } from 'react';
 
-const DocsNavigator = () => {
+interface iProps {
+  DocsData: object;
+}
+
+const DocsNavigator = ({ DocsData }: iProps) => {
+
+  console.log(DocsData)
+
   return <></>;
 };
 
