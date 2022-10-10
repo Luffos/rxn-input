@@ -45,7 +45,7 @@ yarn add rxn-input
      <td align="center"><img width="46" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfnunL1fJZICp_7tCdH7lqBZ6K8CXgBGFu4Q&usqp=CAU"/><br/>IOS</td>
   </tr>
   <tr>
-    <td align="center"><a href="http://localhost:3000/docs/getting-started/setup-android">See instructions here</a></td>
+    <td align="center"><a href="https://luffos.github.io/rxn-input/docs/getting-started/setup-android">See instructions here</a></td>
     <td align="center">Working on it...</td>
   </tr>
  </table>
