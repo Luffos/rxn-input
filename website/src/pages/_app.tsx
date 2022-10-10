@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <link rel="icon" type="image/ico" href="favicon.ico" />
+        <link rel="icon" type="image/ico" href="/favicon.ico" />
       </Head>
       <Component {...pageProps} />
     </>
