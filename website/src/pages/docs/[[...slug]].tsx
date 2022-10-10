@@ -26,12 +26,18 @@ export default function Docs({ url, doc, source }: any) {
       <Layout SelectedPage={'DOCS'}>
         <LayoutContent style={{ marginTop: `7.5rem` }}>
           {!isMobile && (
-            <div style={{position: `fixed`, width: `16rem`, height: `80vh` }}>
+            <div style={{ position: `fixed`, width: `14rem`, height: `80vh` }}>
               <DocsNavigator />
             </div>
           )}
-          <div style={{ position: 'absolute', marginLeft: isMobile ? undefined : `16rem`, marginRight: isMobile ? undefined : '16rem', paddingLeft: isMobile ? undefined : `3rem`,  }}>
-            <p style={{ fontSize: '3.2rem', marginTop: 0, paddingTop:0, marginBottom:'1rem', fontWeight:'bold' }}>{doc.frontmatter.title}</p>
+          <div
+            style={{
+              position: 'absolute',
+              marginLeft: isMobile ? undefined : `16rem`,
+              marginRight: isMobile ? undefined : '16rem',
+            }}
+          >
+            <p style={{ fontSize: '3.2rem', marginTop: 0, paddingTop: 0, marginBottom: '1rem', fontWeight: 'bold' }}>{doc.frontmatter.title}</p>
             <MDXRemote components={MdxComponents} {...source} />
           </div>
         </LayoutContent>
