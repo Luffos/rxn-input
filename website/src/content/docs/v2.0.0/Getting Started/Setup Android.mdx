@@ -2,10 +2,9 @@
 title: Setup Android
 ---
 
-Once rxn-input is installed, you need to manually add some code lines to get things working as expected on Android.
+Once rxn-input was installed, we will manually make a small change to a single file to ensure everything works as expected on Android. This change will be responsible for passing some events from the application's Main Activity to the library so that events can be listen.
 
-MainActivity.java <br/>( /android/app/src/main/java/.../.../MainActivity.java )
-
+## MainActivity.java
 
 ```diff
 package com.YOUR_APP;
@@ -33,3 +32,5 @@ public class MainActivity extends ReactActivity {
 
   . . .
 ```
+
+OBS: This file is this file is usually located at <code>/android/app/src/main/java/.../.../MainActivity.java</code>

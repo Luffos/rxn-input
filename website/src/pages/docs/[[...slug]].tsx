@@ -30,7 +30,7 @@ export default function Docs({ url, doc, source }: any) {
               <DocsNavigator />
             </div>
           )}
-          <div style={{ position: 'absolute', marginLeft: isMobile ? undefined : `16rem`, paddingLeft: isMobile ? undefined : '2rem' }}>
+          <div style={{ position: 'absolute', marginLeft: isMobile ? undefined : `16rem`, marginRight: isMobile ? undefined : '16rem' }}>
             <p style={{ fontSize: '3.2rem', marginTop: 0, paddingTop:0, marginBottom:'1rem', fontWeight:'bold' }}>{doc.frontmatter.title}</p>
             <MDXRemote components={MdxComponents} {...source} />
           </div>
