@@ -10,9 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/Luffos/rxn-input.git"
   },
-  "main": "index.js",
-  "source": "src/index",
-  "react-native": "src/index",
+  "main": "dist/index.js",
+  "source": "dist/index.js",
+  "react-native": "dist/index.js",
   "files": [
     "src",
     "android",
@@ -26,7 +26,7 @@
     "!**/__mocks__"
   ],
   "scripts": {
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint . --ext .ts,.tsx",
     "mobile:android": "cd ./debug/packages/mobile & yarn android",
     "mobile:ios": "cd ./debug/packages/mobile & yarn ios",
     "mobile:start": "cd ./debug/packages/mobile & yarn start",

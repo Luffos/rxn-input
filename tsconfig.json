@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src/",
+    "outDir": "./dist/",
+    "declaration": true,
     "paths": {
-      "rxn-input": ["./index"]
+      "rxn-input": ["./src/index.ts"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -21,7 +23,9 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
     "strict": true,
     "target": "esnext"
-  }
+  },
+  "include": ["src/"]
 }

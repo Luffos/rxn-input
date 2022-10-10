@@ -3,14 +3,14 @@ import type getAxisRaw from './getAxisRaw';
 import type isMouseButtonDown from './isMouseButtonDown';
 import type isMouseButtonUp from './isMouseButtonUp';
 
-export interface iInputFunctions {
+export interface InputFunctions {
   isMouseButtonDown: typeof isMouseButtonDown;
   isMouseButtonUp: typeof isMouseButtonUp;
   getAxis: typeof getAxis;
   getAxisRaw: typeof getAxisRaw;
 }
 
-export interface iInputVariables {
+export interface InputVariables {
   /**
    * Returns if touch inputs are present, which maybe supported by device but that's not in use at moment.
    *
@@ -41,8 +41,6 @@ export interface iInputVariables {
   mousePosition: { x: number; y: number };
 }
 
-type iInput = iInputFunctions & iInputVariables;
-
-const Input: iInput;
+const Input = {} as InputFunctions & InputVariables;
 
 export default Input;

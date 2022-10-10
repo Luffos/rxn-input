@@ -1,22 +1,18 @@
-import {
-  EmitterSubscription,
-  NativeEventEmitter,
-  NativeModules,
-} from 'react-native';
-import type {iKeyListener} from '.';
-import {ErrorMessages} from '../../ErrorMessages';
+import { EmitterSubscription, NativeEventEmitter, NativeModules } from 'react-native';
+import type { KeyListener as _KeyListener } from '.';
+import { ErrorMessages } from '../../ErrorMessages';
 
 const eventEmitter = new NativeEventEmitter(NativeModules.RXNInput);
 
-window.addEventListener('keydown', e => {
+window.addEventListener('keydown', (e) => {
   eventEmitter.emit('keydown', e);
 });
 
-window.addEventListener('keyup', e => {
+window.addEventListener('keyup', (e) => {
   eventEmitter.emit('keyup', e);
 });
 
-const KeyListener: iKeyListener = {
+const KeyListener: typeof _KeyListener = {
   addListener: (event, callback) => {
     if (event.toLowerCase() === 'keydown' || event.toLowerCase() === 'keyup') {
       return eventEmitter.addListener(event.toLowerCase(), (e: KeyboardEvent) =>
@@ -32,7 +28,7 @@ const KeyListener: iKeyListener = {
           scrollLock: e.getModifierState('ScrollLock'),
           device: undefined,
           original: e,
-        }),
+        })
       );
     }
 
@@ -51,5 +47,4 @@ const KeyListener: iKeyListener = {
 
 const KeyEvent = {};
 
-export {KeyEvent, iKeyListener};
-export default KeyListener;
+export { KeyEvent, KeyListener };
