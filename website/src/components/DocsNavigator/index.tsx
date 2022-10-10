@@ -18,7 +18,7 @@ const DocsNavigator = ({ DocsData }: iProps) => {
           Object.keys((DocsData as any)[version]).map((folder, index) => {
             d.push(
               <ul key={`${version}-${folder}`} style={{ margin: 0, padding: 0, marginBottom: `2rem`, listStyle: 'none' }}>
-                <p style={{ marginLeft: '0.5rem', marginTop:'0.5rem', fontSize: '1.2rem', fontWeight: 800 }}>{folder}</p>
+                <p style={{ marginLeft: '0.5rem', marginTop:'0.75rem', fontSize: '1.2rem', fontWeight: 800 }}>{folder}</p>
 
                 {Object.keys((DocsData as any)[version][folder]).map((docName, index) => {
                   return (
