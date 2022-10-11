@@ -14,6 +14,7 @@ import remarkGfm from 'remark-gfm';
 import DocsData from '../../content/docs/data.json';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import BreakPoints from '../../styles/theme/BreakPoints';
+import Sizes from '../../styles/theme/Sizes';
 
 export default function Docs({ url, doc, source }: any) {
   const isMobile = useMediaQuery(BreakPoints.down('md'));
@@ -33,7 +34,7 @@ export default function Docs({ url, doc, source }: any) {
           )}
           <div
             style={{
-              position: 'absolute',
+              position: isMobile ? undefined : 'absolute',
               marginLeft: isMobile ? undefined : `16rem`,
               marginRight: isMobile ? undefined : '16rem',
             }}

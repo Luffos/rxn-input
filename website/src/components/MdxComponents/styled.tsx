@@ -14,12 +14,14 @@ export const P = styled.p`
   font-size: 1.1rem;
 
   & > code {
+    display: block;
     margin-left: 0.2rem;
     padding: 0.5rem;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 0.4rem;
     color: ${Colors.ZIMABLUE};
     font-size: 0.9rem;
+    overflow: auto;
   }
 `;
 
@@ -41,7 +43,9 @@ export const Code = styled.div`
   border-radius: 0.4rem;
   font-size: 0.9rem;
 
+  overflow: auto;
+
   .inserted-sign {
-    background-color: rgba(0, 200, 0, 0.02);
+    background-color: rgba(0, 200, 0, 0.06);
   }
 `;
