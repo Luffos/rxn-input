@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import BreakPoints from '../../styles/theme/BreakPoints';
 import Colors from '../../styles/theme/Colors';
 
 export const H1 = styled.h1`
@@ -14,14 +15,16 @@ export const P = styled.p`
   font-size: 1.1rem;
 
   & > code {
+    ${BreakPoints.down('md')} {
     display: block;
+    }
     margin-left: 0.2rem;
     padding: 0.5rem;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 0.4rem;
     color: ${Colors.ZIMABLUE};
     font-size: 0.9rem;
-    overflow: auto;
+    overflow: auto !important;
   }
 `;
 
