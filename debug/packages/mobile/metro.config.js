@@ -7,7 +7,7 @@ const {
 
 const {getDefaultConfig} = require('metro-config');
 
-const moduleRoot = path.resolve(__dirname, '../../../..');
+const moduleRoot = path.resolve(__dirname, '../../..');
 
 const monorepoMetroTools = getMetroTools();
 
