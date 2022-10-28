@@ -1,7 +1,7 @@
 <a href="#" align="center">
   <img src="https://user-images.githubusercontent.com/28831375/191027718-1af2dec4-8ad4-489d-b3f6-839aab7d32bf.png">
 </a>
-
+</br></br>
 <p align="center">
   <img height="22px" alt="GitHub" src="https://img.shields.io/github/license/Luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="22px" alt="GitHub issues" src="https://img.shields.io/github/issues-raw/luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="22px" alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/luffos/rxn-input?style=for-the-badge"> ‎ ‎ <img height="22px" alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/luffos/rxn-input/main?style=for-the-badge"> ‎ ‎ <img height="22px" alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/luffos/rxn-input?style=for-the-badge">
 </p>
