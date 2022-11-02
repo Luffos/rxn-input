@@ -12,6 +12,10 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "strict": true
+    "strict": true,
+    "paths": {
+      "rxn-input": ["../src/index.ts"],
+      "rxn-input/*": ["../src/*"]
+    }
   }
 }

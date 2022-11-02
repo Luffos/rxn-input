@@ -2,7 +2,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Text, StatusBar, View } from 'react-native';
 
-import { KeyEvent, KeyListener } from '../../../src/index';
+import { KeyEvent, KeyListener } from 'rxn-input';
 
 const App = () => {
   useEffect(() => {
