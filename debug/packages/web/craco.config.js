@@ -62,6 +62,8 @@ const enableImportsFromExternalPaths = (webpackConfig, paths) => {
   addPathsToModuleScopePlugin(webpackConfig, paths);
 };
 
+const pak = require('../../../package.json');
+
 module.exports = function({
   env
 }) {
@@ -69,7 +71,9 @@ module.exports = function({
     babel: {
       plugins: [
         ["module-resolver", {
+          "extensions": ['.tsx', '.ts', '.js', '.json'],
           "alias": {
+            [pak.name]: path.join(__dirname, '../../..', pak.source),
             "^react-native$": "react-native-web"
           }
         }]
