@@ -1,6 +1,6 @@
 {
   "name": "rxn-input",
-   "version": "0.0.1",
+  "version": "0.0.1",
   "description": "🎮 🖱️ ⌨️‎ ‎ Cross-Platform Input Handler for React and React Native.",
   "keywords": [
     "react",
