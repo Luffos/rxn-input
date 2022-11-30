@@ -1,7 +1,7 @@
 {
   "name": "rxn-input",
+  "description": "🎮 🖱️ ⌨️‎ ‎ Cross-Platform Input Handler for React and React Native.",
   "version": "0.0.1",
-  "private": true,
   "homepage": "https://github.com/Luffos/rxn-input#readme",
   "bugs": {
     "url": "https://github.com/Luffos/rxn-input/issues"
