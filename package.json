@@ -1,7 +1,18 @@
 {
   "name": "rxn-input",
+   "version": "0.0.1",
   "description": "🎮 🖱️ ⌨️‎ ‎ Cross-Platform Input Handler for React and React Native.",
-  "version": "0.0.1",
+  "keywords": [
+    "react",
+    "typescript",
+    "react-native",
+    "input",
+    "react-native-web",
+    "rxn",
+    "gamepad",
+    "keyboard",
+    "mouse"
+  ],
   "homepage": "https://github.com/Luffos/rxn-input#readme",
   "bugs": {
     "url": "https://github.com/Luffos/rxn-input/issues"
