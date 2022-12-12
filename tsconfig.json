@@ -1,28 +1,19 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src/",
-    "outDir": "./dist/",
+    "baseUrl": ".",
+    "outDir": "build",
     "declaration": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "esModuleInterop": true,
-    "importsNotUsedAsValues": "error",
-    "forceConsistentCasingInFileNames": true,
+    "preserveSymlinks": true,
+    "target": "es6",
+    "module": "ESNext",
     "jsx": "preserve",
-    "lib": ["esnext", "DOM"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noImplicitUseStrict": false,
-    "noStrictGenericChecks": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "resolveJsonModule": true,
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "lib": ["es6", "dom"],
+    "esModuleInterop": true,
     "strict": true,
-    "target": "esnext"
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/"]
+  "include": ["src"]
 }
