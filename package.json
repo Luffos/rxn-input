@@ -21,7 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/Luffos/rxn-input.git"
   },
-  "main": "dist/index.js",
+  "main": "build/index.js",
   "source": "src/index",
   "react-native": "dist/index.js",
   "files": [
