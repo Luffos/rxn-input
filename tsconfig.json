@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "build",
     "declaration": true,
     "preserveSymlinks": true,
