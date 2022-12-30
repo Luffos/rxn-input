@@ -1,18 +1,32 @@
 {
   "compilerOptions": {
-    "outDir": "build",
-    "declaration": true,
-    "preserveSymlinks": true,
-    "target": "es6",
-    "module": "ESNext",
-    "jsx": "preserve",
-    "skipLibCheck": true,
+    "outDir": "dist",
+    "useDefineForClassFields": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
-    "lib": ["es6", "dom"],
-    "esModuleInterop": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
+    "skipDefaultLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true
+    "target": "esnext",
+    "lib": ["dom", "esnext"],
+    "jsx": "react",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "typeRoots": [
+      "./ts-declarations",
+      "node_modules/@types"
+    ],
+    "declaration": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes": true,
+    "skipLibCheck": true
   },
   "include": ["src"]
 }
