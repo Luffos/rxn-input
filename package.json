@@ -1,6 +1,8 @@
 {
   "name": "rxn-input",
   "version": "0.0.1",
+  "license": "MIT",
+  "author": "Luffos",
   "description": "🎮 🖱️ ⌨️‎ ‎ Cross-Platform Input Handler for React and React Native.",
   "keywords": [
     "react",
@@ -21,11 +23,11 @@
     "type": "git",
     "url": "git+https://github.com/Luffos/rxn-input.git"
   },
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "source": "src/index",
+  "types": "dist/index.d.ts",
   "react-native": "dist/index.js",
   "files": [
-    "src",
     "android",
     "ios",
     "rxn-input.podspec",
@@ -34,7 +36,8 @@
     "!ios/build",
     "!**/__tests__",
     "!**/__fixtures__",
-    "!**/__mocks__"
+    "!**/__mocks__",
+    "dist"
   ],
   "scripts": {
     "lint": "eslint . --ext .ts,.tsx",
@@ -42,7 +45,10 @@
     "mobile:ios": "cd ./debug/packages/mobile & yarn ios",
     "mobile:start": "cd ./debug/packages/mobile & yarn start",
     "test": "jest",
-    "web:start": "cd ./debug/packages/web & yarn start"
+    "web:start": "cd ./debug/packages/web & yarn start",
+    "build": "rimraf ./dist && tsc --build",
+    "build-watch": "watch \"npm run build\" ./src --interval 1 --wait 0.1",
+    "prepack": "npm run build"
   },
   "jest": {
     "moduleFileExtensions": [
