@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "author": "Luffos",
-  "description": "🎮 🖱️ ⌨️‎ ‎ Cross-Platform Input Handler for React and React Native.",
+  "description": "🎮 🖱️ ⌨️‎ ‎ Cross-Platform Input Handler for React Native and React Native Web.",
   "keywords": [
     "react",
     "typescript",
